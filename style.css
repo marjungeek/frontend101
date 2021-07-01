@@ -13,6 +13,18 @@
     justify-content: center;
 }
 
+#user-marjun{
+    width: 300px;
+    height:100px;
+    background-color:yellow;
+}
+
+#user-rj{
+    width: 200px;
+    height:100px;
+    background-color:green;
+}
+
 #user-Kyle{
     width: 300px;
     height:100px;
@@ -26,7 +38,6 @@
     font-family: cursive;
     background-color:blueviolet;
 }
-<<<<<<< HEAD
 
 #renzo{
     width: 200px;
@@ -34,41 +45,17 @@
     background-color:rgb(211, 245, 19);
 }
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #user-dyme{
     width: 300px;
     height:100px;
     background-color: black;
     color:white;
 }
-=======
+
 #euzell{
     width: 300px;
     height: 150 px;
     background-color: rgb(74, 74, 231);
 }
     
->>>>>>> 69d4492adebf208a3817a49a9bdac7a7cbd7e224
-=======
->>>>>>> 8e7ef6085656efb57fbe6336125ef943c18e29fa
+
