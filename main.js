@@ -1,1 +1,1 @@
-alert('Welcome to basic frontend 101')
+alert('Kyle alert');
