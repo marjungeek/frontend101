@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     flex-wrap: nowrap;
-    background-color: DodgerBlue;
+    background-color:black;
   }
 
 .wrapper > div{
@@ -13,17 +13,20 @@
     justify-content: center;
 }
 
-#user-marjun{
+#user-Kyle{
     width: 300px;
     height:100px;
-    background-color: coral;
+    font-family: cursive;
+    background-color:blue;
 }
 
-#user-rj{
+#user-Kyle2{
     width: 200px;
     height:100px;
-    background-color:darkkhaki;
+    font-family: cursive;
+    background-color:blueviolet;
 }
+<<<<<<< HEAD
 
 #renzo{
     width: 200px;
@@ -67,3 +70,5 @@
 }
     
 >>>>>>> 69d4492adebf208a3817a49a9bdac7a7cbd7e224
+=======
+>>>>>>> 8e7ef6085656efb57fbe6336125ef943c18e29fa
