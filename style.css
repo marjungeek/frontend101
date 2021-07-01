@@ -57,5 +57,10 @@
     height: 150 px;
     background-color: rgb(74, 74, 231);
 }
-    
+
+#user-ferry{
+    width: 300px;
+    height: 100 px;
+    background-color: red;
+}
 
