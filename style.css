@@ -16,4 +16,11 @@
 #user-marjun{
     width: 300px;
     height:100px;
+    background-color: coral;
+}
+
+#user-rj{
+    width: 200px;
+    height:100px;
+    background-color:darkkhaki;
 }
