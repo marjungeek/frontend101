@@ -87,6 +87,11 @@
     background-color: lightblue;
 }
 
+#alf {
+    width: 250px;
+    height: 100px;
+    background-color: rgb(238, 14, 14);
+}
 #user-henrich {
     width: 200px;
     height: 200px;
