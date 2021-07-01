@@ -117,8 +117,10 @@
 #lawrence{
     width:300px;
     height: 150px;
-    background-color: yellow;
-
+    background-color:navy;
+    font-size: 50px;
+    color:teal;
+    font-style: oblique;
 }
 #cess{
     width:300px;
