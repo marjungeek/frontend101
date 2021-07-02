@@ -46,10 +46,19 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="RePassword" type="password" class="form-control" name="repassword" placeholder="Re-type Password">
                 </div>
+
+                <div class="checkbox">
+                    <label id="lab"><input type="checkbox" value="" onclick="myCheck()">I am Not a robot</label>
+                </div>
+
+                <div id="robot" class="input-group">
+                    <label id="Q"></label>
+                    <input type="text" id="Ans">
+                </div>
                
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-primary me-md-2" type="button" onclick="myFunction()">Clear</button>
-                    <button id="submit" class="btn btn-success" type="button" onclick="Validate()">Register Now</button>
+                    <button id="submit" class="btn btn-success disabled" type="button" onclick="Validate()">Register Now</button>
                     
                 </div>
                 

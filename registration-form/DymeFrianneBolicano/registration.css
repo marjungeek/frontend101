@@ -30,3 +30,16 @@ body{
 h1{
     color: black;
 }
+
+#robot{
+    width: 100%;;
+    background-color: black;
+    margin-top: 20px;
+    display: none;
+}
+#Q{
+    color: azure;
+}
+#lab{
+    color: azure;
+}

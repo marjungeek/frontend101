@@ -92,17 +92,42 @@ function Validate(){
 
 function addData(){
     DeleteData()
+    var ans=document.getElementById("Ans").value;
+    if(total==ans){
 
-    localStorage.setItem("First Name",document.getElementById("firstname").value);
-    localStorage.setItem("Last Name",document.getElementById("lastname").value);
-    localStorage.setItem("Email",document.getElementById("email").value);
-    localStorage.setItem("Team List",document.getElementById("teamList").value);
-    localStorage.setItem("Password",document.getElementById("Password").value);
+        localStorage.setItem("First Name",document.getElementById("firstname").value);
+        localStorage.setItem("Last Name",document.getElementById("lastname").value);
+        localStorage.setItem("Email",document.getElementById("email").value);
+        localStorage.setItem("Team List",document.getElementById("teamList").value);
+        localStorage.setItem("Password",document.getElementById("Password").value);
+    
+        alert("Correct! \nRegistered, Data stored to local Storage!");
+    
 
-    alert("Registered, Data stored to local Storage!");
+    }
+    else{
+        alert("Wrong capacha!\n"+ans+" not equal to "+total );
+    }
 
 }
 function DeleteData(){
     localStorage.clear();
 }
 
+
+var total;
+function myCheck() {
+    var y = document.getElementById("robot");
+    if (y.style.display === "block") {
+      y.style.display = "none";
+      document.getElementById("submit").className = "btn btn-success disabled";
+    } else {
+      y.style.display = "block"; //show
+      document.getElementById("submit").className = "btn btn-success";
+      var num1=Math.floor(Math.random() * 10);
+      var num2=Math.floor(Math.random() * 10);
+      total=num1+num2;
+      document.getElementById("Q").innerHTML = ""+num1+"+"+num2+"?";
+    }
+    
+  }
