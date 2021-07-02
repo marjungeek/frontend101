@@ -2,13 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src ="main.js"></script>
     <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src ="main.js"></script>
 </head>
 <body>
-    <h1>T3st</h1>
+    <div class="container">
+                <form id="newForm" role="form" onsubmit="signUp(event)">
+
+                    <div class="title">REGISTRATION <span>FORM</span></div>
+
+                    <label class="fname" for="firstname">First Name: </label>
+                    <input type="text" class="input" id="firstname" >
+
+                    <label class="lname" for="lastname">Last Name: </label>
+                    <input type="text" class="input" id="lastname" >    
+
+                    <label class="email" for="email">Email Adress: </label>
+                    <input type="email" class="input" id="email" >
+
+                    <label class="tlist" for="teamlist">Team List: </label>
+                    <select id="teamlist" class="input">
+                        <option> - Select - </option>
+                    </select>
+                    
+                    <label class="pw" for="password">Password: </label>
+                    <input type="password" class="input" id="password" >
+
+                    <label class="re-pw" for="repassword">Re-type Password: </label>
+                    <input type="password" class="input" id="repassword" >
+
+                    <div class="button-container">
+                        <button class="button-clear" onclick="newFunction()" value="Reset" >CLEAR</button>
+                        <button class="button-regs" type="submit">REGISTER NOW</button>
+                    </div>
+
+                </form>
+    </div>
 </body>
 </html>
