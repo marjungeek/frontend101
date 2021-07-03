@@ -33,7 +33,16 @@
                 <div class="input-group" id="idteamList">
                     <span class="input-group-addon">Team:</span>
                     <select id="teamList" class="form-control" name="teamList">
+                        <option> - Select - </option>   
+                    </select>
+                </div>
+
+                <div class="input-group" id="idgenderList">
+                    <span class="input-group-addon">Gender:</span>
+                    <select id="genderList" class="form-control" name="genderList">
                         <option> - Select - </option>
+                        <option>Male</option>
+                        <option>Female</option>
                     </select>
                 </div>
 
@@ -57,13 +66,9 @@
                 </div>
                
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button" onclick="myFunction()">Clear</button>
-                    <button id="submit" class="btn btn-success disabled" type="button" onclick="Validate()">Register Now</button>
-                    
+                    <button class="btn btn-primary me-md-2" type="button" onclick="myClear()">Clear</button>
+                    <button id="submit" class="btn btn-success disabled" type="button" onclick="Validate()">Register Now</button>          
                 </div>
-                
-               
-        
             </form>
         </div>
         
