@@ -12,3 +12,57 @@ $(document).ready(function(){
 
     });
 });
+
+function register(){
+    addData();
+}
+
+
+function addData(){
+
+let dataForm = {
+    firstname : document.getElementById("firstname").value,
+    lastname : document.getElementById("lastname").value,
+    email :  document.getElementById("email").value,
+    teamlist : document.getElementById("teamList").value,
+    password : document.getElementById("password").value,
+    repassword : document.getElementById("repassword").value
+}
+
+ let passowrd = document.getElementById("password").value;
+ let repassword = document.getElementById("repassword").value;
+
+ if (passowrd === repassword) {
+    let test = localStorage.setItem("dataForm", JSON.stringify(dataForm));
+    console.log(test)
+    let getLocalStorage = localStorage.getItem("dataForm");
+    console.log(getLocalStorage);
+
+    clearData();
+ } else {
+
+    alert("Passowrd does not match");
+ }
+
+}
+
+
+function clearData(){
+    document.getElementById("firstname").value = '';
+    document.getElementById("lastname").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("teamList").value = '';
+    document.getElementById("password").value = '';
+    document.getElementById("repassword").value = '';
+
+}
+
+function deleteData() {
+    document.getElementById("firstname").value = '';
+    document.getElementById("lastname").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("teamList").value = '';
+    document.getElementById("password").value = '';
+    document.getElementById("repassword").value = '';
+    localStorage.clear();
+}
