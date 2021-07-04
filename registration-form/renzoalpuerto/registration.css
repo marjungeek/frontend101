@@ -1,3 +1,18 @@
 .main{
     width: 600px;
 }
+
+.inputF{
+    max-width: max-content !important;
+}
+
+body{
+    background-color: #C4DFE6;
+}
+
+.form-control{
+    border: 2px solid #07575B !important;
+    color: #003B46 !important; 
+
+}
+
