@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Registration Form</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="registration.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="registration.js"></script>
+
+    </head>
+
+    <body>
+    
+    <div class="main">
+        <h2>Registration Form</h2>
+        <form action="regform">
+
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email Address" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="team">Team:</label>
+                <select id="team" class="form-control">
+                    <option id="teamL"> - Select - </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pword">Password:</label>
+                <input type="password" class="form-control" id="pword" placeholder="Enter Password" name="pword">
+            </div>
+
+            <div class="form-group">
+                <label for="rpword">Re-type Password:</label>
+                <input type="password" class="form-control" id="rpword" placeholder="Re-type Password" name="rpword">
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-block" id="clearbtn">Clear</button>
+                <button type="button" onclick="save();" onclick="save1();" class="btn btn-primary btn-block">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    
+
+    </body>
+
+</html>
