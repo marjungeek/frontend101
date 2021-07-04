@@ -88,7 +88,7 @@ function clearf(){
     var team = document.getElementById("team").selectedIndex=0;
     var team1 = document.getElementById("team").options="";
 }
-function retrieve(){
+function retrievef(){
     firstName = localStorage.getItem("firstName");
     lastName = localStorage.getItem("lastName");
     email = localStorage.getItem("email");
