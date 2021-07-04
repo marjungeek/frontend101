@@ -30,9 +30,7 @@
               <label for="tm">Team:</label>
               <select class="form-select" aria-label="Default select example" id="tm">
                 <option selected>--Select--</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+
               </select>
             </div>
             
@@ -71,8 +69,8 @@ $.ajax ({
   type: "GET",
   url: 'https://api.first.org/data/v1/teams',
   success: function (teams) {
-   $.each(teams, function(i, team){
-     $tm.append('<option>'+  i + "  "+team.team + ' </option>')
+   $.each(teams['data'], function(i, team){
+     $tm.append('<option'+' value='+ team.id +'>' + "  "+team.team + ' </option>')
    })
   }
 }
