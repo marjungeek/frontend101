@@ -31,7 +31,7 @@ function validateForm(){
     }else if(atSymbol < 1 || dotSymbol < atSymbol+2 || dotSymbol+2 >= email.length){
         alert("Please enter a valid email.");
         return false;
-    }else if(firstPassword.length < 1){
+    }else if(firstPassword.length < 6){
         alert("Password must at least 6 characters long.");
         return false;
     }else if(firstPassword != secondPassword){
