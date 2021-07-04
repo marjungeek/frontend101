@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="registration.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src ="registration.js"></script>
+</head>
+<body>
+    <h2>WELCOME TO THE REGISTRATION FORM</h2>
+    <hr>
+    <div class="main">
+       <form role="form" onsubmit="register(event);">
+           <div class="fields">
+               <label for="fullName">Full Name:</label>
+               <input type="text" name="fname" id="fname" placeholder="Enter Fullname" required>
+           </div>
+
+           <div class="fields">
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lname" id="lname" placeholder="Enter Lastname" required>
+        </div>
+
+        <div class="fields">
+            <label for="email">E-mail:</label>
+            <input type="email"  name="email" id="email" placeholder="Enter E-mail Address" required>
+        </div>
+
+        <div class="fields">
+            <label for="teamList">Team:</label>
+            <select name="team" id="teamList">
+            <option> - Select Team - </option>
+            </select>
+        </div>
+
+        <div class="fields">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+            <option> - Select Gender - </option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>I prefer not to say</option>
+            </select>
+        </div>
+
+        <div class="fields">
+            <label for="password">Password:</label>
+            <input type="password" name="pwd" id="pwd" placeholder="Enter Password" required>
+        </div>
+
+        <div class="fields">
+            <label for="repassword">Re-type Password:</label>
+            <input type="password" name="repwd" id="repwd" placeholder="Enter Password" required>
+            <error id="alert"></error>
+        </div>
+
+       <div>
+           <button input type="reset" class="clear-btn">Clear</button>
+           <button input type="submit" class="submit-btn">Register Now</button>
+       </div>
+       </form>
+   </div>
+   <footer class="footer">
+       <p>|Created by Paula K. Lopez||2021|</p>
+   </footer>
+</body>
+</html>
