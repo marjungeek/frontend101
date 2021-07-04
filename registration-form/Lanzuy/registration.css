@@ -1,0 +1,22 @@
+.container-main{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    width: 600px;
+    height: 550px;
+    background-color: skyblue;
+    padding: 10px;
+}
+.reg-title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 5px;
+    padding: 5px;
+    background: pink;
+    border-radius: 15px;
+}
+.mb-3{
+    margin-top: 10px;
+}
+.btn-register{
+    margin-top: 30px;
+}

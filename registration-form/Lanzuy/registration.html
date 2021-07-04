@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Registration101</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="registration.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="registration.js"></script>
+</head>
+
+
+<body>
+    <div class="container-main">
+        <div class="title-reg"><h2 class="reg-title">Registration Form</h2></div>
+        <form id="myForm">
+            <div class="mb-3">
+                <label for="firstNameControl" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstNameControl">
+            </div>
+            <div class="mb-3">
+                <label for="lastNameControl" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastNameControl">
+            </div>
+
+            <div class="mb-3">
+                <label for="emailControl" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailControl">
+            </div>
+            <div class = "mb-3">
+                <label for="teamList" class="form-label">Team:</label>
+                <select id="teamList" class="form-control">
+                    <option value="team">
+                        - Select - 
+                    </option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="genderList" class="form-label">Gender:</label>
+                <select id="genderList" class="form-control">
+                    <option>- Gender -</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                
+                </select>
+
+
+            </div>
+
+            <div class="mb-3">
+                <label for="passwordControl" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="passwordControl">
+            </div>
+
+            <div class="mb-3">
+                <label for="repasswordControl" class="form-label">Re-type Password</label>
+                <input type="password" class="form-control" id="repasswordControl">
+            </div>
+
+            <div class="btn-register">
+                <button class="btn btn-primary me-md-2" type="button" onclick="clearForm()">Clear</button>
+                <button class="btn btn-succes" type="button" onclick="saveStorage()">Register Now</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
