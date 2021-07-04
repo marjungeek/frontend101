@@ -1,0 +1,93 @@
+.container{
+    background-color: #6c7690;
+}
+form{
+    padding: 50px;
+    background-color: #621f23;
+    margin-bottom: 20px;
+}
+.btn-info{
+    background-color: #d23d21;
+}
+.btn-info:hover{
+    background-color: #eae8db;
+}
+.btn{
+    font-family: 'Teko', sans-serif;
+}
+.btn-success{
+    background-color: #d23d21;
+}
+.btn-light{
+    background-color: #d23d21;
+}
+.btn-primary{
+    background-color: #d23d21;
+}
+.btn-light:hover{
+    background-color: #eae8db;
+}
+.btn-primary:hover{
+    background-color: #eae8db;
+}
+.inputS {
+    position: relative;
+    padding-top: 50px;
+    top: 0;
+    left: 0;
+}
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #d3d3d3;
+    transition: 0.2s all;
+    cursor: text;
+    font-family: 'Teko', sans-serif;
+}
+input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color:#d23d21;
+    border-bottom: 2px solid #d3d3d3;
+    color: #111;
+}
+input:focus,input:valid{
+    border-color: #2900dd;
+    font-family: 'Teko', sans-serif;
+}
+input:focus~label,
+input:valid~label{
+    font-size: 14px;
+    top: -20px;
+    color: #eae8db;
+}
+.firstNamee{
+    position: relative;
+    margin-bottom: 20px;
+}
+.lastNamee{
+    position: relative;
+    margin-bottom: 20px;
+}
+.emaile{
+    position: relative;
+    margin-bottom: 20px;
+}
+.password11{
+    position: relative;
+    margin-bottom: 20px;
+}
+.password22{
+    position: relative;
+    margin-bottom: 20px;
+}
+.selectselect{
+    margin-bottom: 20px;
+}
+.button-group{
+    margin-bottom: 20px;
+    width: 100%;
+}
