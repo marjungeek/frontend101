@@ -1,0 +1,42 @@
+[
+    {
+        "CountryCountryCode": "AU",
+        "Capital": "Canberra"
+    },
+    {
+        "CountryCode": "JP",
+        "Capital": "Tokyo"
+    },
+    {
+        "CountryCode": "PH",
+        "Capital": "Manila"
+    },
+    {
+        "CountryCode": "SG",
+        "Capital": "Singapore"
+    },
+    {
+        "CountryCode": "US",
+        "Capital": "Washington, D.C."
+    },
+    {
+        "CountryCode": "BE",
+        "Capital": "Brussels"
+    },
+    {
+        "CountryCode": "BH",
+        "Capital": "Manama"
+    },
+    {
+        "CountryCode": "CA",
+        "Capital": "Ottawa"
+    },
+    {
+        "CountryCode": "CN",
+        "Capital": "Beijing"
+    },
+    {
+        "CountryCode": "DE",
+        "Capital": "Berlin"
+    }
+]
