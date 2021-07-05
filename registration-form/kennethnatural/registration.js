@@ -27,7 +27,7 @@ if (typeof(Storage) !== "undefined")
     localStorage.setItem("teamList", team);
     localStorage.setItem("passwordControl", password);
 } else{
-    document.getElementById("Result").innerHTML = "failed";
+    alert("failed");
 }};
 
 function funct(){
