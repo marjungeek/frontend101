@@ -1,12 +1,39 @@
-$(document).ready(function(){
-    $.get('https://api.first.org/data/v1/teams', function(data, status){
-        var teams = data.data; //result from API
-        var options = '';
-        options += '<option value="Select">Select</option>';
+//get teams
+async function getTeams(){
+    const result = await getAPI();
+    const teams = result.data; //result from api
+    let options = '<option value="Select">Select</option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < teams.length; i++) {     
+        options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
+    }
 
-        for (var i=0; i<teams.length; i++){
-            options += '<option value="'+teams[i].id + '">' + teams[i].team + '</option>' //ito ung sa dropdown based sa API response
-        }
-        $('#teamList').append(options); //ito ung sa value sa dropdown
-    })
-})
+    document.getElementById('teamList').innerHTML = options;   
+}
+
+function getAPI(){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                resolve(xhr.response);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send();
+    });
+}
+
+function passid_validation(passwordControl,mx,my){
+    var passwordControl_len = ppasswordControl.value.length;
+    if (passwordControl_len == 0 ||passwordControl_len >= my || passwordControl_len < mx){
+        alert("Password should not be empty / length be between "+mx+" to "+my);
+        passwordControl.focus();
+        return false;
+    }
+    return true;
+}
