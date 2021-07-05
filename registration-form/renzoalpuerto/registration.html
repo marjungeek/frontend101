@@ -2,8 +2,11 @@
 <html>
     <head>
 
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Registration Exercise</title>
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- initializing bootstrap stylesheet  -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <!-- initializing local stylesheet -->
@@ -12,8 +15,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- initialize local js  -->
         <script src ="registration.js"></script>
-        <!-- Add icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
    
     </head>
 
@@ -82,14 +84,14 @@
                 </div>
 
                
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex" style="padding-top: 15px; justify-content: center;">
                     
-                    <input class="btn btn-primary me-md-2" style="background-color: red; border-color: black;" type="reset" value="Clear"></input>
-                    <input type="submit" style="border-color: black;" class="btn btn-success" onclick="registerFiles()" type="button" value="Register Now" required></input>
+                    <button class="btn btn-primary me-md-2" style="background-color: red; border-color: black;" onclick="clearF()"type="reset">CLEAR<i class="fa fa-trash btnIcon"></i></button>
+                    <button type="submit" style="border-color: black;" class="btn btn-success" onclick="registerFiles()" type="button" required>Register Now<i class="fa fa-edit btnIcon"></i></button>
 
                 </div>
                 
-                <div style="height: 40px;"></div>
+                <div style="height: 30px !important;"></div>
                 
             </form>
 

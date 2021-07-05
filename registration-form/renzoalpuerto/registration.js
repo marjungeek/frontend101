@@ -37,7 +37,9 @@ $(document).ready(function(){
 
 // });
 
-
+function clearF(){
+    alert("Fields cleared!");
+}
 
 function registerFiles() {
     var fName = document.getElementById("firstnId").value;
@@ -51,7 +53,7 @@ function registerFiles() {
         if(fName&&lName&&emailC&&teaml&&gen&&pass&&repass!=""){
             if(pass==repass&&emailC.includes("@")){
                     if(repass.length>7){
-                        alert("Register Successful!\n"+
+                        alert("Registered Successfully!\n\n"+
                                 "First name: "+fName+
                             "\n"+"Last name: "+lName+
                             "\n"+"Gender: "+gen+
