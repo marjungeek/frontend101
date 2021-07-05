@@ -13,6 +13,7 @@ $(document).ready(function(){
     });
 });
 
+
 function register(){
     addData();
 }
@@ -29,7 +30,7 @@ let dataForm = {
     repassword : document.getElementById("repassword").value
 }
 
- let passowrd = document.getElementById("password").value;
+ let password = document.getElementById("password").value;
  let repassword = document.getElementById("repassword").value;
 
  if (passowrd === repassword) {
@@ -37,9 +38,9 @@ let dataForm = {
     console.log(test)
     let getLocalStorage = localStorage.getItem("dataForm");
     console.log(getLocalStorage);
-
+ alert("Successfully Registered") 
     clearData();
- } else {
+ } else{
 
     alert("Passowrd does not match");
  }

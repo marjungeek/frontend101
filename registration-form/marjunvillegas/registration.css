@@ -1,3 +1,59 @@
 .main{
     width: 300px;
 }
+
+#firstname{
+    height: 30px;
+    width: 200px;
+    background-color:antiquewhite
+
+}
+
+#lastname{
+    height: 30px;
+    width: 200px;
+    background-color: azure;
+
+}
+
+#email{
+    height: 30px;
+    width: 200px;
+    background-color: cyan;
+}
+
+#teamList{
+    height: 40px;
+    width: 200px;
+    background-color: cadetblue;
+
+}
+
+#password{
+    height: 30px;
+    width: 200px;
+    background-color: gold
+
+}
+
+#repassword{
+    height: 30px;
+    width: 200px;
+    background-color: gold;
+
+}
+
+
+
+#button{
+    height: 30px;
+    width: 200px;
+    background-color: chartreuse;
+}
+
+#register
+{
+    height: 30px;
+    width: 200px;
+    background-color:chartreuse;
+}
