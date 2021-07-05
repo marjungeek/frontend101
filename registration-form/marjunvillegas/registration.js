@@ -33,7 +33,7 @@ let dataForm = {
  let password = document.getElementById("password").value;
  let repassword = document.getElementById("repassword").value;
 
- if (passowrd === repassword) {
+ if (password === repassword) {
     let test = localStorage.setItem("dataForm", JSON.stringify(dataForm));
     console.log(test)
     let getLocalStorage = localStorage.getItem("dataForm");
