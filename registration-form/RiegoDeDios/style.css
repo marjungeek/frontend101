@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px;
+  background: linear-gradient(#251ea0, #5f5fb8, #00d4ff);
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: whitesmoke;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 10px 15px;
+}
+.container .title {
+  font-size: 50px;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: relative;
+}
+form .user-details .RegForm {
+  margin: 20px 0 12px 0;
+  width: calc(100% / 2 - 20px);
+}
+.user-details .RegForm .form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .RegForm input {
+  height: 30px;
+  width: 550px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+}
+.user-details .RegForm select {
+  height: 40px;
+  width: 565px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+}
+.user-details .RegForm label {
+  font-size: large;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.button1 .buttonClear {
+  padding: 2px 5px;
+  width: 100%;
+  font-size: 17px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: rgb(8, 8, 8);
+  background-color: #10bbf4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button1:hover .buttonClear {
+  background-color: #f03423;
+}
+
+.button1:active .buttonClear {
+  background-color: #e94117;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button .buttonReg {
+  padding: 2px 5px;
+  width: 100%;
+  font-size: 17px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: rgb(7, 7, 7);
+  background-color: #10bbf4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover .buttonReg {
+  background-color: #18ee7c;
+}
+
+.button:active .buttonReg {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.user-details .RegForm .showPass {
+  height: 15px;
+  width: 15px;
+  margin-top: 10px;
+}
+.user-details .RegForm .showPass2 {
+  height: 15px;
+  width: 15px;
+  margin-top: 10px;
+}
