@@ -22,11 +22,7 @@ function myFunction(){
     let ln = document.forms["myForm"]["lastNameControl"].value;
     let em = document.forms["myForm"]["emailControl"].value;
 
-    if (pass1 != pass2) {
-        alert("Password does not match!");
-        return false;
-    
-    }else if(fn == ""){
+    if(fn == ""){
         alert("First name missing!");
     
     }else if(ln == ""){
@@ -35,6 +31,9 @@ function myFunction(){
     }else if(em == ""){
         alert("Email is missing!");
     
+    }else if(pass1 != pass2) {
+        alert("Password does not match!");
+        return false;
     }
     
     else {

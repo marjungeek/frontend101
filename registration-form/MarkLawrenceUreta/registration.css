@@ -9,3 +9,11 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+button.clear{
+    margin: 10px;
+}
+
+button.register{
+    margin: 10px;
+}
+
