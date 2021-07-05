@@ -1,14 +1,34 @@
-$(document).ready(function(){
-    $.get('https://api.first.org/data/v1/teams', function(data, status){
-        const teams = data.data; //result from api
-        let options = '';  
-        options += '<option value="Select">Select</option>'; 
+//get teams
+async function getTeams(){
+    const result = await getAPI();
+    const teams = result.data; //result from api
+    let options = '<option value="Select">Select</option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < teams.length; i++) {     
+        options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
+    }
 
-        for (var i = 0; i < teams.length; i++) {     
-            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; //construct list of dropdown based from api response
-        }
+    document.getElementById('teamList').innerHTML = options;   
+}
 
-        $('#teamList').append(options); //append option with value to dom (dropdown)
-
+function getAPI(){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                resolve(xhr.response);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send();
     });
-});
+}
+
+
+
+
+
