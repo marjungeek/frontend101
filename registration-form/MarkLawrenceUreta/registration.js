@@ -23,13 +23,16 @@ function myFunction(){
     let em = document.forms["myForm"]["emailControl"].value;
 
     if(fn == ""){
-        alert("First name missing!");
+        alert("First name is missing!");
+        return false;
     
     }else if(ln == ""){
-        alert("Last name missing!");
+        alert("Last name is missing!");
+        return false;
     
     }else if(em == ""){
         alert("Email is missing!");
+        return false;
     
     }else if(pass1 != pass2) {
         alert("Password does not match!");
