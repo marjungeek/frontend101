@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.get('https://api.first.org/data/v1/teams', function(data, status){
-        var teams = data.data; //result from api
-        var options = '';  
+        const teams = data.data; //result from api
+        let options = '';  
         options += '<option value="Select">Select</option>'; 
 
         for (var i = 0; i < teams.length; i++) {     
