@@ -40,7 +40,9 @@
                             <label for="password2">Re-Type Password:</label>
                         </div>
                         <div class="selectselect">
-                            <select class="btn btn-info form-select" name="team" id="team">
+                            <select class="btn btn-info form-select" onchange="getCity()" name="country" id="country">
+                            </select>
+                            <select class="btn btn-info form-select" name="city" id="city">
                             </select>
                         </div>
                         <div class="button-group">
@@ -48,7 +50,7 @@
                             <button style="width:48%" onclick="clearf()" class="btn btn-light" type="button">Clear</button>
                         </div>
                         <div class="button-group">
-                            <button style="width:100%" onclick="retrieveff()" class="btn btn-primary" type="button">Display</button>
+                            <button style="width:100%" onclick="getCountry()" class="btn btn-primary" type="button">Display</button>
                         </div>
                     </div>
                 </form>
