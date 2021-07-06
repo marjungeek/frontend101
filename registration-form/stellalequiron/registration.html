@@ -10,7 +10,7 @@
     <style>
         h2 {text-align: center;}
     </style>
-    <body>
+    <body onload="getTeams()">
         <div class="container main" id="registrationForm">
             <h2 class="mt-10">Registration Form</h2> <!--m sets margin, t top/padding top-->
 
@@ -32,14 +32,13 @@
 
                 <div class="mb-2">
                     <label for="countryList" class="form-label">Country: </label>
-                    <select id="countryList" class="form-control">
-                        <option>Choose Country</option>
+                    <select id="countryList" class="form-control" onchange="getCapital()">
                     </select>
                 </div>
 
                 <div class="mb-2">
                     <label for="cityControl" class="form-label">City: </label>
-                    <input type="city" class="form-control" id="cityControl">
+                    <input type="city" class="form-control" id="cityControl" readonly>
                 </div>
 
                 <div class="mb-2">

@@ -1,16 +1,75 @@
-$(document).ready(function(){
-    $.get('https://api.first.org/data/v1/teams', function(data, status){
-        var teams = data.data;
-        var options = '';  
-        console.log(status)
-        options += '<option value="Select">Select Team?</option>'; 
-        for (var i = 0; i < teams.length; i++) {     
-            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>';
-        }
-        $('#team').append(options);     
-    });
-});
+async function getTeams(){
+    const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
+    console.log('teams => ', result);
+    const teams = result.data; //result from api
+    const options = constructDropDown(teams, 'team');
+    document.getElementById('teamList').innerHTML = options;   
+}
 
+//reusable function
+function constructDropDown(data, type){
+    let options = '<option value="">Select</option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < data.length; i++) {    
+        let value;
+        let id;
+        if(type == 'team'){
+            value = data[i].team;
+            id = data[i].id;
+        }else{
+            value = data[i].Name;
+            id = data[i].Code;
+        }
+        options += '<option value="' + id + '">' + value + '</option>'; 
+    }
+    return options;
+}
+
+//resuable function
+function getAPI(method, endpoint){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, endpoint, true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                resolve(xhr.response);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send();
+    });
+}
+
+async function getCountry(){
+    const result = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
+    console.log('countries => ', result);
+    const option = constructDropDown(result, 'country');
+    document.getElementById('countryList').innerHTML = option;
+}
+
+function getCity(){
+    return getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites');
+}
+
+async function getCapital(){
+    const countryCode = document.getElementById('countryList').value;
+    if(countryCode == ''){
+        alert('Please select your country');
+        document.getElementById('city').value = '';
+    }
+
+    const cities = await getCity();
+
+    for(var i = 0; i < cities.length; i++){
+       if(countryCode == cities[i].CountryCode){
+           console.log(countryCode);
+           document.getElementById('city').value = cities[i].Capital;
+       }
+    }
+}
 
 function passid_validation(passwordControl,mx,my){
     var passwordControl_len = ppasswordControl.value.length;
@@ -30,35 +89,35 @@ function myClear() {
 
 }
 
-async function getCountry(){
-    const Country = await getJSON();
-    let options = '<option value="Select"> - Select - </option>';  //construct list of dropdown based from api response using loops
-    for (var i = 0; i < Country.length; i++) {     
-        options += '<option value="' + Country[i].Name + '">' + Country[i].Name + '</option>'; 
-    }
-    console.log("getJSON");
-    document.getElementById('CList').innerHTML = options;   
+// async function getCountry(){
+//     const Country = await getJSON();
+//     let options = '<option value="Select"> - Select - </option>';  //construct list of dropdown based from api response using loops
+//     for (var i = 0; i < Country.length; i++) {     
+//         options += '<option value="' + Country[i].Name + '">' + Country[i].Name + '</option>'; 
+//     }
+//     console.log("getJSON");
+//     document.getElementById('CList').innerHTML = options;   
 
     
-}
+// }
 
-function getJSON(){
-    return new Promise(function (resolve, reject) {
-        var _HTTPREq = new XMLHttpRequest();
-        _HTTPREq.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',true);
-        _HTTPREq.responseType = 'json';
-        _HTTPREq.onload = function () {
-            var status = _HTTPREq.status;
-            if (status == 200) {
-                console.log("Success1!");
-                resolve(_HTTPREq.response);
-            } else {
-                reject(status);
-                console.log("Fail!1");
-            }
-        };
-        _HTTPREq.send();
-    });
+// function getJSON(){
+//     return new Promise(function (resolve, reject) {
+//         var _HTTPREq = new XMLHttpRequest();
+//         _HTTPREq.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',true);
+//         _HTTPREq.responseType = 'json';
+//         _HTTPREq.onload = function () {
+//             var status = _HTTPREq.status;
+//             if (status == 200) {
+//                 console.log("Success1!");
+//                 resolve(_HTTPREq.response);
+//             } else {
+//                 reject(status);
+//                 console.log("Fail!1");
+//             }
+//         };
+//         _HTTPREq.send();
+//     });
     
     
-}
+// }
