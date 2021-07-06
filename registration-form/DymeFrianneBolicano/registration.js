@@ -1,3 +1,37 @@
+async function getTeams(){
+    const result = await getAPI();
+    const teams = result.data; //result from api
+    let options = '<option value="Select"> - Select - </option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < teams.length; i++) {     
+        options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
+        //console.log(teams[i].team);
+    }
+
+    document.getElementById('teamList').innerHTML = options;   
+    //console.log(JSON.stringify(teams));
+    
+}
+
+function getAPI(){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                console.log("Success!");
+                resolve(xhr.response);
+            } else {
+                reject(status);
+                console.log("Fail!");
+            }
+        };
+        xhr.send();
+    });
+}
+/*
 $(document).ready(function(){
     $.get('https://api.first.org/data/v1/teams', function(data, status){
         var teams = data.data;
@@ -11,7 +45,8 @@ $(document).ready(function(){
         $('#teamList').append(options); 
 
     });
-});
+});*/
+
 
 function myClear() {
     alert("Cleared");
@@ -27,6 +62,7 @@ function Validate(){
     var _firstname= document.getElementById("firstname").value;
     var _lastname=document.getElementById("lastname").value;
     var _email=document.getElementById("email").value;
+    var _Country=document.getElementById("CList").value;
     var _teamList=document.getElementById("teamList").value;
     var _genderList=document.getElementById("genderList").value;
     var _Password=document.getElementById("Password").value;
@@ -64,6 +100,16 @@ function Validate(){
             //alert("Not a valid email");
         }
     }
+     if(_Country==="- Select -"){
+        document.getElementById("idCList").className = "input-group has-error";
+        mes += "Country is empty!\n";
+    }
+    else{
+        document.getElementById("idCList").className = "input-group has-success";
+        //document.getElementById("City").value = Country
+        x++;
+    }
+    
     if(_teamList==="- Select -"){
         document.getElementById("idteamList").className = "input-group has-error";
         mes += "Team List is empty!\n";
@@ -88,7 +134,7 @@ function Validate(){
     }
     else{
 
-        if((_Password === _RePassword) && (x===5)){
+        if((_Password === _RePassword) && (x===6)){
             document.getElementById("idpassword").className = "input-group has-success";
             document.getElementById("idRepassword").className = "input-group has-success";
             addData();
@@ -115,6 +161,8 @@ function addData(){
         localStorage.setItem("First Name",document.getElementById("firstname").value);
         localStorage.setItem("Last Name",document.getElementById("lastname").value);
         localStorage.setItem("Email",document.getElementById("email").value);
+        localStorage.setItem("Country",document.getElementById("CList").value);
+        localStorage.setItem("City",document.getElementById("City").value);
         localStorage.setItem("Team List",document.getElementById("teamList").value);
         localStorage.setItem("Gender",document.getElementById("genderList").value);
         localStorage.setItem("Password",document.getElementById("Password").value);
@@ -157,4 +205,38 @@ function myRandom(){
     var num2=Math.floor(Math.random() * 10);
     total=num1+num2;
     document.getElementById("Q").innerHTML = ""+num1+"+"+num2+"?";
+}
+
+async function getCountry(){
+    const Country = await getJSON();
+    let options = '<option value="Select"> - Select - </option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < Country.length; i++) {     
+        options += '<option value="' + Country[i].Name + '">' + Country[i].Name + '</option>'; 
+    }
+    console.log("getJSON");
+    document.getElementById('CList').innerHTML = options;   
+
+    
+}
+
+function getJSON(){
+    return new Promise(function (resolve, reject) {
+        var _HTTPREq = new XMLHttpRequest();
+        _HTTPREq.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',true);
+        _HTTPREq.responseType = 'json';
+        _HTTPREq.onload = function () {
+            var status = _HTTPREq.status;
+            if (status == 200) {
+                console.log("Success1!");
+                resolve(_HTTPREq.response);
+            } else {
+                reject(status);
+                console.log("Fail!1");
+            }
+        };
+        _HTTPREq.send();
+    });
+    
+    
 }

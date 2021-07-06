@@ -9,7 +9,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src ="registration.js"></script>
     </head>
-    <body>
+    <body onload="getTeams(); getCountry()">
         <h1><i>@dymefriannebolicano</i></h1>
         <div class="container main" id = "myForm">
             
@@ -30,10 +30,22 @@
                     <input id="email" type="text" class="form-control" name="email" placeholder="Email">
                 </div>
 
+                <div class="input-group" id="idCList">
+                    <span class="input-group-addon">Country:</span>
+                    <select id="CList" class="form-control" name="CList">
+                        <option> - Select - </option>   
+                    </select>
+                </div>
+
+                <div class="input-group" id="idCity">
+                    <span class="input-group-addon">City:</span>
+                    <input id="City" type="text" class="form-control" name="City" value="Select Country First" disabled>
+                </div>
+
                 <div class="input-group" id="idteamList">
                     <span class="input-group-addon">Team:</span>
                     <select id="teamList" class="form-control" name="teamList">
-                        <option> - Select - </option>   
+                       
                     </select>
                 </div>
 
