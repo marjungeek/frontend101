@@ -157,6 +157,18 @@ function addData(){
     DeleteData()
     var ans=document.getElementById("Ans").value;
     if(total==ans){
+        var y =document.getElementById("CList").value;
+        console.log(y);
+
+        for (var i = 0; i < City.length; i++) {     
+            console.log(City[i].CountryCode);
+            if(y===City[i].CountryCode){
+                console.log("found a match");
+                //document.getElementById("City").vaule = City[i].Capital;
+                document.getElementById("City").setAttribute('value',City[i].Capital);
+            }else {}
+        }
+
 
         localStorage.setItem("First Name",document.getElementById("firstname").value);
         localStorage.setItem("Last Name",document.getElementById("lastname").value);
@@ -206,7 +218,7 @@ function myRandom(){
     total=num1+num2;
     document.getElementById("Q").innerHTML = ""+num1+"+"+num2+"?";
 }
-
+/*
 async function getCountry(){
     const Country = await getJSON();
     let options = '<option value="Select"> - Select - </option>';  
@@ -217,7 +229,6 @@ async function getCountry(){
     console.log("getJSON");
     document.getElementById('CList').innerHTML = options;   
 
-    
 }
 
 function getJSON(){
@@ -237,6 +248,55 @@ function getJSON(){
         };
         _HTTPREq.send();
     });
+
+}*/
+
+//loadFile();
+
+let myPromise = new Promise(function(successCb, errorCb) {
+
+    let req = new XMLHttpRequest();
+    req.open('GET', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries'); //country.json
+    req.onload = function() {
+        if (req.status === 200) {
+            successCb(this.response);
+            //console.log(JSON.parse(this.response))
+            let Country = JSON.parse(this.response)
+            console.log("got Country");
+            console.log(Country);
+            let options = '<option name="Select"> - Select - </option>';  
+            for (var i = 0; i < Country.length; i++) {     
+                options += '<option id="Ccode" value="' + Country[i].Code + '">' + Country[i].Name + '</option>'; 
+            }
+            //console.log("getJSON");
+            document.getElementById('CList').innerHTML = options;   
+            // loop through data
+            // load to select element <option></option>
+        } else {
+            errorCb("Error");
+        }
+    }
+    req.send();
+});
+let City;
+myPromise.then(
+    function(value) { console.log("Getting City?"); 
+    
+    let req = new XMLHttpRequest();
+    req.open('GET', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites'); //country.json
+    req.onload = function() {
+        if (req.status === 200) {
+            //console.log(JSON.parse(this.response))
+            City = JSON.parse(this.response)
+            console.log("got city");
+            console.log(City);
+        } else {
+            console.log("fail to get city");
+        }
+    }
+    req.send();
     
     
-}
+    },
+    function(error) { alert("Fail to get COuntry"); }
+)

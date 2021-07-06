@@ -12,7 +12,7 @@ function displayMe(data) {
 }
 
 let myPromise = new Promise(function(successCb, errorCb) {
-    let x = 100;
+    let x = 200;
 
     if (x === 200) {
         successCb("Success");
@@ -30,9 +30,6 @@ myPromise.then(
     
 );
 
-let x = await x();
-let y = await y(x);
-let z = await z(y);
 
 
 </script>
