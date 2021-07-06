@@ -52,26 +52,22 @@ function delLocalStorage(){
     alert("Local storage deleted!");
 }
 
-//function validateEmail($email) {
-//  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-//  return emailReg.test( $email );
+//function ValidateEmail1(inputText)
+//{
+//var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+//if(inputText.value.match(mailformat))
+//{
+//alert("Valid email address!");
+//document.form1.email1.focus();
+//return true;
 //}
-function ValidateEmail1(inputText)
-{
-var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-if(inputText.value.match(mailformat))
-{
-alert("Valid email address!");
-document.form1.email1.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-document.form1.email1.focus();
-return false;
-}
-}
+//else
+//{
+////alert("You have entered an invalid email address!");
+///document.form1.email1.focus();
+//return false;
+//}
+//}
 function validateForm(){
     let fName = document.getElementById("firstNameControl").value;
     let lName = document.getElementById("lastNameControl").value;
@@ -108,11 +104,11 @@ function validateForm(){
         document.getElementById("teamMsg").innerHTML = "Please Select Team";
         return false;
     }
-   if(eControl == "")  {
-    document.getElementById("annyMsg").innerHTML = "Please Enter Your Email";
-  return false;
-      }
-      
+    if (eControl == ""){
+      document.getElementById("annyMsg").innerHTML = "Invalid Email Address";
+      return false;
+    }
+    
       if(pwd == "") {
         document.getElementById("message1").innerHTML = "Please Enter Your password";
         return false;
@@ -154,5 +150,4 @@ function validateForm(){
         alert("Registration Complete!");
         location.reload();
     }  
-  }
-
+}
