@@ -2,8 +2,9 @@
 $(document).ready(function(){
 
     $("#repasswordId").keyup(isPasswordMatch); //for password confirmation
-
+    
     $.get('https://api.first.org/data/v1/teams', function(data, status){ 
+    
         var teams = data.data; //result from api
         var options = '';  
 
@@ -14,8 +15,43 @@ $(document).ready(function(){
         $('#teamlId').append(options); //append option with value to dom (dropdown)
 
     });
-    
+
+
+
 });
+
+
+
+let myPromise = new Promise(function(successCb, errorCb) {
+
+    var countryData = $.get('https://raw.githubusercontent.com/marjungeek/frontend101/master/js-async/public/country.json');
+
+    
+    if (countryData != "") {
+        successCb(countryData);
+        
+    } else {
+        errorCb(console.log("FAILED"));
+    }
+});
+
+
+myPromise.then((countData) => {
+
+    console.log(countData)
+  
+
+   
+
+}).then(
+
+).then(
+    
+);
+
+
+
+
 
 // ATTEMPT TOP LOOP THE VARIABLES
 
