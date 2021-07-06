@@ -25,11 +25,14 @@ async function getTeams(){
 
   document.getElementById('teamList').innerHTML = options;   
 }
+function constructDropDown(data, type){
+  let option = '<option = "value '
 
-function getAPI(){
+}
+function getAPI(method, endpoint){
   return new Promise(function (resolve, reject) {
       var xhr = new XMLHttpRequest();
-      xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+      xhr.open(method, endpoint, true);
       xhr.responseType = 'json';
       xhr.onload = function () {
           var status = xhr.status;
@@ -43,6 +46,11 @@ function getAPI(){
   });
 }
 
+async function Country(){
+  const result = await getAPI('get', );
+  const option = constructDropDown(result, 'country');
+
+}
 function clearFields() {
 
     document.getElementById("firstNameControl").value = "";
