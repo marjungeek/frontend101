@@ -29,6 +29,17 @@ function getAPI(){
 }
 
 
+const Register = e =>{
+    let formData = {
+        firstNameControl: document.getElementById('firstNameControl'),
+        lastNameControl: document.getElementById('lastNameControl'),
+        emailControl: document.getElementById('emailControl'),
+        teamList: document.getElementById('teamList'),
+        passwordControl: document.getElementById('passwordControl'),
+        repasswordControl: document.getElementById('repasswordControl')
+    }
 
-
-
+    localStorage.setItem('formData', JSON.stringify(formData));
+    console.log(localStorage.getItem('formData'));
+    e.preventDefault();
+}

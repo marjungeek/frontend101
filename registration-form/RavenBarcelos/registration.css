@@ -1,0 +1,15 @@
+.main{
+    width: 600px;
+}
+
+.container{
+    background-color: springgreen;
+    color: white;
+    height: 630px;;
+    width: 750px;
+}
+
+body{
+    background-color: turquoise;
+    font-family: Tahoma;
+}

@@ -10,7 +10,7 @@
     <body onload="getTeams()">
         <div class="container main">
             <h2 class="mt-5">Registration Form</h2>
-            <form>
+            <form role="form">
                 <div class="mb-3">
                     <label for="firstNameControl" class="form-label">First Name: </label>
                     <input type="text" class="form-control" id="firstNameControl" >
@@ -45,8 +45,8 @@
 
                
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Clear</button>
-                    <button class="btn btn-success" type="button">Register Now</button>
+                    <button class="btn btn-primary me-md-2" type="reset">Clear</button>
+                    <button class="btn btn-success" type="button" onclick="Register(event)">Register Now</button>
                 </div>
 
         
