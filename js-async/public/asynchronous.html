@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Asynchronous</h2>
+
+<p>A good example is JavaScript setTimeout().</p>
+
+<p id="demo"></p>
+
+<script>
+function displayMe(data) {
+    console.log('async display');
+    document.getElementById('demo').innerHTML = data;
+}
+
+function asyncFunc() {
+    setTimeout(displayMe, 3000);
+}
+
+function loadFile() {
+    let req = new XMLHttpRequest();
+    req.open('GET', 'country.json'); //country.json
+    req.onload = function() {
+        if (req.status === 200) {
+            console.log(JSON.parse(this.responseText))
+            let data = JSON.parse(this.responseText);
+
+            // loop through data
+            // load to select element <option></option>
+        }
+    }
+    req.send();
+}
+
+loadFile();
+
+
+// console.log('first');
+// asyncFunc();
+// console.log('second');
+
+</script>
+
+</body>
+</html>
+
