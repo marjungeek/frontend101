@@ -11,6 +11,16 @@ $(document).ready(function(){
     });
 });
 
+$(function(){
+    var countries = [];
+
+    $.getJSON('countries.json', function(data){
+        $.each(data.countries, function(i,f){
+            $('#countries').append(options)
+        })
+    })
+})
+
 function passid_validation(passwordControl,mx,my){
     var passwordControl_len = ppasswordControl.value.length;
     if (passwordControl_len == 0 ||passwordControl_len >= my || passwordControl_len < mx){
