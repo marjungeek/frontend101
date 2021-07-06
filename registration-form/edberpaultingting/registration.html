@@ -28,8 +28,7 @@
                             <label for="emailControl" class="form-label">Email: </label>
                             <input type="email" class="form-control" id="emailControl" >
                         </div>
-                    </div>
-                    <div class="col">
+
                         <div class="mb-3">
                             <label for="teamList" class="form-label">Team: </label>
                             <select id="teamList" class="form-control">
@@ -37,7 +36,20 @@
                                 <!--<option> - Select - </option>-->
                             </select>
                         </div>
-        
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="countryList" class="form-label">Country: </label>
+                            <select id="countryList" class="form-control" onchange="findCity()">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cityList" class="form-label">Capital City: </label>
+                            <input type="text" id="cityList" class="form-control" disabled>
+                        </div>
+                        
                         <div class="mb-3">
                             <label for="passwordControl" class="form-label">Password: </label>
                             <input type="password" class="form-control" id="passwordControl" >
