@@ -1,0 +1,42 @@
+[
+    {
+        "Code": "AU",
+        "Name": "Australia"
+    },
+    {
+        "Code": "JP",
+        "Name": "Japan"
+    },
+    {
+        "Code": "PH",
+        "Name": "Philippines"
+    },
+    {
+        "Code": "SG",
+        "Name": "Singapore"
+    },
+    {
+        "Code": "US",
+        "Name": "America, United States of"
+    },
+    {
+        "Code": "BE",
+        "Name": "Belgium"
+    },
+    {
+        "Code": "BH",
+        "Name": "Bahrain"
+    },
+    {
+        "Code": "CA",
+        "Name": "Canada"
+    },
+    {
+        "Code": "CN",
+        "Name": "China"
+    },
+    {
+        "Code": "DE",
+        "Name": "Germany"
+    }
+]
