@@ -4,10 +4,13 @@
 }
 body {
     background-image: url("doodle.jpg");
+    
+    
 }
 .containerform {
     width: 400px;
     margin: 100px auto 0px auto;
+  
 }
 .content {
    /* background-color: rgb(17, 16, 16);
