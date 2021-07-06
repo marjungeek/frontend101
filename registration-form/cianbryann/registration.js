@@ -48,7 +48,7 @@ function inputf(){
     }
 
     if(password1.length >= 1){
-        console.log("nice");
+        console.log("nicee");
     }else{
         errorCount = errorCount + 1;
     }
@@ -88,7 +88,7 @@ function clearf(){
     var team = document.getElementById("team").selectedIndex=0;
     var team1 = document.getElementById("team").options="";
 }
-function retrievef(){
+function retrieveff(){
     firstName = localStorage.getItem("firstName");
     lastName = localStorage.getItem("lastName");
     email = localStorage.getItem("email");
