@@ -10,33 +10,40 @@
 </head>
 <body>
     <div class="container">
-                <form id="newForm" role="form" onsubmit="signUp(event)">
+                <form id="newForm" role="form" >
 
                     <div class="title">REGISTRATION <span>FORM</span></div>
 
-                    <label class="fname" for="firstname">First Name: </label>
-                    <input type="text" class="input" id="firstname" >
+                    <label for="firstname">First Name: </label>
+                    <input type="text" class="input" id="firstname" placeholder="Your First Name.." >
 
-                    <label class="lname" for="lastname">Last Name: </label>
-                    <input type="text" class="input" id="lastname" >    
+                    <label for="lastname">Last Name: </label>
+                    <input type="text" class="input" id="lastname" placeholder="Your Last Name..">    
 
-                    <label class="email" for="email">Email Adress: </label>
-                    <input type="email" class="input" id="email" >
+                    <label for="email">Email Adress: </label>
+                    <input type="email" class="input" id="email" placeholder="Your Email Address..">
 
-                    <label class="tlist" for="teamlist">Team List: </label>
+                    <label for="countrylist" >Country: </label>
+                    <select id="countrylist" class="input" onchange="getCapital()">
+                    </select>
+
+                    <label for="cityControl" >City: </label> 
+                    <input type="text" id="city" class="input" placeholder="Select City.."readonly>
+
+                    <label for="teamlist">Team List: </label>
                     <select id="teamlist" class="input">
                         <option> - Select - </option>
                     </select>
                     
-                    <label class="pw" for="password">Password: </label>
-                    <input type="password" class="input" id="password" >
+                    <label for="password">Password: </label>
+                    <input type="password" class="input" id="password" placeholder="Set Password..">
 
-                    <label class="re-pw" for="repassword">Re-type Password: </label>
-                    <input type="password" class="input" id="repassword" >
+                    <label for="repassword">Re-type Password: </label>
+                    <input type="password" class="input" id="repassword" placeholder="Confirm Password..">
 
                     <div class="button-container">
                         <button class="button-clear" onclick="newFunction()" value="Reset" >CLEAR</button>
-                        <button class="button-regs" type="submit">REGISTER NOW</button>
+                        <button class="button-regs" onclick="signUp()" >REGISTER NOW</button>
                     </div>
 
                 </form>
