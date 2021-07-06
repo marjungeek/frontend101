@@ -110,12 +110,14 @@ function Validate(){
         x++;
     }
     
-    if(_teamList==="- Select -"){
+    if(_teamList ==="Select"){
         document.getElementById("idteamList").className = "input-group has-error";
         mes += "Team List is empty!\n";
+        //alert("Fail");
     }
     else{
         document.getElementById("idteamList").className = "input-group has-success";
+        //alert(_teamList);
         x++;
     }
     if(_genderList==="- Select -"){
@@ -156,19 +158,8 @@ function Validate(){
 function addData(){
     DeleteData()
     var ans=document.getElementById("Ans").value;
+
     if(total==ans){
-        var y =document.getElementById("CList").value;
-        console.log(y);
-
-        for (var i = 0; i < City.length; i++) {     
-            console.log(City[i].CountryCode);
-            if(y===City[i].CountryCode){
-                console.log("found a match");
-                //document.getElementById("City").vaule = City[i].Capital;
-                document.getElementById("City").setAttribute('value',City[i].Capital);
-            }else {}
-        }
-
 
         localStorage.setItem("First Name",document.getElementById("firstname").value);
         localStorage.setItem("Last Name",document.getElementById("lastname").value);
@@ -180,7 +171,6 @@ function addData(){
         localStorage.setItem("Password",document.getElementById("Password").value);
     
         alert("Correct! \nRegistered, Data stored to local Storage!");
-    
 
     }
     else{
@@ -300,3 +290,17 @@ myPromise.then(
     },
     function(error) { alert("Fail to get COuntry"); }
 )
+
+function getCity(){
+    var y =document.getElementById("CList").value;
+        console.log(y);
+
+        for (var i = 0; i < City.length; i++) {     
+            console.log(City[i].CountryCode);
+            if(y===City[i].CountryCode){
+                console.log("found a match");
+                //document.getElementById("City").vaule = City[i].Capital;
+                document.getElementById("City").setAttribute('value',City[i].Capital);
+            }else {}
+        }
+}
