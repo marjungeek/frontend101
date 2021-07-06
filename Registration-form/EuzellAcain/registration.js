@@ -1,17 +1,48 @@
-$(document).ready(function(){
-    $.get('https://api.first.org/data/v1/teams', function(data, status){
-        var teams = data.data; //result from api
-        var options = '';  
-        options += '<option value="Select">Select</option>'; 
+//$(document).ready(function(){
+ //   $.get('https://api.first.org/data/v1/teams', function(data, status){
+  //      var teams = data.data; //result from api
+   //     var options = '';  
+  //      options += '<option value="Select">Select</option>'; 
 
-        for (var i = 0; i < teams.length; i++) {     
-            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; //construct list of dropdown based from api response
-        }
+   //     for (var i = 0; i < teams.length; i++) {     
+  //          options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; //construct list of dropdown based from api response
+  //      }
 
-        $('#teamList').append(options); //append option with value to dom (dropdown)
+ //       $('#teamList').append(options); //append option with value to dom (dropdown)
 
-    });
-});
+//    });
+//});
+
+//get teams
+async function getTeams(){
+  const result = await getAPI();
+  const teams = result.data; //result from api
+  let options = '<option value="Select">Select</option>';  
+  //construct list of dropdown based from api response using loops
+  for (var i = 0; i < teams.length; i++) {     
+      options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
+  }
+
+  document.getElementById('teamList').innerHTML = options;   
+}
+
+function getAPI(){
+  return new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+      xhr.responseType = 'json';
+      xhr.onload = function () {
+          var status = xhr.status;
+          if (status == 200) {
+              resolve(xhr.response);
+          } else {
+              reject(status);
+          }
+      };
+      xhr.send();
+  });
+}
+
 function clearFields() {
 
     document.getElementById("firstNameControl").value = "";
