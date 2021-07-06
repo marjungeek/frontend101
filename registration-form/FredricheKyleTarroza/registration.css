@@ -1,76 +1,67 @@
-body{
-    background-image: linear-gradient(to right, rgb(49, 41, 41) , rgb(187, 187, 148));
-
-
+* {
+    margin: 0;
+    padding: 0;
 }
-
-
-
-.containerform{
-/*background-color: rgb(148, 75, 75);*/
-background-color:rgb(126, 47, 47);
-
-/*height and width*/
-height: 600px;
-width: 600px;
-
-/*margins, padding etc*/
-position: relative;
-top:50px;
-margin:auto;
-
-/*center of the whole*/
-margin: auto;
-/*borders*/
-padding: 10px;
-border: 5px solid #0c0c01;
-box-shadow: 10px 10px;
-
-
-/*makes items inside center*/
-display: flex;
-justify-content: center;
-align-items: center;
-
-
+body {
+    background-image: url("doodle.jpg");
 }
-
-
-.content{
-    width: 80%;
-
-    
+.containerform {
+    width: 400px;
+    margin: 100px auto 0px auto;
 }
-
-label{
-    display: inline-block;
-        width: 140px;
-        text-align:left;
-
-
-  }
-
-input[type=text],[type=password], select {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    
-    
-  }
-
-
-
-
-  .input-box{
-    display: inline-block;
-    width: 700px;
-    text-align:left;
-
-  }
-
-
+.content {
+   /* background-color: rgb(17, 16, 16);
+    */
+    background-image: linear-gradient(to right, rgb(10, 10, 10) , rgb(34, 34, 32));
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow:20px 20px rgb(0, 0, 0);
+    padding: 20px;
+}
+input[type=text], [type=password] {
+    width: 300px;
+    float: right;
+    font-family: cursive;
+    border-radius: 5px;
+    box-shadow: 3px 3px rgb(3, 3, 3);
+    padding: 0 10px;
+}
+select{
+    width: 300px;
+    float: right;
+    font-family: cursive;
+    border-radius: 5px;
+    box-shadow: 3px 3px rgb(3, 3, 3);
+    padding: 0 10px;
+}
+input[type=text]:hover{
+    transform: scale(1.1);
+}
+input[type=password]:hover{
+    transform: scale(1.1);
+}
+select:hover{
+    transform: scale(1.1);
+}
+.clear{
+    border-radius: 50px;
+    width: 150px;
+    font-family: cursive;
+}
+.submit{
+    border-radius: 50px;
+    width: 150px;
+    font-family: cursive;
+    float:right;
+}
+.clear:hover{
+    transform: scale(1.3);
+}
+.submit:hover{
+    transform: scale(1.3);
+}
+h1, p, label, hr {
+    color: white;
+    font-family: cursive;
+}
