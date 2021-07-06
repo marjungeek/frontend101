@@ -11,9 +11,10 @@
         h2 {text-align: center;}
     </style>
     <body>
-        <div class="container main">
+        <div class="container main" id="registrationForm">
             <h2 class="mt-10">Registration Form</h2> <!--m sets margin, t top/padding top-->
-            <form>
+
+            <form id="registrationForm1"> 
                 <div class="mb-2"> <!--m sets margin, b bottom/padding bottom-->
                     <label for="firstNameControl" class="form-label">First Name: </label>
                     <input type="text" class="form-control" id="firstNameControl">
@@ -32,7 +33,7 @@
                 <div class="mb-2">
                     <label for="countryList" class="form-label">Country: </label>
                     <select id="countryList" class="form-control">
-                        <option> - Select - </option>
+                        <option>Choose Country</option>
                     </select>
                 </div>
 
