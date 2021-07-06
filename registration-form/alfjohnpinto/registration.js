@@ -13,6 +13,18 @@ $(document).ready(function(){
     });
 });
 
+function getAPI(){
+    
+}
+
+function getCountry(){
+
+}
+function getCity(){
+
+}
+
+
 function validate (){
     var password = document.getElementById("passwordID").value;
     var repassword = document.getElementById("repasswordID").value;
@@ -84,3 +96,7 @@ function resetList() {
     document.getElementById("passwordID").value="";
     document.getElementById("repasswordID").value="";
 }
+
+
+
+
