@@ -1,52 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src ="main.js"></script>
-</head>
-<body>
-    <div class="container">
-                <form id="newForm" role="form" >
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src ="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <form id="myForm">
+                <div class="title">REGISTRATION <span>FORM</span></div>
+                    <label for="firstNameControl">FIRST NAME: </label>
+                    <input class="input" type="text" id="firstNameControl" placeholder="Enter your First Name..">
 
-                    <div class="title">REGISTRATION <span>FORM</span></div>
+                    <label for="lastNameControl">LAST NAME: </label>
+                    <input class="input" type="text" id="lastNameControl" placeholder="Enter your Last Name..">
 
-                    <label for="firstname">First Name: </label>
-                    <input type="text" class="input" id="firstname" placeholder="Your First Name.." >
+                    <label for="emailControl">EMAIL: </label>
+                    <input class="input" type="email"id="emailControl" placeholder="Enter your Email Address..">
 
-                    <label for="lastname">Last Name: </label>
-                    <input type="text" class="input" id="lastname" placeholder="Your Last Name..">    
-
-                    <label for="email">Email Adress: </label>
-                    <input type="email" class="input" id="email" placeholder="Your Email Address..">
-
-                    <label for="countrylist" >Country: </label>
+                    <label for="countrylist" >COUNTRY: </label>
                     <select id="countrylist" class="input" onchange="getCapital()">
                     </select>
 
                     <label for="cityControl" >City: </label> 
                     <input type="text" id="city" class="input" placeholder="Select City.."readonly>
 
-                    <label for="teamlist">Team List: </label>
-                    <select id="teamlist" class="input">
-                        <option> - Select - </option>
+                    <label for="teamList">TEAM: </label>
+                    <select class="input" id="teamList">
+                        <option value="" disabled selected>SELECT TEAM</option>
                     </select>
-                    
-                    <label for="password">Password: </label>
-                    <input type="password" class="input" id="password" placeholder="Set Password..">
 
-                    <label for="repassword">Re-type Password: </label>
-                    <input type="password" class="input" id="repassword" placeholder="Confirm Password..">
+                    <label for="passwordControl">PASSWORD: </label>
+                    <input class="input" type="password" id="passwordControl" placeholder="Set Password..">
+
+                    <label for="repasswordControl">RE-ENTER PASSWORD: </label>
+                    <input class="input" type="password" id="repasswordControl" placeholder="Confirm Password..">
 
                     <div class="button-container">
-                        <button class="button-clear" onclick="newFunction()" value="Reset" >CLEAR</button>
-                        <button class="button-regs" onclick="signUp()" >REGISTER NOW</button>
+                        <button class="button-clear" type="reset" onclick="clearForm()">CLEAR</button>
+                        <button class="button-regs"  type="button" onclick="signUp()">REGISTER</button>
                     </div>
-
-                </form>
-    </div>
-</body>
+            </form>
+        </div>   
+    </body>
 </html>

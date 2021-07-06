@@ -1,10 +1,9 @@
-
 async function getTeams(){
     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
     console.log('teams => ', result);
     const teams = result.data; //result from api
     const options = constructDropDown(teams, 'team');
-    document.getElementById('teamlist').innerHTML = options;   
+    document.getElementById('teamList').innerHTML = options;   
 }
 getCountry();
 getCity();
@@ -76,85 +75,67 @@ async function getCapital(){
     }
 }
 
-function newFunction() {
-    document.getElementById("newForm").reset();
- }
-
-// const signUp = e =>{
-//     let formData = {
-//         firstname: document.getElementById('firstname').value,
-//         lastname: document.getElementById('lastname').value,
-//         email: document.getElementById('email').value,
-//         teamlist: document.getElementById('teamlist').value,
-//         password: document.getElementById('password').value,
-//         repassword: document.getElementById('repassword').value,
-//     }
-//     localStorage.getItem('formData',JSON.stringify(formData));
-//     e.prevenDefault();
-// }
 
 function signUp(){
     
-    
-    let firstname = document.forms["newForm"]["firstName"].value;
-    let lastname = document.forms["newForm"]["lastName"].value;
-    let email = document.forms["newForm"]["email"].value;
-    let countrylist = document.forms["newForm"]["countrylist"].value;
-    let cityControl = document.forms["newForm"]["cityControl"].value;
-    let teamlist = document.forms["newForm"]["teamlist"].value;
-    let password = document.forms["newForm"]["password"].value;
-    let repassword = document.forms["newForm"]["repassword"].value;
-    if(firstname == ""){
-        alert("First name is missing!");
+    let fname = document.forms["myForm"]["firstNameControl"].value;
+    let lname = document.forms["myForm"]["lastNameControl"].value;
+    let email = document.forms["myForm"]["emailControl"].value;
+    let password = document.forms["myForm"]["passwordControl"].value;
+    let password2 = document.forms["myForm"]["repasswordControl"].value;
+
+    if(fname == ""){
+        alert("Please input your First Name!");
         return false;
     
-    }else if(lastname == ""){
-        alert("Last name is missing!");
+    }else if(lname == ""){
+        alert("Please input your Last Name!");
         return false;
     
     }else if(email == ""){
-        alert("Email is missing!");
+        alert("Please input your Email Address!");
         return false;
     
-    }else if(countrylist == ""){
-        alert("Country is missing!");
-        return false;
-    
-    }else if(cityControl == ""){
-        alert("City is missing!");
-        return false;
-    
-    }else if(teamlist == ""){
-        alert("team is missing!");
-        return false;
-    
-    }else if(password != repassword) {
+    }else if(password != password2) {
         alert("Password does not match!");
         return false;
     }
+    
     else {
       	localStorage.setItem(
           "First Name",
-          document.getElementById("firstName").value
+          document.getElementById("firstNameControl").value
         );
         localStorage.setItem(
           "Last Name",
-          document.getElementById("lastName").value
+          document.getElementById("lastNameControl").value
         );
         localStorage.setItem(
           "Email",
-          document.getElementById("email").value
+          document.getElementById("emailControl").value
         );
         localStorage.setItem(
+            "Country",
+            document.getElementById("countrylist").value
+        );
+        localStorage.setItem(
+            "City",
+            document.getElementById("city").value
+          );
+        localStorage.setItem(
           "Team List",
-          document.getElementById("teamlist").value
+          document.getElementById("teamList").value
         );
         localStorage.setItem(
           "Password",
-          document.getElementById("password").value
+          document.getElementById("passwordControl").value
         );
         
         alert("Registered Successfully!");
         ;
     }
 }
+
+function clearForm() {
+    document.getElementById("myForm").reset();
+ }
