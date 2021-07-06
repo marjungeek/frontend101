@@ -13,6 +13,24 @@ $(document).ready(function(){
     });
 });
 
+// ----Country---
+// async function getCountry() {
+//     const result = await getFile();
+//     const countries = result.data;
+//     let options = '<option value="Select">Select</option>';
+
+//     for (var a = 0; a < countries.length; a++){
+//         id +'">' + countries[a].country + '</option>';
+//     }
+//     document.getElementById('countryList').innerHTML = options;
+// }
+
+// funtion getFile() {
+//     return new Promise(function(resolve, reject) {
+        
+//     })
+// }
+
 const register = x =>{
      let userData = {
          fname: document.getElementById('fname').value,
