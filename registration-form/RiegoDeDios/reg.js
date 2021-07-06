@@ -1,40 +1,115 @@
-$(document).ready(function(){
-    $.get('https://api.first.org/data/v1/teams', function(data, status){
-        var teams = data.data; //result from api
-        var options = '';  
-        options += '<option value="Select">Select</option>'; 
-
-        for (var i = 0; i < teams.length; i++) {     
-            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; //construct list of dropdown based from api response
-        }
-
-        $('#teamList').append(options); //append option with value to dom (dropdown)
-
-    });
-});
-
-var password = document.getElementById("pass")
-  , confirm_password = document.getElementById("pass2");
-
-function storage(){
-    var info = document.getElementById("first").value;
-
-    localStorage.setItem("Local" , info);
-    console.log(localStorage.getItem("Local"));
+getCountry();
+getCity();
 
 
-    if(pass.value != pass2.value) {
-        pass2.setCustomValidity("Passwords Don't Match");
-      } else {
-        pass2.setCustomValidity('');
+//reusable function for Dropdowns
+function constructDropDown(data, type){
+  let options = '<option value="">Select</option>';  
+  //construct list of dropdown based from api response using loops
+  for (var i = 0; i < data.length; i++) {    
+      let value;
+      let id;
+      if(type == 'team'){
+          value = data[i].team;
+          id = data[i].id;
+      }else{
+          value = data[i].Name;
+          id = data[i].Code;
       }
-
-
+      options += '<option value="' + id + '">' + value + '</option>'; 
+  }
+  return options;
 }
 
-pass.onchange = validatePassword;
-pass2.onkeyup = validatePassword;
+//resuable function getting API's
+function getAPI(method, endpoint){
+  return new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, endpoint, true);
+      xhr.responseType = 'json';
+      xhr.onload = function () {
+          var status = xhr.status;
+          if (status == 200) {
+              resolve(xhr.response);
+          } else {
+              reject(status);
+          }
+      };
+      xhr.send();
+  });
+}
 
+///////////////////Teams dropdown
+async function getTeams(){
+  const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
+  console.log('teams => ', result);
+  const teams = result.data; //result from api
+  const options = constructDropDown(teams, 'team');
+  document.getElementById('teamList').innerHTML = options;   
+}
+/////////////////// country dropdown
+async function getCountry(){
+  const result = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
+  console.log('countries => ', result);
+  const option = constructDropDown(result, 'country');
+  document.getElementById('countryList').innerHTML = option;
+}
+///////////////City API
+function getCity(){
+  return getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites');
+}
+////////////////City Display when onchange event Country
+async function getCapital(){
+  const countryCode = document.getElementById('countryList').value;
+  if(countryCode == ''){
+      alert('Please select your country');
+      document.getElementById('city').value = '';
+  }
+
+  const cities = await getCity();
+
+  for(var i = 0; i < cities.length; i++){
+     if(countryCode == cities[i].CountryCode){
+         console.log(countryCode);
+         document.getElementById('city').value = cities[i].Capital;
+     }
+  }
+}
+////////////////////////////
+//////////////////////////// Local Storage 
+function storage() {
+  document.getElementById("newForm").reset();
+}
+
+const reg = e =>{
+  let formData = {
+      firstname: document.getElementById('first').value,
+      lastname: document.getElementById('last').value,
+      email: document.getElementById('email').value,
+      teamlist: document.getElementById('teamList').value,
+      countrylist: document.getElementById('countryList').value,
+      citylist: document.getElementById('cityList').value,
+      password: document.getElementById('pass').value,
+      repassword: document.getElementById('pass2').value,
+  }
+  localStorage.getItem('formData',JSON.stringify(formData));
+  e.prevenDefault();
+}
+
+
+//////////////////// Password Validation
+var check = function() {
+  if (document.getElementById('pass').value ==
+    document.getElementById('pass2').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password not matching';
+  }
+}
+
+/////////////////// Password Reveal/Hide
 function showPass() {
     var x = document.getElementById("pass");
     if (x.type === "password") {

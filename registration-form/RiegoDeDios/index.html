@@ -9,10 +9,13 @@
     <script src="reg.js"></script>
   </head>
 
-  <body>
+  <body onload="getTeams()">
     <div class="container main">
+
       <div class="title">Registration Form</div>
-      <form>
+
+      <form id="newForm" role="form" onsubmit="reg(event)">
+
         <div class="user-details">
           <div class="RegForm">
             <label for="firstName" class="form-label">First Name: </label>
@@ -55,20 +58,34 @@
           </div>
 
           <div class="RegForm">
+            <label for="countryList" class="form-label">Country: </label>
+            <select id="countryList" class="form-control" onchange="getCapital()">
+            </select>
+        </div>
+
+        <div class="RegForm">
+            <label for="cityControl" class="form-label">City: </label> 
+            <input type="text" id="city" class="form-control" readonly>
+
+        </div>
+
+          <div class="RegForm">
             <label for="password" class="form-label">Password: </label>
-            <input id="pass" type="password" class="form-control" required />
+            <input id="pass" type="password" class="form-control" onkeyup="check()" required />
             <input class="showPass" type="checkbox" onclick="showPass()" />Show
             Password
           </div>
 
           <div class="RegForm">
             <label for="password2" class="form-label">Confirm Password: </label>
-            <input id="pass2" type="password" class="form-control" required />
+            <span id='message'></span>
+            <input id="pass2" type="password" class="form-control" onkeyup="check()" required />
             <input
               class="showPass2"
               type="checkbox"
               onclick="showPass2()"
-            />Show Password
+            />
+            Show Password
           </div>
           <br />
           <div class="button1">
@@ -76,9 +93,7 @@
           </div>
           <br />
           <div class="button">
-            <button onclick="storage()" class="buttonReg" type="submit">
-              Register Now
-            </button>
+            <button onclick="Validate()" class="buttonReg" type="submit"> Register Now </button>
           </div>
         </div>
       </form>
