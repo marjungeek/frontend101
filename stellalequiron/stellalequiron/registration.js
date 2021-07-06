@@ -1,32 +1,15 @@
-//get teams
-async function getTeams(){
-    const result = await getAPI();
-    const teams = result.data; //result from api
-    let options = '<option value="Select">Select</option>';  
-    //construct list of dropdown based from api response using loops
-    for (var i = 0; i < teams.length; i++) {     
-        options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
-    }
-
-    document.getElementById('teamList').innerHTML = options;   
-}
-
-function getAPI(){
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://api.first.org/data/v1/teams', true);
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            var status = xhr.status;
-            if (status == 200) {
-                resolve(xhr.response);
-            } else {
-                reject(status);
-            }
-        };
-        xhr.send();
+$(document).ready(function(){
+    $.get('https://api.first.org/data/v1/teams', function(data, status){
+        var teams = data.data;
+        var options = '';  
+        console.log(status)
+        options += '<option value="Select">Select Team?</option>'; 
+        for (var i = 0; i < teams.length; i++) {     
+            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>';
+        }
+        $('#team').append(options);     
     });
-}
+});
 
 function passid_validation(passwordControl,mx,my){
     var passwordControl_len = ppasswordControl.value.length;
@@ -37,3 +20,4 @@ function passid_validation(passwordControl,mx,my){
     }
     return true;
 }
+
