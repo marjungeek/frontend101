@@ -85,7 +85,10 @@ function addData(){
         firstname : document.getElementById("firstname").value,
         lastname : document.getElementById("lastname").value,
         email :  document.getElementById("email").value,
+        countryList : document.getElementById("countryList").value,
+        cityList : document.getElementById("cityList").value,
         teamlist : document.getElementById("teamList").value,
+        gender : document.getElementById("gender").value,
         password : document.getElementById("password").value,
         repassword : document.getElementById("repassword").value
     }
@@ -112,6 +115,8 @@ function addData(){
         document.getElementById("firstname").value = '';
         document.getElementById("lastname").value = '';
         document.getElementById("email").value = '';
+        document.getElementById("countryList").value = '';
+        document.getElementById("cityList").value = '';
         document.getElementById("teamList").value = '';
         document.getElementById("password").value = '';
         document.getElementById("repassword").value = '';
