@@ -1,9 +1,9 @@
 
 class Execise {
     constructor(){
-        //no init
+        
     }
-    async  getTeams(){
+    async getTeams(){
         const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
         console.log('teams => ', result);
         const teams = result.data; //result from api
