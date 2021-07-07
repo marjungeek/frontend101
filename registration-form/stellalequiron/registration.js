@@ -88,14 +88,36 @@ function submit(){
     var lastnamee = document.getElementById("lastNameControl").value;
     var emaile = document.getElementById("emailControl").value;
     var countrye = document.getElementById("countryControl").value;
-    var citye = document.getElementById("cityControl").value;
     var teamse = document.getElementById("teamList").value;
     var gendere = document.getElementById("gender").value;
     var passworde = document.getElementById("passwordControl").value;
     var repassworde = document.getElementById("repasswordControl").value;
-    if (firstnamee =="" || firstnamee <=1){
-    };
-    })
+
+    if (firstnamee <=0){
+        alert("Please enter Firstname");
+    }
+    if (lastnamee <=o){
+        alert("Please enter Lastname");
+    }
+    if (emaile <=0){
+        alert("Please enter Email");
+    }
+    if (countrye <=0){
+        alert("Please choose your Country");
+    }
+    if (teamse <=0){
+        alert("Please choose your Teams");
+    }
+    if (gendere <=0){
+        alert("Please choose your Gender");
+    }
+    if (passworde <=0){
+        alert("Please enter Password");
+    }
+    if (passworde != repassworde){
+        alert("Password don't match");
+        return false;
+    }
 }
 
 function myClear() {
