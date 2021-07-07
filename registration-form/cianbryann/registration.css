@@ -91,3 +91,8 @@ input:valid~label{
     margin-bottom: 20px;
     width: 100%;
 }
+.capitall{
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

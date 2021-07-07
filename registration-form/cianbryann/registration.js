@@ -1,47 +1,26 @@
-//get teams
 async function getCountry(){
-    const result = await getAPICountry();
+    const result = await getAPIs('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
     let options = '<option value="Select">Select Country</option>';  
     for (i = 0; i < result.length; i++) {     
         options += '<option value="' + result[i].Code + '">' + result[i].Name + '</option>'; 
     }
     document.getElementById('country').innerHTML = options;  
-    console.log(result[1].Name);
 }
-async function getCity(code){
+async function getCity(){
     var team = document.getElementById("country").value;
-    const result = await getAPICity();
-    let options = '<option value="Select">Select Country</option>';
-    for (i = 0; i < result.length; i++) {     
+    var valueCity = "";
+    const result = await getAPIs('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites');
+    for (i = 0; i < result.length; i++) { 
         if(result[i].CountryCode == team){
-            options += '<option value="' + result[i].Capital + '">' + result[i].Capital + '</option>';
+            valueCity = result[i].Capital;
+            document.getElementById('capital').value = valueCity;
         } 
-    }
-    document.getElementById('city').innerHTML = options;  
-    console.log(result[1].CountryCode);
-    console.log(team)
+    }     
 }
-function getAPICountry(){
+function getAPIs(method,endpoint){
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries', true);
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            var status = xhr.status;
-            if (status == 200) {
-                resolve(xhr.response);
-            } else {
-                reject(status);
-            }
-        };
-        xhr.send();
-    });
-}
-
-function getAPICity(){
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites', true);
+        xhr.open(method,endpoint, true);
         xhr.responseType = 'json';
         xhr.onload = function () {
             var status = xhr.status;
@@ -55,102 +34,68 @@ function getAPICity(){
     });
 }
 getCountry();
-
-function inputf(){
+function control() { 
     var firstname = document.getElementById("FirstName").value;
     var lastname = document.getElementById("LastName").value;
     var email = document.getElementById("Email").value;
+    var capital = document.getElementById("capital").value;
     var password1 = document.getElementById("password1").value;
     var password2 = document.getElementById("password2").value;
-    var team = document.getElementById("country").selectedIndex;
-    var team1 = document.getElementById("country").options;
-    var team2 = document.getElementById("city").selectedIndex;
-    var team22 = document.getElementById("city").options;
-    errorCount = 0;
+    var cap2 = document.getElementById("country").selectedIndex;
+    var cap22 = document.getElementById("country").options;
     var option1 = "";
-    var option2 = "";
+    const obb = {fn:firstname,
+                ln:lastname,
+                em:email,
+                cp:capital,
+                pw1:password1,
+                pw2:password2};
+    this.input = function() {
+        var errorcount = 0;
+        for (var key in obb) {
+            if (obb[key] == "" || obb[key] == null){
+                console.log(obb[key]);
+                errorcount = errorcount + 1;
+            }else{
+                console.log(obb[key]);
+            }
+        }
+        if(password1 == password2){
+            console.log("nice");
+        }else{
+            errorcount = errorcount + 1;
+        }
 
-    if(team1[team].index == 0){
-        errorCount = errorCount + 1;
-    }else{
-        option1 = team1[team].text;
-    }
-    
-    if(team22[team2].index == 0){
-        errorCount = errorCount + 1;
-    }else{
-        option2 = team22[team2].text;
-    }
-    
+        if(cap22[cap2].index == 0){
+            errorcount = errorcount + 1;
+        }else{
+            option1 = cap22[cap2].text;
+        }
 
-    if(firstname.length >= 1){
-        console.log(firstname);
-    }else{
-        errorCount = errorCount + 1;
+        if(errorcount == 0){
+            localStorage.setItem("firstName",firstname);
+            localStorage.setItem("lastName",lastname);
+            localStorage.setItem("email",email);
+            localStorage.setItem("country",option1);
+            localStorage.setItem("capital",capital);
+            alert("Galing mo doon ah");
+        }else{
+            alert("Pls Check Input")
+        }
     }
-
-    if(lastname.length >= 1){
-        console.log(lastname);
-    }else{
-        errorCount = errorCount + 1;
+    this.clear = function() {
+        document.getElementById("FirstName").value='';
+        document.getElementById("LastName").value='';
+        document.getElementById("Email").value='';
+        document.getElementById("password1").value='';
+        document.getElementById("password2").value='';
+        document.getElementById("capital").value='';
     }
-
-    if(email.length >= 1){
-        console.log(email);
-    }else{
-        errorCount = errorCount + 1;
+    this.display = function(){
+        alert("First Name: " + localStorage.getItem("firstName") + 
+        '\n' + "Last Name: " + localStorage.getItem("lastName") +
+        '\n' + "Email: " + localStorage.getItem("email") +
+        '\n' + "Country: " + localStorage.getItem("country") +
+        '\n' + "Capital: " + localStorage.getItem("capital"));
     }
-
-    if(password1.length >= 1){
-        console.log("nice");
-    }else{
-        errorCount = errorCount + 1;
-    }
-
-    if(password2.length >= 1){
-        console.log("nice");
-    }else{
-        errorCount = errorCount + 1;
-    }
-
-    if(password1 == password2){
-        console.log("nice");
-    }else{
-        errorCount = errorCount + 1;
-    }
-    console.log(errorCount);
-
-    if(errorCount == 0){
-        localStorage.setItem("firstName",firstname);
-        localStorage.setItem("lastName",lastname);
-        localStorage.setItem("email",email);
-        localStorage.setItem("team",option1)
-        localStorage.setItem("team2",option2)
-        alert("Nice")
-    }else{
-        alert("Check Input");
-    }
-}
-function clearf(){
-    document.getElementById("FirstName").value='';
-    document.getElementById("LastName").value='';
-    document.getElementById("Email").value='';
-    document.getElementById("password1").value='';
-    document.getElementById("password2").value='';
-    var team = document.getElementById("team").selectedIndex=0;
-    var team1 = document.getElementById("team").options="";
-}
-function retrievef(){
-    firstName = localStorage.getItem("firstName");
-    lastName = localStorage.getItem("lastName");
-    email = localStorage.getItem("email");
-    team = localStorage.getItem("team");
-    console.log("First Name: " + firstName + 
-    '\n' + "Last Name: " + lastName +
-    '\n' + "Email: " + email +
-    '\n' + "Team: " + team);
-    alert("First Name: " + firstName + 
-    '\n' + "Last Name: " + lastName +
-    '\n' + "Email: " + email +
-    '\n' + "Team: " + team);
 }

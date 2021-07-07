@@ -20,7 +20,7 @@
                 <form>
                     <div class="inputS">
                         <div class="firstNamee">
-                            <input type="text" id="FirstName" required/>
+                            <input type="text" name="FirstName" id="FirstName" required/>
                             <label for="FirstName">First Name:</label>
                         </div>
                         <div class="lastNamee">
@@ -42,15 +42,17 @@
                         <div class="selectselect">
                             <select class="btn btn-info form-select" onchange="getCity()" name="country" id="country">
                             </select>
-                            <select class="btn btn-info form-select" name="city" id="city">
-                            </select>
+                            <div class="capitall">
+                                <input type="text" id="capital" required/>
+                                <label for="capital">Capital</label>
+                            </div>
                         </div>
                         <div class="button-group">
-                            <button style="width:50%" onclick="inputf()" class="btn btn-success" type="button">Submit</button>
-                            <button style="width:48%" onclick="clearf()" class="btn btn-light" type="button">Clear</button>
+                            <button style="width:50%" onclick="new control().input()" class="btn btn-success" type="button">Submit</button>
+                            <button style="width:48%" onclick="new control().clear()" class="btn btn-light" type="button">Clear</button>
                         </div>
                         <div class="button-group">
-                            <button style="width:100%" onclick="getCountry()" class="btn btn-primary" type="button">Display</button>
+                            <button style="width:100%" onclick="new control().display()" class="btn btn-primary" type="button">Display</button>
                         </div>
                     </div>
                 </form>
