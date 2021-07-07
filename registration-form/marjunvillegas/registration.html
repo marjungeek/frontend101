@@ -46,6 +46,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="gender" class="form-label">Gender: </label>
+                    <select id="gender" class="form-control">
+                        <option> - Select Gender - </option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="passwordControl" class="form-label">Password: </label>
                     <input type="password" class="form-control" id="passwordControl" >
                 </div>
@@ -57,8 +67,8 @@
 
                
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Clear</button>
-                    <button class="btn btn-success" type="button">Register Now</button>
+                    <button class="btn btn-primary me-md-2" type="button" onclick="deleteData()">Clear</button>
+                    <button class="btn btn-success" type="button" onclick="register()">Register Now</button>
                 </div>
 
         
