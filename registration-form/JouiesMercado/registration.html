@@ -10,7 +10,7 @@
 
     </head>
 
-    <body>
+    <body onload="getTeams()">
     
     <div class="main">
         <h2>Registration Form</h2>
@@ -32,9 +32,29 @@
             </div>
 
             <div class="form-group">
-                <label for="team">Team:</label>
-                <select id="team" class="form-control">
-                    <option id="teamL"> - Select - </option>
+                <label for="countryList">Country:</label>
+                <select id="countryList" class="form-control" onchange="getCapital()">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cityControl">City:</label>
+                <input type="text" class="form-control" id="city" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="teamL">Team:</label>
+                <select id="teamL" class="form-control">
+                    <option> - Select - </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" class="form-control">
+                    <option> - Select Gender - </option>
+                    <option>Male</option>
+                    <option>Female</option>
                 </select>
             </div>
 
@@ -50,12 +70,12 @@
 
             <div>
                 <button type="button" class="btn btn-primary btn-block" id="clearbtn">Clear</button>
-                <button type="button" onclick="save();" onclick="save1();" class="btn btn-primary btn-block">Submit</button>
+                <button type="button" onclick="save();" class="btn btn-primary btn-block">Submit</button>
             </div>
 
         </form>
     </div>
-
+ 
     
 
     </body>
