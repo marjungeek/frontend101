@@ -9,7 +9,7 @@ class teamList {
     get teamList() {
         return//idk
     }
-    }
+    
 }
 class countryList {
     constructor(country) {
