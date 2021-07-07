@@ -1,4 +1,3 @@
-//get teams
 async function getTeams(){
     const result = await getAPI();
     const teams = result.data; //result from api

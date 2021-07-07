@@ -15,36 +15,35 @@
 
 //get teams
 async function getTeams(){
-  const result = await getAPI();
-  const teams = result.data; //result from api
-  let options = '<option value="Select">Select</option>';  
-  //construct list of dropdown based from api response using loops
-  for (var i = 0; i < teams.length; i++) {     
-      options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
-  }
+    const result = await getAPI();
+    const teams = result.data; //result from api
+    let options = '<option value="Select">Select</option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < teams.length; i++) {     
+        options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; 
+    }
 
-  document.getElementById('teamList').innerHTML = options;   
+    document.getElementById('teamList').innerHTML = options;   
 }
-function constructDropDown(data, type){
-  let option = '<option = "value '
 
+function getAPI(){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://api.first.org/data/v1/teams', true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                resolve(xhr.response);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send();
+    });
 }
-function getAPI(method, endpoint){
-  return new Promise(function (resolve, reject) {
-      var xhr = new XMLHttpRequest();
-      xhr.open(method, endpoint, true);
-      xhr.responseType = 'json';
-      xhr.onload = function () {
-          var status = xhr.status;
-          if (status == 200) {
-              resolve(xhr.response);
-          } else {
-              reject(status);
-          }
-      };
-      xhr.send();
-  });
-}
+
+
 
 async function Country(){
   const result = await getAPI('get', );
@@ -125,10 +124,12 @@ function validateForm(){
       document.getElementById("blankMsg").innerHTML = "Only Characters are Allowed";
       return false;
     }
+
     if(lName == "" || lName.length <= 1 ){
         document.getElementById("charMsg").innerHTML = "Fill the Last Name";
         return false;
     }
+
     if(!isNaN(lName)){
       document.getElementById("charMsg").innerHTML = "Only Characters are Allowed";
       return false;
@@ -139,38 +140,40 @@ function validateForm(){
         return false;
     }
 
-    if(tList == "- Select -") {
+    if(tList == "- Select -"){
         document.getElementById("teamMsg").innerHTML = "Please Select Team";
         return false;
     }
+
     if (eControl == ""){
       document.getElementById("annyMsg").innerHTML = "Invalid Email Address";
       return false;
     }
     
-      if(pwd == "") {
-        document.getElementById("message1").innerHTML = "Please Enter Your password";
-        return false;
-      }
+    if(pwd == ""){
+      document.getElementById("message1").innerHTML = "Please Enter Your password";
+      return false;
+    }
 
-      if(pwd.length < 8) {
-        document.getElementById("message1").innerHTML = "Use 8 characters or more for your password";
-        return false;
-      }
+    if(pwd.length < 8) {
+      document.getElementById("message1").innerHTML = "Use 8 characters or more for your password";
+      return false;
+    }
 
-      if(rpwd == "") {
-        document.getElementById("message2").innerHTML = "Please Re-Type Your password";
-        return false;
-      }
+    if(rpwd == "") {
+      document.getElementById("message2").innerHTML = "Please Re-Type Your password";
+      return false;
+    }
 
-      if(pwd != rpwd) {
-        document.getElementById("message2").innerHTML = "Those passwords didn’t match. Try again.";
-        return false;
+    if(pwd != rpwd) {
+      document.getElementById("message2").innerHTML = "Those passwords didn’t match. Try again.";
+      return false;
         
     } else {
-   let Firstname = document.getElementById("firstNameControl").value;
+
+        let Firstname = document.getElementById("firstNameControl").value;
         localStorage.setItem("Firstname", Firstname);
-    
+          
         let Lastname = document.getElementById("lastNameControl").value;
         localStorage.setItem("Lastname", Lastname);
     
@@ -184,7 +187,7 @@ function validateForm(){
         localStorage.setItem("Gender", Gender);
     
         let Password = document.getElementById("passwordControl1").value;
-       localStorage.setItem("Password", Password);
+        localStorage.setItem("Password", Password);
     
         alert("Registration Complete!");
         location.reload();
