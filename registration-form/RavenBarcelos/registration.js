@@ -1,16 +1,14 @@
-getCountry();
-getCity();
-
 //get teams
 async function getTeams(){
     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
     console.log('teams => ', result);
     const teams = result.data;
-    const option = constructDropDown(teams, 'team');
+    const options = constructDropDown(teams, 'team');
     document.getElementById('teamList').innerHTML = options;
 }
 
 function constructDropDown(data, type){
+    let options = '<option value=""> Select </option>'
     for (var i = 0; i < data.length; i++){
         let value;
         let id;
