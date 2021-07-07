@@ -15,40 +15,40 @@
             <h2 class="mt-10">Registration Form</h2> <!--m sets margin, t top/padding top-->
 
             <form id="registrationForm1"> 
-                <div class="mb-2"> <!--m sets margin, b bottom/padding bottom-->
+                <div class="mb-2" id="firstName">  <!--m sets margin, b bottom/padding bottom-->
                     <label for="firstNameControl" class="form-label">First Name: </label>
                     <input type="text" class="form-control" id="firstNameControl">
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="lastName">
                     <label for="lastNameControl" class="form-label">Last Name: </label>
                     <input type="text" class="form-control" id="lastNameControl">
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="eemail"> 
                     <label for="emailControl" class="form-label">Email: </label>
                     <input type="email" class="form-control" id="emailControl">
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="country">
                     <label for="countryList" class="form-label">Country: </label>
                     <select id="countryList" class="form-control" onchange="getCapital()">
                     </select>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="city">
                     <label for="cityControl" class="form-label">City: </label>
                     <input type="city" class="form-control" id="cityControl" readonly>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="team">
                     <label for="teamList" class="form-label">Team: </label>
                     <select id="teamList" class="form-control">
                         <option> - Select - </option>
                     </select>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="egender">
                     <label for="gender" class="form-label">Gender: </label>
                     <select id="gender" class="form-control">
                         <option> - Select - </option>
@@ -58,19 +58,19 @@
                     </select>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="pwd">
                     <label for="passwordControl" class="form-label">Password: </label>
                     <input type="password" class="form-control" id="passwordControl">
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" id="repwd">
                     <label for="repasswordControl" class="form-label">Re-type Password: </label>
                     <input type="password" class="form-control" id="repasswordControl">
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button onclick="myClear()" class="btn btn-primary me-md-2" type="button">Clear</button>
-                    <button class="btn btn-success" type="button">Register Now</button>
+                    <button onclick="submit()" class="btn btn-success" type="button">Register Now</button>
                 </div>
             </form>
         </div>

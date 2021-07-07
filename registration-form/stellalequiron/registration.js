@@ -1,3 +1,5 @@
+getCountry(); //initialization of the country (api)
+
 async function getTeams(){
     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
     console.log('teams => ', result);
@@ -58,7 +60,7 @@ async function getCapital(){
     const countryCode = document.getElementById('countryList').value;
     if(countryCode == ''){
         alert('Please select your country');
-        document.getElementById('city').value = '';
+        document.getElementById('cityControl').value = '';
     }
 
     const cities = await getCity();
@@ -66,7 +68,7 @@ async function getCapital(){
     for(var i = 0; i < cities.length; i++){
        if(countryCode == cities[i].CountryCode){
            console.log(countryCode);
-           document.getElementById('city').value = cities[i].Capital;
+           document.getElementById('cityControl').value = cities[i].Capital;
        }
     }
 }
@@ -81,10 +83,24 @@ function passid_validation(passwordControl,mx,my){
     return true;
 }
 
+function submit(){
+    var firstnamee = document.getElementById("firstNameControl").value;
+    var lastnamee = document.getElementById("lastNameControl").value;
+    var emaile = document.getElementById("emailControl").value;
+    var countrye = document.getElementById("countryControl").value;
+    var citye = document.getElementById("cityControl").value;
+    var teamse = document.getElementById("teamList").value;
+    var gendere = document.getElementById("gender").value;
+    var passworde = document.getElementById("passwordControl").value;
+    var repassworde = document.getElementById("repasswordControl").value;
+    if (firstnamee =="" || firstnamee <=1){
+    };
+    })
+}
+
 function myClear() {
     alert("Cleared");
     document.getElementById("registrationForm1").reset();
-    DeleteData()
     location.reload();
-
 }
+
