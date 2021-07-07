@@ -1,53 +1,95 @@
 
+getTeams();
+getCount();
+getCity();
+
 $(document).ready(function(){
 
     $("#repasswordId").keyup(isPasswordMatch); //for password confirmation
-    
-    $.get('https://api.first.org/data/v1/teams', function(data, status){ 
-    
-        var teams = data.data; //result from api
-        var options = '';  
 
-        for (var i = 0; i < teams.length; i++) {     
-            options += '<option value="' + teams[i].id + '">' + teams[i].team + '</option>'; //construct list of dropdown based from api response
-        }
+});
 
-        $('#teamlId').append(options); //append option with value to dom (dropdown)
 
+async function getTeams(){
+    const teamsresult = await getAPI('get', 'https://api.first.org/data/v1/teams');  //storing api in teamresult
+    console.log(teamsresult);                                   
+    const teams = teamsresult.data; //result from api (object.object)
+    // console.log(teams);
+    const options = constructDropDown(teams, 'team');  //throw to function constructDropDown (data, <dataname>) 
+    // console.log(options); 
+    document.getElementById('teamlId').innerHTML = options;  
+}
+
+//resuable function // Checking if the API is available
+function getAPI(method, endpoint){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, endpoint, true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {      // if the api status code is 200(success)
+                resolve(xhr.response);
+            } else {
+                reject(status);
+                alert("File not yet ready");
+            }
+        };
+        xhr.send();
     });
+}
 
 
-
-});
-
-
-
-let myPromise = new Promise(function(successCb, errorCb) {
-
-    var countryData = $.get('https://raw.githubusercontent.com/marjungeek/frontend101/master/js-async/public/country.json');
-
-    
-    if (countryData != "") {
-        successCb(countryData);
-        
-    } else {
-        errorCb(console.log("FAILED"));
+//reusable function
+function constructDropDown(data, type){
+    let options = '<option value="">Select</option>';  
+    //construct list of dropdown based from api response using loops
+    for (var i = 0; i < data.length; i++) {    
+        let value;
+        let id;
+        if(type == 'team'){
+            value = data[i].team;
+            id = data[i].id;
+        }else{
+            value = data[i].Name;
+            id = data[i].Code;
+        }
+        options += '<option value="' + id + '">' + value + '</option>'; 
     }
-});
+    return options;
+}
 
+async function getCount(){
+    const count = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
+    // console.log(count);
+    const cnt =  constructDropDown(count, 'Name');
+    // console.log(cnt);
+    document.getElementById('countryId').innerHTML = cnt;
+}
 
-myPromise.then((countData) => {
+function getCity(){
+    return getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites');
+}
 
-    console.log(countData)
-  
-
-   
-
-}).then(
-
-).then(
+async function getCap(){
     
-);
+    const countId = document.getElementById('countryId').value;
+
+    if(countId == ''){
+        document.getElementById('cityId').value = '';
+    }
+
+    const cities = await getCity();
+
+    for(var i = 0; i < cities.length; i++){
+       if(countId == cities[i].CountryCode){
+           console.log(countId);
+           document.getElementById('cityId').value = cities[i].Capital;
+       }
+    }
+
+
+}
 
 
 
@@ -82,11 +124,14 @@ function registerFiles() {
     var lName = document.getElementById("lastnId").value;
     var emailC  = document.getElementById("emailId").value;
     var gen = document.getElementById("genderId").value;
+    var countL = document.getElementById("countryId").value;
+    var cityL = document.getElementById("cityId").value;
     var teaml = document.getElementById("teamlId").value;
     var pass = document.getElementById("passwordId").value;
     var repass = document.getElementById("repasswordId").value;
+    
     if(typeof(Storage) !== "undefined") {
-        if(fName&&lName&&emailC&&teaml&&gen&&pass&&repass!=""){
+        if(fName&&lName&&emailC&&teaml&&gen&&pass&&repass&&cityL&&countL!=""){
             if(pass==repass&&emailC.includes("@")){
                     if(repass.length>7){
                         alert("Registered Successfully!\n\n"+
@@ -94,10 +139,14 @@ function registerFiles() {
                             "\n"+"Last name: "+lName+
                             "\n"+"Gender: "+gen+
                             "\n"+"Email: "+emailC+
+                            "\n"+"Country: "+countL+
+                            "\n"+"City: "+cityL+
                             "\n"+"Team: "+teaml);
                         localStorage.setItem("First Name", fName);    //store files
                         localStorage.setItem("Last Name", lName);
                         localStorage.setItem("Email", emailC);
+                        localStorage.setItem("Country", countL);
+                        localStorage.setItem("City", cityL);
                         localStorage.setItem("Team", teaml);
                         localStorage.setItem("Gender", gen);
                         localStorage.setItem("Password", pass);

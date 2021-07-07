@@ -61,15 +61,13 @@
 
                     <div class="col">
                         <label for="countryId" class="form-label"><b>Country:</b></label>
-                        <select id="countryId" onchange="" class="form-control" required>
+                        <select id="countryId" onchange="getCap()" class="form-control" required>
                             <option id="countId" value=""> - Select - </option>
                         </select>
                     </div>
                     <div class="col">
                         <label for="cityId" class="form-label"><b>City:</b></label>
-                        <select id="cityId" class="form-control" required>
-                            <option value=""> - Select - </option>
-                        </select>
+                        <input id="cityId" class="form-control" readonly disabled   ></input>
                     </div>
                     <div class="col">
                         <label for="teamlId" class="form-label"><b>Team:</b></label>
