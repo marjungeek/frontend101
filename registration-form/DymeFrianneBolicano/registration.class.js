@@ -6,7 +6,7 @@ class MyClass {
     constructor(){
         //no init
     }
-
+    //this run onload
     async getTeams(){
         const result = await this.getAPI();
         console.log(result);
@@ -20,6 +20,7 @@ class MyClass {
         document.getElementById('teamList').innerHTML = options;   
         //console.log(JSON.stringify(teams));
     }
+    //get API for team
     getAPI(){
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
@@ -38,7 +39,7 @@ class MyClass {
             xhr.send();
         });
     }
-
+    //this Run onload and Get API for Country and City with then
     myPromise(){
         let myPromise = new Promise(function(successCb, errorCb) {
 
@@ -96,7 +97,7 @@ class ReRunning {
         alert("Cleared");
         document.getElementById("myForm1").reset();
         this.DeleteData()
-        //location.reload();
+        location.reload();
     
     }
 
@@ -275,4 +276,5 @@ class ReRunning {
 let obj1 = new MyClass();
 let obj2 = new ReRunning();
 
-obj1.myPromise();
+
+
