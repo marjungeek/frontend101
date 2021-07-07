@@ -24,7 +24,19 @@
 
                 <div class="mb-3">
                     <label for="emailControl" class="form-label">Email: </label>
-                    <input type="email" class="form-control" id="emailControl" >
+                    <input type="email" class="form-control" id="email" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="countryList" class="form-label">Country: </label>
+                    <select id="countryList" class="form-control" onchange="getCapital()">
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cityControl" class="form-label">City: </label> 
+                    <input type="text" id="city" class="form-control" readonly>
+
                 </div>
 
                 <div class="mb-3">
