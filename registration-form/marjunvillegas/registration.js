@@ -101,7 +101,7 @@ function addData(){
         console.log(test)
         let getLocalStorage = localStorage.getItem("dataForm");
         console.log(getLocalStorage);
-     alert("Successfully Registered") 
+        alert("Successfully Registered") 
         clearData();
      } else{
     
