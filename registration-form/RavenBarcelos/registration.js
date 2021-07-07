@@ -24,7 +24,7 @@ function constructDropDown(data, type){
     return options;
 }
 
-function getAPI(){
+function getAPI(method, endpoint){
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open(method, endpoint, true);
