@@ -12,7 +12,7 @@
 
 //     });
 // });
-
+getCountry();
 //-----Reusable Function-----(from origin)
 function constructDropDown(data, type){
     let options = '<option value="">Select</option>';  
@@ -34,6 +34,7 @@ function constructDropDown(data, type){
 
 function getAPI(method, endpoint){
     return new Promise(function (resolve, reject) {
+        //AJAX
         var xhr = new XMLHttpRequest();
         xhr.open(method, endpoint, true);
         xhr.responseType = 'json';
@@ -61,7 +62,8 @@ async function getTeams(){
 async function getCountry(){
     const result = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
     console.log('countries => ', result);
-    const option = constructDropDown(result, 'country');
+    const countries = result.data; //added this
+    const option = constructDropDown(countries, 'country'); //edited this
     document.getElementById('countryList').innerHTML = option;
 }
 

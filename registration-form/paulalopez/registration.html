@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src ="registration.js"></script>
 </head>
-<body>
+<body onload="getTeams()">
     <h2>WELCOME TO THE REGISTRATION FORM</h2>
     <hr>
     <div class="main">
@@ -31,14 +31,14 @@
 
         <div class="fields">
             <label for="countryList">Country:</label>
-            <select name="country" id="countryList">
+            <select name="country" id="countryList"onchange="getCapital()>
             <option> - Select Country - </option>
             </select>
         </div>
 
         <div class="fields">
             <label for="city">City:</label>
-            <input type="texr" id="city" readonly>
+            <input type="readonly" name="city" id="city" readonly>
         </div>
 
         <div class="fields">
