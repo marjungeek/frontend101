@@ -88,36 +88,3 @@ function myClear() {
     location.reload();
 
 }
-
-// async function getCountry(){
-//     const Country = await getJSON();
-//     let options = '<option value="Select"> - Select - </option>';  //construct list of dropdown based from api response using loops
-//     for (var i = 0; i < Country.length; i++) {     
-//         options += '<option value="' + Country[i].Name + '">' + Country[i].Name + '</option>'; 
-//     }
-//     console.log("getJSON");
-//     document.getElementById('CList').innerHTML = options;   
-
-    
-// }
-
-// function getJSON(){
-//     return new Promise(function (resolve, reject) {
-//         var _HTTPREq = new XMLHttpRequest();
-//         _HTTPREq.open('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',true);
-//         _HTTPREq.responseType = 'json';
-//         _HTTPREq.onload = function () {
-//             var status = _HTTPREq.status;
-//             if (status == 200) {
-//                 console.log("Success1!");
-//                 resolve(_HTTPREq.response);
-//             } else {
-//                 reject(status);
-//                 console.log("Fail!1");
-//             }
-//         };
-//         _HTTPREq.send();
-//     });
-    
-    
-// }
