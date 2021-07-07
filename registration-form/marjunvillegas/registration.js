@@ -1,6 +1,4 @@
-
 getCountry();
-getCity();
 
 async function getTeams(){
     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
