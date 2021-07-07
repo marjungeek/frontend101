@@ -10,7 +10,7 @@
 </head>
 
 
-<body>
+<body onload="getTeams() ; getCountry()">
     <div class="container-main">
         <div class="title-reg"><h2 class="reg-title">Registration Form</h2></div>
         <form id="myForm">
@@ -30,7 +30,7 @@
             <div class = "mb-3">
                 <label for="teamList" class="form-label">Team:</label>
                 <select id="teamList" class="form-control">
-                    <option value="team">
+                    <option>
                         - Select - 
                     </option>
                 </select>
@@ -43,7 +43,17 @@
                     <option value="Female">Female</option>
                 
                 </select>
+                <div class="mb-3">
+                    <label for="countryList" class="form-label">Country:</label>
+                    <select id="countryList" class="form-control" onchange="getCapital()">
+                        <option value="">- Select -</option>
+                    </select>
 
+                </div>
+                <div class="mb-3">
+                    <label for="cityControl" class="form-label">City:</label>
+                    <input type="text" class="form-control" readonly>
+                </div>
 
             </div>
 
