@@ -1,3 +1,6 @@
+getCountry();
+getCity();
+
 //get teams
 async function getTeams(){
     const result = await getAPI();
