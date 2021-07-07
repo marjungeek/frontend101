@@ -13,16 +13,6 @@ $(document).ready(function(){
     });
 });
 
-function getAPI(){
-    
-}
-
-function getCountry(){
-
-}
-function getCity(){
-
-}
 
 
 function validate (){
