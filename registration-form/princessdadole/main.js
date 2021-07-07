@@ -8,7 +8,6 @@ const regForm = new RegForm({
   teamUrl: 'https://api.first.org/data/v1/teams'
 });
 
-
 // self-invoking function
 (async function() {  
   // load the data
