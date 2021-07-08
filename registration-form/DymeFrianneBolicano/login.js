@@ -146,20 +146,20 @@ class RegForm extends HttpClient {
     // });
 
 
-    obj1.txtEmail.addEventListener('blur', function(event) {
-        event.preventDefault();
+    // obj1.txtEmail.addEventListener('blur', function(event) {
+    //     event.preventDefault();
         
-        const email = event.target.value;
+    //     const email = event.target.value;
 
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
-          console.log('valid email');
-            obj1.txtEmaildiv.setAttribute('class','input-group has-success')
-        } else {
-            console.log('invalid email');
-            obj1.txtEmaildiv.setAttribute('class','input-group has-error')
+    //     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+    //       console.log('valid email');
+    //         obj1.txtEmaildiv.setAttribute('class','input-group has-success')
+    //     } else {
+    //         console.log('invalid email');
+    //         obj1.txtEmaildiv.setAttribute('class','input-group has-error')
 
-        }
-      });
+    //     }
+    //   });
 
       obj1.userName.addEventListener('blur', function(event) {
         event.preventDefault();
@@ -168,10 +168,10 @@ class RegForm extends HttpClient {
 
         if (user !== '') {
           console.log('valid name');
-            obj1.userNamediv.setAttribute('class','input-group has-success')
+            obj1.userNamediv.setAttribute('class','input-group has-success');
         } else {
             console.log('invalid name');
-            obj1.userNamediv.setAttribute('class','input-group has-error')
+            obj1.userNamediv.setAttribute('class','input-group has-error');
 
         }
       });
@@ -183,10 +183,10 @@ class RegForm extends HttpClient {
 
         if (passwd !== '') {
           console.log('valid password');
-            obj1.passworddiv.setAttribute('class','input-group has-success')
+            obj1.passworddiv.setAttribute('class','input-group has-success');
         } else {
             console.log('invalid password');
-            obj1.passworddiv.setAttribute('class','input-group has-error')
+            obj1.passworddiv.setAttribute('class','input-group has-error');
 
         }
       });
@@ -205,8 +205,21 @@ class RegForm extends HttpClient {
         console.log('password: ',password);
         //console.log(obj1.postURL.value);
       let response = await obj1.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
-  
+      
       console.log(response);
+      //console.log(response.statusCode);
+      if(response.statusCode == 200){
+          obj1.userNamediv.setAttribute('class','input-group has-success');
+          obj1.passworddiv.setAttribute('class','input-group has-success');
+          alert("Seccess!");
+      }
+         
+       else {
+        alert("Wrong Credentials!");
+        obj1.userNamediv.setAttribute('class','input-group has-error');
+        obj1.passworddiv.setAttribute('class','input-group has-error');
+      }
+
     });
   })();
 
