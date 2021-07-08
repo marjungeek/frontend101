@@ -5,7 +5,7 @@ export class httpClient {
 
     async #httpRequest(method, endpoint, data = undefined) {
         return new Promise(function(resolve, reject) {
-            var req = new Request();
+            var req = new XMLHttpRequest();
             req.open(method, endpoint, true);
             if (method === 'post') {
                 req.setRequestHeader('Content-type', 'application/json');

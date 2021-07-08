@@ -1,4 +1,4 @@
-import LoginClass from '../LoginClass.js';
+import LoginClass from './LoginClass.js';
 
 console.log("OK");
 
@@ -7,18 +7,22 @@ const loginClass = new LoginClass({
 });
 
 (async function(){
-
-    let username = await loginClass.getUsername();
-    loginClass.loadUser(users);
-
     loginClass.btnLogin.addEventListener('click',async function(event) {
     event.preventDefault();
 
-    let user = document.getElementById('uname');
-    let password = document.getElementById('pwd');
+    let username = loginClass.user.value;
+    let password = loginClass.pass.value;
 
-    let response = await loginClass.postRequest('http://127.0.0.1:8080/login.html', { user , password });
-
+    let response = await loginClass.postRequest('http://127.0.0.1:8080/login.html', { username , password });
+    
     console.log(response);
+
+    if (username == "ghuser" && password == "secret") {
+        alert("Login Success")
+    }
+    else{
+        alert("Login Failed")
+    }
+
     });
 })();
