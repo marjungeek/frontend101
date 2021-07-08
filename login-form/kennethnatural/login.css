@@ -1,0 +1,13 @@
+.main{
+    margin-top: 100px;
+    width: 600px;
+    background-color: lightblue;
+    background-image: linear-gradient(to right, lightblue, lemonchiffon);
+    /* background-image: linear-gradient(to right, lightcoral, lightskyblue); */
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
