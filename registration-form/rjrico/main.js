@@ -46,7 +46,7 @@ const regForm = new RegForm({
     let user = regForm.optCountries.value;
     let password = regForm.txtCity.value;
 
-    let response = await regForm.postRequest('http://localhost:5000/registration.html', { user, password });
+    let response = await regForm.postRequest('`http://127.0.0.1:8080/rjrico/registration.html', { user, password });
 
     console.log(response);
   });
