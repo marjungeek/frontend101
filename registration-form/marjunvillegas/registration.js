@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 getCountry();
+=======
+getTeams();
+getCountry();
+getCity();
+>>>>>>> 1c474cae3f4320459d452c453da500ee1b97c301
 
 async function getTeams(){
     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
@@ -43,6 +49,7 @@ function getAPI(method, endpoint){
         };
         xhr.send();
     });
+
 }
 
 async function getCountry(){
@@ -74,10 +81,57 @@ async function getCapital(){
 }
 
 
+function register(){
+    addData();
+}
 
 
+function addData(){
+
+let dataForm = {
+    firstname : document.getElementById("firstname").value,
+    lastname : document.getElementById("lastname").value,
+    email :  document.getElementById("email").value,
+    teamlist : document.getElementById("teamList").value,
+    password : document.getElementById("password").value,
+    repassword : document.getElementById("repassword").value
+}
+
+ let password = document.getElementById("password").value;
+ let repassword = document.getElementById("repassword").value;
+
+ if (password === repassword) {
+    let test = localStorage.setItem("dataForm", JSON.stringify(dataForm));
+    console.log(test)
+    let getLocalStorage = localStorage.getItem("dataForm");
+    console.log(getLocalStorage);
+ alert("Successfully Registered") 
+    clearData();
+ } else{
+
+    alert("Password does not match");
+ }
+
+}
 
 
+function clearData(){
+    document.getElementById("firstname").value = '';
+    document.getElementById("lastname").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("teamList").value = '';
+    document.getElementById("password").value = '';
+    document.getElementById("repassword").value = '';
 
+}
 
+function deleteData() {
+    document.getElementById("firstname").value = '';
+    document.getElementById("lastname").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("teamList").value = '';
+    document.getElementById("password").value = '';
+    document.getElementById("repassword").value = '';
+    localStorage.clear();
+}
 

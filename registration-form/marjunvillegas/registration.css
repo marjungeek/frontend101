@@ -1,3 +1,53 @@
 .main{
-    width: 600px;
+    width: 300px;
+}
+
+#firstname{
+    height: 30px;
+    width: 200px;
+    background-color:azure;
+
+}
+
+#lastname{
+    height: 30px;
+    width: 200px;
+    background-color: azure;
+
+}
+
+#email{
+    height: 30px;
+    width: 200px;
+    background-color: azure;
+}
+
+#teamList{
+    height: 40px;
+    width: 200px;
+    background-color: azure;
+
+}
+
+#password{
+    height: 30px;
+    width: 200px;
+    background-color: azure;
+
+}
+
+#repassword{
+    height: 30px;
+    width: 200px;
+    background-color: azure;
+
+}
+
+.btn{
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+
 }
