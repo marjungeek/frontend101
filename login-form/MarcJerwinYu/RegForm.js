@@ -8,7 +8,6 @@ export default class RegForm extends HttpClient {
     // class property - sort of like configuration
     this.txtUsername = document.getElementById('username');
     this.txtPassword = document.getElementById('password');
-
     this.btnSubmit = document.getElementById('btn-login');
   }
   async getloginUrl() {
