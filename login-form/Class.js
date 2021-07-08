@@ -5,10 +5,11 @@ export default class ClassForm extends HttpClient {
         console.log("ClassForm was loaded");
         super();
 
-        this.messageUrl = options.messageUrl;
+        this.LoginAPI = options.LoginAPI;
+        this.btnLogin = document.getElementById("submit");
     }
 
     async getMessage(){
-        return await this.getRequest(this.messageUrl);
+        return await this.getRequest(this.LoginAPI);
     }
 }
