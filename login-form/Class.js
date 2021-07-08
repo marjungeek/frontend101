@@ -6,7 +6,9 @@ export default class ClassForm extends HttpClient {
         super();
 
         this.LoginAPI = options.LoginAPI;
-        this.btnLogin = document.getElementById("submit");
+        this.btnLogIn = document.getElementById("submit");
+        this.txtUsername = document.getElementById("username");
+        this.txtPassword = document.getElementById("password");
     }
 
     async getMessage(){
