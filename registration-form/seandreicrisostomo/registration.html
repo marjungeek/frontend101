@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="container main">
-            <h1 class="mt-5" style="font-size: xx-large;">Create Account</h1>
-            <form name="myForm" method="POST" action="valid.html" onsubmit="return validateForm()">
+            <h1 class="mt-5" style="font-size: xx-large;">Log in</h1>
+            <form name="myForm" method="POST" action="valid.html" onsubmit="return getData.validateForm()">
                 <div class="mb-3">
                     <label for="firstNameControl" class="form-label">First Name: </label>
                     <input type="text" class="form-control" id="firstNameControl" pattern="[A-Za-z]{1,}" title="(Alphabet only)" required>
@@ -49,6 +49,6 @@
                 </div>
             </form>
         </div>
-        <script src="registration.js"></script>
+        <script src="registration.class.js"></script>
     </body>
 </html>
