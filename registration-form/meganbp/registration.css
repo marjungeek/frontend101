@@ -1,0 +1,15 @@
+.main{
+    width:450px;
+    height: 700px;
+    background-color: rgb(153, 209, 206);
+    color: black;
+    font-family: Calibri;
+    border-radius: 10px;
+    margin-top: 5px;    
+}
+
+body{
+    background: teal;
+   
+}
+
