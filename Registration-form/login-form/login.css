@@ -1,0 +1,63 @@
+input.error {
+    border-color: red;
+}
+
+.main{
+    max-width: 600px;
+}
+
+.h1, h1{
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: 16px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.sub-container{
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+}
+
+input.box{
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    border: .1rem red solid;
+    direction: ltr;
+}
+
+
+body{
+    margin-top: 60px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+    margin-top: 30px;
+    padding: 0px;
+    background-color: white;
+}
+
+#Header{
+    align: solid;
+    font-family: 'Times New Roman', Times, serif;
+    color: azure;
+    font-size: 50px;
+}
+
+.btn-container{
+    margin-top: 10px;
+    float: right;
+}
+
+#createbtn{
+    float: left;
+}
