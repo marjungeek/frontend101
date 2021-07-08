@@ -1,6 +1,10 @@
 import LoginForm from "./LoginForm.js";
 
 console.log('Application was loaded...');
+//console.log("Try on Incognito4");
+//For some reason, changes on js files do not update on this exercise.
+//I need to clear cache or use incognito everytime for it to update on browser
+//Only the css and html files are updated if I refresh the browser
 
 const loginForm = new LoginForm();
 
