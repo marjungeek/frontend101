@@ -81,7 +81,6 @@ function register(){
 
 
 function addData(){
-
 let dataForm = {
     firstname : document.getElementById("firstname").value,
     lastname : document.getElementById("lastname").value,
@@ -103,7 +102,7 @@ let dataForm = {
     clearData();
  } else{
 
-    alert("Passowrd does not match");
+    alert("Password does not match");
  }
 
 }
