@@ -55,20 +55,43 @@ class logForm extends HttpClient {
        this.passworddiv = document.getElementById("password-div");
 
       this.btnSubmit = document.getElementById('test-submit');
+      this.checkbox = document.getElementById('checkbox');
+      this.clear = document.getElementById('reload');
       }
-}
+
+      myRandom(){
+        var num1=Math.floor(Math.random() * 10);
+        var num2=Math.floor(Math.random() * 10);
+        total=num1+num2;
+        document.getElementById("Q").innerHTML = ""+num1+"+"+num2+"?";
+
+      }
+      myCheck() {
+          var y = document.getElementById("robot");
+          if (y.style.display === "block") {
+            y.style.display = "none";
+            document.getElementById("test-submit").className = "btn btn-success disabled";
+          } else {
+            y.style.display = "block"; //show
+            document.getElementById("test-submit").className = "btn btn-success";
+            this.myRandom();
+          }
+      }
+  }
+
   
-  const obj1 = new logForm({
+const obj1 = new logForm({
     postURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
 });
-
+var total;
   // self-invoking function
-  (async function() {  
+(async function() {
+    
 
-      obj1.userName.addEventListener('blur', function(event) {
-        event.preventDefault();
+  obj1.userName.addEventListener('blur', function(event) {
+    event.preventDefault();
         
-        const user = event.target.value;
+    const user = event.target.value;
 
         if (user !== '') {
             console.log('valid name');
@@ -93,33 +116,61 @@ class logForm extends HttpClient {
 
         }
       });
-  
+      
     obj1.btnSubmit.addEventListener('click', async function(event) {
       event.preventDefault();
-  
-      let username = obj1.userName.value;
-      let password = obj1.password.value;
+      
+      var ans=document.getElementById("Ans").value;
+
+      console.log(`${ans} ${total}`)
+      if(total==ans){
+        let username = obj1.userName.value;
+        let password = obj1.password.value;
       //console.log('URL',obj1.postURL.value);
         console.log('UserName: ',username);
         console.log('password: ',password);
         //console.log(obj1.postURL.value);
-      let response = await obj1.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
+        let response = await obj1.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
       
-      console.log(response);
-      //console.log(response.statusCode);
-      if(response.statusCode == 200){
+        console.log(response);
+        //console.log(response.statusCode);
+        if(response.statusCode == 200){
           obj1.userNamediv.setAttribute('class','input-group has-success');
           obj1.passworddiv.setAttribute('class','input-group has-success');
-          alert("Seccess!");
+          lert("Success!");
+        }
+        else {
+          alert("Wrong Credentials!");
+          obj1.userNamediv.setAttribute('class','input-group has-error');
+          obj1.passworddiv.setAttribute('class','input-group has-error');
+        }
       }
-         
-       else {
-        alert("Wrong Credentials!");
-        obj1.userNamediv.setAttribute('class','input-group has-error');
-        obj1.passworddiv.setAttribute('class','input-group has-error');
+      else{
+        alert('Wrong Capacha!');
+        obj1.myRandom();
       }
 
     });
+
+    obj1.checkbox.addEventListener('click', function(event) {
+      //event.preventDefault();
+      console.log('Check box triggered');
+      var box = event.target.value;
+      obj1.myCheck();
+
+      //console.log('Data: ',box);
+    });
+    obj1.clear.addEventListener('click', function() {
+      //event.preventDefault();
+      console.log('reloading...');
+      location.reload();
+
+      //console.log('Data: ',box);
+    });
+
   })();
 
 });
+
+
+
