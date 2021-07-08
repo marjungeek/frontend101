@@ -7,7 +7,7 @@ const loginForm = new LogInForm ({
     apiURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
 });
 
-    loginForm.btnSubmit.addEventListener('submit', async function(event) {
+    loginForm.btnSubmit.addEventListener('click', async function(event) {
         event.preventDefault();
 
         let username = loginForm.logInUsername.value;
