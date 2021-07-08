@@ -1,13 +1,13 @@
-export class APICLASS{
+export class httpclient{
     constructor(){
-        console.log("BOB1O");
+        console.log("httpclient")
     }
-    getAPIs(method,endpoint,data){
+    getAPIs(method,endpoint,data=undefined){
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open(method,endpoint, true);
-            if (method === 'post') {
-                xhr.setRequestHeader('Content-Type', 'application/json');  
+            if(method == 'post'){
+                xhr.setRequestHeader('Content-Type','application/json')
                 data = JSON.stringify(data);
             }
             xhr.responseType = 'json';
@@ -15,6 +15,7 @@ export class APICLASS{
                 var status = xhr.status;
                 if (status == 200) {
                     resolve(xhr.response);
+                    console.log(xhr.response);
                 } else {
                     reject(status);
                 }
