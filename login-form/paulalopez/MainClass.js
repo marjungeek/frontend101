@@ -13,7 +13,7 @@ const loginClass = new LoginClass({
     let username = loginClass.user.value;
     let password = loginClass.pass.value;
 
-    let response = await loginClass.postRequest('http://127.0.0.1:8080/login.html', { username , password });
+    let response = await loginClass.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username , password });
     
     console.log(response);
 
