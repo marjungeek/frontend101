@@ -1,10 +1,8 @@
 import logincontrol from './logincontrol.js';
-alert("BOBOLOGIN");
-let gfgfg = new logincontrol();
+let lControlObject = new logincontrol();
 
-gfgfg.submit.addEventListener('click',function(){
-    var ufffff = gfgfg.username.value;
-    var pfffff = gfgfg.password.value;
-    gfgfg.getCountry(ufffff,pfffff);
+lControlObject.submit.addEventListener('click',function(){
+    var userNameI = lControlObject.username.value;
+    var passWordI = lControlObject.password.value;
+    lControlObject.getCredentials(userNameI,passWordI);
 });
-// console.log("BOBOLOGIN");
