@@ -25,7 +25,7 @@ export class HttpClient {
       });
     }
   
-    async postRequest(endpoint) {
+    async getRequest(endpoint) {
       return await this.#httpRequest('get', endpoint);
     }
   

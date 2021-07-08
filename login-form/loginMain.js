@@ -4,31 +4,33 @@ console.log('Application was loaded..');
 
 const loginForm = new LoginForm({
  loginURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
+ 
 });
-
+console.log(loginURL);
 (async function(){
+
     loginForm.txtEmail.addEventListener('blur', function(event){
         event.preventDefault();
 
-        const email = event.target.value;
+        const email1 = event.target.value;
 
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email1)) {
             console.log('valid email');
-            regForm.txtEmail.classList.remove('error');
-          } else {
-            regForm.txtEmail.classList.add('error');
-          }
-    })
-})
+            loginForm.txtEmail.classList.remove('error');
+        } else {
+            loginForm.txtEmail.classList.add('error');
+        }
+    });
 
     loginForm.btnSubmit.addEventListener('click', async function(event){
         event.preventDefault();
         
-        let user = loginForm.txtUsername.value;
-        let pass = loginForm.txtPassword.value;
-            console.log('UserName:',user);
-            console.log('password:',pass);
+        let username = loginForm.txtUsername.value;
+        let password = loginForm.txtPassword.value;
+            console.log('UserName:',username);
+            console.log('password:',password);
 
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
-    })
+    });
+})();
