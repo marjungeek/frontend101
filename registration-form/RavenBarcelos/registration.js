@@ -9,10 +9,10 @@ const regForm = new RegForm({
 });
 
 (async function() {
-    let countries = await RegistrationForm.getCountries();
+    let countries = await regForm.getCountries();
     regForm.loadCountries(countries);
 
-    let teams = await RegistrationForm.getTeams();
+    let teams = await regForm.getTeams();
     regForm.loadTeams(teams.data);
 
     regForm.optCountries.addEventListener('change', async function(event) {

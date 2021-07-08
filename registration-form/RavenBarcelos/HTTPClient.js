@@ -21,7 +21,7 @@ export class HttpClient {
                     reject(status);
                 }
             };
-            xhr.send(data);
+        xhr.send(data);
         });
     }
 
