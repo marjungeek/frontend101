@@ -19,7 +19,14 @@ const loginForm = new LoginForm({
        
       let response = await loginForm.postRequest("https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login",{ username, password }
       );
-      console.log(response);
+      console.log(response)
+      if (response.statusCode == 200) {
+          location.href = "successful.html";
+      }
+      else{
+        alert("Wrong Username or Password!");
+      }
+      
   
     });
   })();
