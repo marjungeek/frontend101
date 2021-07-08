@@ -17,11 +17,5 @@ const loginForm = new LogInForm ({
 
         console.log(response);
 
-        if (response == 200) {
-            console.log("Success");
-        }else{
-            console.log("error");
-        }
-
     });
 })();
