@@ -4,6 +4,7 @@ export class httpclient {
     }
   
     async #httpRequest(method, endpoint, data = undefined) {
+      //why is data = undefined?, code still runs if it is data only
       return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();      
         xhr.open(method, endpoint, true);
