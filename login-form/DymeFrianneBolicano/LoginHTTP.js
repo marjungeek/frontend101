@@ -1,4 +1,4 @@
-export default class HttpClient {
+export class HttpClient {
     constructor() {
       console.log('HttpClient was laoded...');
     }
