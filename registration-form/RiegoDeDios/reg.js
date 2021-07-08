@@ -1,7 +1,6 @@
 getCountry();
 getCity();
 
-
 //reusable function for Dropdowns
 function constructDropDown(data, type){
   let options = '<option value="">Select</option>';  
@@ -21,7 +20,7 @@ function constructDropDown(data, type){
   return options;
 }
 
-//resuable function getting API's
+//resuable function getting API's / One Class
 function getAPI(method, endpoint){
   return new Promise(function (resolve, reject) {
       var xhr = new XMLHttpRequest();
@@ -96,18 +95,20 @@ const reg = e =>{
   e.prevenDefault();
 }
 
-
 //////////////////// Password Validation
 var check = function() {
+
+  }
   if (document.getElementById('pass').value ==
     document.getElementById('pass2').value) {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'Password Match';
+    
   } else {
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'Password not matching';
   }
-}
+
 
 /////////////////// Password Reveal/Hide
 function showPass() {

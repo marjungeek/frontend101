@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Log In!</title>
+    <link rel="stylesheet" href="loginstyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="login.js"></script>
+  </head>
+
+  <body>
+    <div class="container main">
+      <div class="title">Welcome Back!</div>
+      <br>
+      <div class="title">Log In Here</div>
+      <form>
+        <div class="user-details">
+          <div class="RegForm">
+            <label for="userName" class="form-label">Username: </label>
+            <input
+              id="uname"
+              type="text"
+              class="form-control"
+              placeholder="Enter your Username"
+              required
+            />
+          </div>
+
+          <div class="RegForm">
+            <label for="password" class="form-label">Password: </label>
+            <input id="pass" type="password" class="form-control" required />
+            <input class="showPass" type="checkbox" onclick="showPass()" />Show
+            Password
+          </div>
+
+          <div class="button1">
+            <button class="buttonClear" type="reset">Clear</button>
+          </div>
+          <br />
+          <div class="button">
+            <button id="loginbtn" class="buttonReg" type="submit">
+              Log In
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
