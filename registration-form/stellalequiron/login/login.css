@@ -1,0 +1,66 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+    border: 3px solid #eee0e0;
+}
+
+input[type=text], input[type=password]{
+    width: 100px;
+    padding: 15px 22px;
+    margin: 10px 5;
+    display: inline-block;
+    border: 2px solid rgb(190, 186, 186);
+    box-sizing: border-box;
+}
+
+button{
+    background-color: #10b12b;
+    color: white;
+    padding: 15px 21px;
+    margin: 10px 2px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.cancelButton{
+    width: auto;
+    padding: 10px 20x;
+    background-color: #f44336;
+}
+
+.imageContainer{
+    margin: 24px 0 12px 0;
+    text-align: center;
+}
+
+image.loginAvatar{
+    width: 40px;
+    border-radius: 50px;
+}
+
+.container{
+    padding: 20px;
+}
+
+span.password{
+    float: right;
+    padding-top: 20px;
+}
+
+/* para sa span and style sa maliliit ang screen */
+@media screen and (max-width: 300px){
+    span.password{
+        display: block;
+        float: none;
+    }
+    .cancelButton{
+        width: 100px;
+    }
+}
