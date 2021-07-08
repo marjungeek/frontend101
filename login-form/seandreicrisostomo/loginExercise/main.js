@@ -8,7 +8,7 @@ const loginForm = new LogInForm ({
 });
 
     loginForm.btnSubmit.addEventListener('click', async function(event) {
-        event.preventDefault();
+        event.preventDefault();//para hindi mag load or submit or magredirect
 
         let username = loginForm.logInUsername.value;
         let password = loginForm.logInPassword.value;
@@ -18,4 +18,7 @@ const loginForm = new LogInForm ({
         console.log(response);
 
     });
+
 })();
+
+

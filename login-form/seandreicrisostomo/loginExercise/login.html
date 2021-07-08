@@ -9,16 +9,16 @@
     </head>
     <body>
         <div class="container main">
-            <h2 class="mt-5">Log In</h2>
-            <form>
+            <form class="box" method="POST">
+                <h2 class="mt-5">Log In</h2>
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username: </label>
-                    <input type="text" class="form-control" id="username" pattern="[A-Za-z]{1,}" title="(Alphabet only)" required>
+                    <label for="username" class="form-label"></label>
+                    <input type="text" class="form-control" id="username" placeholder="Username" pattern="[A-Za-z]{1,}" title="(Alphabet only)" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password: </label>
-                    <input type="password" class="form-control" id="password" required>
+                    <label for="password" class="form-label"></label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

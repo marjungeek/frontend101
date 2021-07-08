@@ -22,7 +22,4 @@ export default class LogInForm extends loginHttpRequest {
         return await this.postRequest(this.apiURL);
     }
 
-    
-
 }
-
