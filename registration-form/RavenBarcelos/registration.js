@@ -1,6 +1,6 @@
 import RegForm from "./RegForm.js";
 
-console.log("Application was loaded!!!");
+console.log('Application was loaded!!!');
 
 const regForm = new RegForm({
     conutryUrl: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',
