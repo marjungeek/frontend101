@@ -19,7 +19,7 @@ const result = await lezgo.getAPIs('post', 'https://22pnpc80ni.execute-api.ap-so
         console.log(result);
     var stat = result.statusCode;
         console.log(stat);
-    if(stat == 400){
+    if(stat == 200){
         alert("Log In Succesfully!");
     }else{
         alert("Wrong Credentials!");
