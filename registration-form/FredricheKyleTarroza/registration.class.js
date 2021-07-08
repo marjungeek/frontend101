@@ -1,18 +1,39 @@
 
-getTeams();
-getCountry();
-getCity();
+
+// getCountry();
+// getTeams();
 
 
 
+// class storage{
+// 	constructor(FN, LN, email,countryList,city, teamList,  psw  ){
+// 		this.FN = FN; 
+// 		this.FN = LN; 
+// 		this.FN = email; 
+// 		this.FN = countryList; 
+// 		this.FN = city; 
+// 		this.FN = teamList; 
+// 		this.FN = psw; 
+		
+// 	}
+// 	}
 
-// async function getTeams(){
-//     const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
-//     // console.log('teams => ', result);
-//     const teams = result.data; //result from api
-//     const options = constructDropDown(teams, 'team');
-//     document.getElementById('teamList').innerHTML = options;   
+
+// class getTeamsclass{
+// constructor(){
 // }
+
+// }
+
+
+
+async function getTeams(){
+    const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
+    console.log('teams => ', result);
+    const teams = result.data; //result from api
+    const options = constructDropDown(teams, 'team');
+    document.getElementById('teamList').innerHTML = options;   
+}
 
 // reusable function
 function constructDropDown(data, type){
@@ -36,6 +57,7 @@ function constructDropDown(data, type){
 //resuable function
 function getAPI(method, endpoint){
     return new Promise(function (resolve, reject) {
+		//ajax
         var xhr = new XMLHttpRequest();
         xhr.open(method, endpoint, true);
         xhr.responseType = 'json';
@@ -52,17 +74,9 @@ function getAPI(method, endpoint){
     });
 }
 
-async function getTeams(){
-    const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
-    // console.log('teams => ', result);
-    const teams = result.data; //result from api
-    const options = constructDropDown(teams, 'team');
-    document.getElementById('teamList').innerHTML = options;   
-}
-
 async function getCountry(){
     const result = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
-    // console.log('countries => ', result);
+    console.log('countries => ', result);
     const option = constructDropDown(result, 'country');
     document.getElementById('countryList').innerHTML = option;
 }
