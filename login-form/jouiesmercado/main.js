@@ -19,9 +19,10 @@ const logForm = new LogForm({
     console.log(response);
 
     if ( username == 'ghuser' && password == 'secret'){
-        alert('Login success')
+        alert("Login success");
     }else {
-        alert('Login fail')
+        alert('Login fail');
     }
-})
+
+});
 })();
