@@ -1,9 +1,9 @@
 window.addEventListener('load', (event) => {
-    console.log('The page has fully loaded');
+    console.log('The page is loaded');
 
     class HttpClient {
         constructor() {
-          console.log('HttpClient was laoded...');
+          console.log('HttpClient was loaded...');
         }
 
         async #httpRequest(method, endpoint, data = undefined) {
@@ -39,7 +39,7 @@ window.addEventListener('load', (event) => {
         }
     }
     
-    class loForm extends HttpClient {
+    class logForm extends HttpClient {
         constructor(options) {
             console.log('RegForm was loaded...');
             super();
@@ -55,7 +55,7 @@ window.addEventListener('load', (event) => {
     const object1 = new logForm({
         postURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
     });
-
+    
     (async function(){
         object1.username.addEventListener('blur', function(event){
             event.preventDefault();
@@ -106,7 +106,7 @@ window.addEventListener('load', (event) => {
                 object1.passWord.setAttribute('class', 'input-group error');
             }
         });
-    });
+    })();
 });
 
 function passwordbtn(){
