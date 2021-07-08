@@ -1,85 +1,48 @@
-//get teams
-async function getTeams(){
-    const result = await getAPI('get', 'https://api.first.org/data/v1/teams');
-    console.log('teams => ', result);
-    const teams = result.data;
-    const options = constructDropDown(teams, 'team');
-    document.getElementById('teamList').innerHTML = options;
-}
+import RegForm from "./RegForm.js";
 
-function constructDropDown(data, type){
-    let options = '<option value=""> Select </option>'
-    for (var i = 0; i < data.length; i++){
-        let value;
-        let id;
-        if(type == 'team'){
-            value = data[i].team;
-            id = data[i].id;
-        } else{
-            value = data[i].Name;
-            id = data[i].code;
-        }
-        options +=  '<option value"' + id + '">' + value + '</option>';
-    }
-    return options;
-}
+console.log("Application was loaded!!!");
 
-function getAPI(method, endpoint){
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open(method, endpoint, true);
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            var status = xhr.status;
-            if (status == 200) {
-                resolve(xhr.response);
-            } else {
-                reject(status);
-            }
-        };
-        xhr.send();
+const regForm = new RegForm({
+    conutryUrl: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',
+    cityUrl: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites',
+    teamUrl: 'https://api.first.org/data/v1/teams'
+});
+
+(async function() {
+    let countries = await RegistrationForm.getCountries();
+    regForm.loadCountries(countries);
+
+    let teams = await RegistrationForm.getTeams();
+    regForm.loadTeams(teams.data);
+
+    regForm.optCountries.addEventListener('change', async function(event) {
+        event.preventDefault();
+
+        let cities = await regForm.getCities();
+        regForm.loadCity(event.target.value, cities);
     });
-}
 
-async function getCountry(){
-    const result = await getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries');
-    console.log('countries => ', result);
-    const option = constructDropDown(result, 'country');
-    document.getElementById('countryList').innerHTML = option;
-}
+    regForm.txtEmail.addEventListener('blur', function(event) {
+        event.preventDefault();
 
-function getCity(){
-    return getAPI('get', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites');
-}
+        const email = event.target.value;
 
-async function getCapital(){
-    const countryCode = document.getElementById('countryList').value;
-    if(countryCode == ''){
-        alert('Please select your country!!');
-        document.getElementById('city').value = '';
-    }
-
-    const cities = await getCity();
-
-    for(var i = 0; i < cities.length; i++){
-        if(countryCode == cities[i].CountryCode){
-            console.log(countryCode);
-            document.getElementById('city').value = cities[i].Capital;
+        if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+            console.log('Valid Email');
+            regForm.txtEmail.classList.remove('error');
+        } else{
+            regForm.txtEmail.classList.add('error');
         }
-    }
-}
+    });
 
-const Register = e =>{
-    let formData = {
-        firstNameControl: document.getElementById('firstNameControl'),
-        lastNameControl: document.getElementById('lastNameControl'),
-        emailControl: document.getElementById('emailControl'),
-        teamList: document.getElementById('teamList'),
-        passwordControl: document.getElementById('passwordControl'),
-        repasswordControl: document.getElementById('repasswordControl')
-    }
+    regForm.btnSubmit.addEventListener('click', async function(event){
+        event.preventDefault();
 
-    localStorage.setItem('formData', JSON.stringify(formData));
-    console.log(localStorage.getItem('formData'));
-    e.preventDefault();
-}
+        let user = regForm.optCountries.value;
+        let password = regForm.txtCity.value;
+
+        let response = await regForm.postRequest('http://localhost:5000/registration.html', {user, password});
+
+        console.log(response);
+    });
+})();
