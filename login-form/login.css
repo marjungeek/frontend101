@@ -43,7 +43,7 @@ label{
 input.box{
     margin-left: 30px;
     padding: 5px 10px;
-    width: 20rem;
+    width: auto;
     background-color: gray;
 }
 

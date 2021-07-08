@@ -6,7 +6,7 @@ const loginForm = new LoginForm({
  loginURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
  
 });
-console.log(loginURL);
+
 (async function(){
 
     loginForm.txtEmail.addEventListener('blur', function(event){
@@ -32,5 +32,6 @@ console.log(loginURL);
 
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
+            alert("Successfully Log-in")
     });
 })();

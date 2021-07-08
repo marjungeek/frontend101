@@ -1,6 +1,6 @@
 export class HttpClient {
     constructor() {
-      console.log('HttpClient was laoded...');
+      console.log('HttpClient was loaded...');
     }
   
     async #httpRequest(method, endpoint, data = undefined) {
@@ -10,6 +10,7 @@ export class HttpClient {
         if (method === 'post') {
           xhr.setRequestHeader('Content-Type', 'application/json');  
           data = JSON.stringify(data);
+          console.log('data:', data)
         }
   
         xhr.responseType = 'json';
