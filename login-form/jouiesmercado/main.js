@@ -18,12 +18,12 @@ const logForm = new LogForm({
 
     console.log(response);
 
-    if ( username && password == 'ghuser' && 'secret'){
+    if ( username == 'ghuser' && password == 'secret'){
         alert("Login success")
     }else {
         alert("error")
 
 
     }
-})
 });
+})();
