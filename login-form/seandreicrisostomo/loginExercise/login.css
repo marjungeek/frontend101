@@ -1,0 +1,11 @@
+body{
+    background-image: url(images/cloud.jpg);
+}
+
+.container{
+    width: 400px;
+    color: darkslateblue;
+    font-family: cursive;
+    border-color: transparent;
+    
+}
