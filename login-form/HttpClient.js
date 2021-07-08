@@ -10,7 +10,6 @@ export class HttpClient {
         if (method === 'post') {
           xhr.setRequestHeader('Content-Type', 'application/json');  
           data = JSON.stringify(data);
-          console.log('data:', data)
         }
   
         xhr.responseType = 'json';

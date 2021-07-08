@@ -18,6 +18,7 @@ const loginForm = new LoginForm({
             console.log('valid email');
             loginForm.txtEmail.classList.remove('error');
         } else {
+            alert("Invalid Password");
             loginForm.txtEmail.classList.add('error');
         }
     });
@@ -32,6 +33,11 @@ const loginForm = new LoginForm({
 
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
-            alert("Successfully Log-in")
+
+        if (username == "ghuser" || passwor == "secret"){
+            alert("Successfully Login");
+        }else{
+            alert("Invalid User or Password");
+        }
     });
 })();
