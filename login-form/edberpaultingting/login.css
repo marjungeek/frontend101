@@ -7,6 +7,25 @@
   transform: translate(-50%, -50%);
 }
 
-label {
-  border-style: hidden;
+.card {
+  width: 400px;
+}
+
+body {
+  background-color: lightsteelblue;
+  background-image: url("https://images2.fanpop.com/image/photos/13900000/grassy-field-distant-mountains-beautiful-places-13908065-1440-900.jpg");
+}
+
+h6 {
+  color: white;
+}
+
+button {
+  border-radius: 8px;
+  border: black;
+  padding: 7px 7px;
+  width: 365px;
+  background-color: mediumaquamarine;
+  /* position: relative;
+  left: 250px; */
 }
