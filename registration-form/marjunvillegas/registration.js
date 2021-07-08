@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+getCountry();
+
+>>>>>>> 9f31147d6aad951b4f0ec287512251cc172b8e50
 async function getTeams(){
     const result = await getAPI();
     const teams = result.data; //result from api
