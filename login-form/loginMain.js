@@ -18,7 +18,7 @@ const loginForm = new LoginForm({
             console.log('valid email');
             loginForm.txtEmail.classList.remove('error');
         } else {
-            alert("Invalid Password");
+            alert("Invalid Email");
             loginForm.txtEmail.classList.add('error');
         }
     });
@@ -34,10 +34,15 @@ const loginForm = new LoginForm({
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
 
-        if (username == "ghuser" || passwor == "secret"){
+        if (username == "ghuser" && password == "secret"){
             alert("Successfully Login");
+            location.reload();
+            loginForm.txtUsername.classList.remove('error');
+            loginForm.txtPassword.classList.remove('error');
         }else{
             alert("Invalid User or Password");
+            loginForm.txtUsername.classList.add('error');
+            loginForm.txtPassword.classList.add('error');
         }
     });
 })();
