@@ -14,7 +14,7 @@ body {
 
 .container-main {
     border:0.5rem outset blueviolet;
-    background-color: lightblue; /* For browsers that do not support gradients */
+    background-color: lightblue;
     background-image: linear-gradient(to bottom right, blueviolet 0%, purple 100%);
 }
 
