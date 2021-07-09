@@ -4,7 +4,7 @@ export default class LoginForm extends HttpClient{
         console.log("Login Form Loaded successfully...")
         super();
         this.url = options.url;
-        this.txtEmail =  document.getElementById("email");
+        this.txtEmail =  document.getElementById("user");
         this.txtPassword  = document.getElementById("password");
         this.btnSubmit = document.getElementById("submit");
 
