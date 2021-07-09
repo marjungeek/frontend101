@@ -1,7 +1,7 @@
 export class httpclient{
     constructor(){
     }
-    getAPIs(method,endpoint,data=undefined){
+    async getAPIs(method,endpoint,data=undefined){
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open(method,endpoint, true);
@@ -21,5 +21,9 @@ export class httpclient{
             };
             xhr.send(data);
         });
+    }
+    async postRequest(endpoint,data){
+        console.log("sfdsfds");
+        return await this.getAPIs('post',endpoint,data);
     }
 }

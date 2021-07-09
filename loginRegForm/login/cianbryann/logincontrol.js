@@ -8,13 +8,12 @@ export default class logincontrol extends httpclient{
         this.password = document.getElementById('password');
     }
     async getCredentials(username,password){
-        let httpObject = new httpclient();
         console.log(username);
         console.log(password);
         if(username=='' && password==''){
             alert("Fill up inputs");
         }else{
-            const result = await httpObject.getAPIs('post', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
+            const result = await this.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             if(result.statusCode == 200){
                 alert(result.body);
             }else{
