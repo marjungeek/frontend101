@@ -16,7 +16,7 @@ const classForm = new ClassForm({
 
         console.log(response);
 
-        if(username == 'ghuser' && password == 'secret'){
+        if(response.statusCode == 200){
             alert("Log In Successful");
         } else if(username == '' && password == ''){
             alert("Missing Credentials");
