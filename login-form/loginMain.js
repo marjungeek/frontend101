@@ -28,8 +28,8 @@ const loginForm = new LoginForm({
         
         let username = loginForm.txtUsername.value;
         let password = loginForm.txtPassword.value;
-            console.log('UserName:',username);
-            console.log('password:',password);
+            console.log('Username:',username);
+            console.log('Password:',password);
 
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
