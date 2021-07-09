@@ -68,8 +68,8 @@ button {
     width: 50%;
     padding: 15px;
     background-color: #fff;
-    color: rgba(64, 137, 206, 0.911);
-    border: solid 2px rgba(64, 137, 206, 0.911);
+    color: blueviolet;
+    border: solid 2px lavender;
     cursor: pointer;
     transition: all .38s ease-in-out;
 }
