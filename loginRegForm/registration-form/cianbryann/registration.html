@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form by CBM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registration.css">
+    <script type="module" src ="registrationclass.js"></script>
+</head>
+    <body>
+        <div class="container h-100">
+            <div class="d-flex justify-content-center">
+                <form>
+                    <div class="inputS">
+                        <div class="firstNamee">
+                            <input type="text" name="FirstName" id="FirstName" required/>
+                            <label for="FirstName">First Name:</label>
+                        </div>
+                        <div class="lastNamee">
+                            <input type="text" id="LastName" required/>
+                            <label for="LastName">Last Name:</label>
+                        </div>
+                        <div class="emaile">
+                            <input type="text" id="Email" required/>
+                            <label for="Email">Email:</label>
+                        </div>
+                        <div class="password11">
+                            <input type="password" id="password1" required/>
+                            <label for="password1">Password:</label>
+                        </div>
+                        <div class="password22">
+                            <input type="password" id="password2" required/>
+                            <label for="password2">Re-Type Password:</label>
+                        </div>
+                        <div class="selectselect">
+                            <select class="btn btn-info form-select" name="gender" id="gender">
+                                <option value="Gender?">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="selectselect">
+                            <select class="btn btn-info form-select" name="team" id="team">
+                            </select>
+                        </div>
+                        <div class="selectselect">
+                            <select class="btn btn-info form-select" name="country" id="country">
+                            </select>
+                            <div class="capitall">
+                                <input type="text" id="capital" required/>
+                                <label for="capital">Capital</label>
+                            </div>
+                        </div>
+                        <div class="button-group d-flex justify-content-center">
+                            <button id="clear" style="width:50%;" class="btn btn-light" type="button">Clear</button>
+                            <button id="reg" style="width:50%;" class="btn btn-success" type="button">Register</button>
+                        </div>
+                        <div class="button-group">
+                            <button id="display" style="width:100%" class="btn btn-primary" type="button">Display</button>
+                        </div>
+                        <a href="../../login/cianbryann/login.html">Already Have Account?</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

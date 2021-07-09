@@ -1,0 +1,18 @@
+{
+    "Philippines":{
+        "mnl": "Manila",
+        "pas": "Pasig"
+    },
+    "Singapore":{
+        "jur": "Jurong",
+        "sel": "Seletar"
+    },
+    "Zimbadwe":{
+        "har": "Harare",
+        "bul": "Bulawayo"
+    },
+    "Somalio":{
+        "kim": "Kismayo",
+        "mog": "Mogadishu"
+    }
+}
