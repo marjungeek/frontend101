@@ -6,4 +6,13 @@ login.submit.addEventListener('click',function(){
     var passhu = login.password.value;
     login.loginFunc(userhu,passhu);
     
-});
+}); 
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 import { httpclient } from './httpclient.js';
 export default class logincontrol extends httpclient{
     constructor(){
-        console.log("logincontrol");
+        console.log("logincontrol loaded");
         super();
         this.submit = document.getElementById('loginbtn');
         this.username = document.getElementById('uname');

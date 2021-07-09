@@ -1,5 +1,6 @@
 export class httpclient{
     constructor(){
+        console.log("httpclient loaded");
     }
     getAPIs(method,endpoint,data){
         return new Promise(function (resolve, reject) {
@@ -21,5 +22,6 @@ export class httpclient{
             };
             xhr.send(data);
         });
+        
     }
 }
