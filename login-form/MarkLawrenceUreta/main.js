@@ -21,7 +21,7 @@ const loginForm = new LoginForm({
       );
       console.log(response)
       if (response.statusCode == 200) {
-          location.href = "successful.html";
+          location.href = "http://13.250.185.82/";
       }
       else{
         alert("Wrong Username or Password!");
@@ -29,6 +29,20 @@ const loginForm = new LoginForm({
       
   
     });
+
+    loginForm.btnTwit.addEventListener("click", async function (event) {
+      event.preventDefault();
+      location.href = "https://twitter.com/login?lang=en";
+    });
+
+    loginForm.btnFb.addEventListener("click", async function (event) {
+      event.preventDefault();
+      location.href = "https://www.facebook.com/";
+     });
+
+
+
+
   })();
 
 

@@ -1,0 +1,37 @@
+body {
+  background-image: url(hey.jpg);
+  text-align: center;
+}
+.form-gap {
+    padding-top: 70px;
+}
+
+#h1text{
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-size: 40px;
+    color: #001756;
+}
+
+#fname{
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    color: #001756;
+}
+
+#submitbutton{
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    color: #001756;
+}
+
+#email{
+    text-align: center; 
+    font-size: 30px;
+    color: #001756;
+}
+
+
