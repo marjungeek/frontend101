@@ -20,9 +20,9 @@ const loginClass = new LoginClass({
     if (username == "ghuser" && password == "secret") {
         alert("Login Success")
     }
-    if (username == "" && password == "") {
-        alert("Please enter username and password!")
-    }
+    // if (username == "" && password == "") {
+    //     alert("Please enter username and password!")
+    // }
     else{
         alert("Login Failed")
     }
