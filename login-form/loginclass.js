@@ -1,12 +1,20 @@
 import { HttpClient } from "./HttpClient.js";
 
-export default class LoginClass extends HttpClient {
-  constructor(options) {
+export default class loginClass extends HttpClient {
+  constructor() {
     super();
-    let testServer = "https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login";
-    testServer = options.baseURL;
-    this.username = document.getElementById("user");
-    this.password = document.getElementById("pass");
+  
+    this.username = document.getElementById("username");
+    this.password = document.getElementById("password");
     this.btnsubmit = document.getElementById("submit");
   }
+
+
+  getUser() {
+
+  let test = 'tessssssssssssssssssssssssssssssssstttt';
+  
+  }
+
 }
+

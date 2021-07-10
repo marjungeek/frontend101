@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+}
+
+.log-header {
+margin-bottom: 80px;
+justify-content: center;
+display: flex;
+
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+.avatar {
+    width: auto;
+    height: 300px;
+}
+
+.header-text {
+font-size: 30px ;
+font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.username-form, .password-form {
+margin-bottom: 60px;
+font-size: 30px;
+}
+
+.log{
+    display: flex;
+    justify-content: flex-end;
+    }
+
+
+#username.form-control, #password.form-control {
+font-size: 23px;
+width: 600px;
+}
