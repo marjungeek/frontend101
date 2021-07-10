@@ -11,7 +11,7 @@ import loginClass from "./loginClass.js";
      
     loginclass.btnsubmit.addEventListener('click', async function(event) {
     event.preventDefault();
-  
+ 
     let username = loginclass.username.value;
     console.log(loginclass.username, + 'ussererrr name ');
     let password = loginclass.password.value;
