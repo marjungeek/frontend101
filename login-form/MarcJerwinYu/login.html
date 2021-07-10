@@ -12,21 +12,31 @@
     <body id="body">
         <div class="container main">
             <h2 class="mt-5">Login</h2>
-            <form id="myform">
+            <form class="form-login" id="myform">
+                <div class="mb-3">
+                    <img id="profile-img" class="profile-img-card" src="avatar.jpg"/>
+                    <p id="profile-name" class="profile-name-card"></p>
+                </div>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username </label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="text" class="form-control" id="username" placeholder="Username" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password: </label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="checkbox" value="lsRememberMe" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-primary me-md-2" type="button" id="btn-login">Login</button>
                 </div>
             </form>
+            <a href="#" class="forgot-password">Forgot password?</a>
         </div>
     </body>
 </html>

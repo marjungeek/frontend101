@@ -11,7 +11,16 @@ const regForm = new RegForm({
     regForm.btnSubmit.addEventListener('click', function() {
     var un = regForm.username.value;
     var pswrd = regForm.password.value;
+    var rmChck = regForm.rmCheck.value;
+    if(rmChck.checked && un.value !== ''){
+      localStorage.name = username.value;
+      localStorage.checkbox = rmChck.value;
+    } else {
+      localStorage.name = "";
+      localStorage.checkbox = "";
+    }
     regForm.getInput(un, pswrd)
+    regForm.getCheck(un,rmChck)
 
     //let response = await regForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
     //console.log(response); 

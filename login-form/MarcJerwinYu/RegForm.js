@@ -8,6 +8,7 @@ export default class RegForm extends HttpClient {
     // class property - sort of like configuration
     this.username = document.getElementById('username');
     this.password = document.getElementById('password');
+    this.rmCheck = document.getElementById('rememberMe');
     this.btnSubmit = document.getElementById('btn-login');
   }
   async getInput(username, password){
@@ -32,6 +33,18 @@ export default class RegForm extends HttpClient {
       }
 
   }
+  async getCheck(username, rmCheck){
+    console.log(username);
+    console.log(rmCheck);
+    if (localStorage.checkbox && localStorage.checkbox !== ''){
+      rmCheck.setAttribute('checked', 'checked');
+      username.value = localStorage.name;
+    } else {
+      rmCheck.removeAttribute('checked');
+      username.value = "";
+    }
+  }
+
   async getAPI() {
     return await this.getRequest(this.APIUrl);
   }
