@@ -4,9 +4,9 @@ export class httpclient {
     }
   
     async #httpRequest(method, endpoint, data = undefined) {
-      //why is data = undefined?, code still runs if it is data only
+      //undefine is just a default value, so if there is a time when nothing is passed to data it can still run
       return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();      
+        var xhr = new XMLHttpRequest();
         xhr.open(method, endpoint, true);
         if (method === 'post') {
           xhr.setRequestHeader('Content-Type', 'application/json');  
