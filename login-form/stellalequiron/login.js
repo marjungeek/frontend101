@@ -64,10 +64,10 @@ window.addEventListener('load', (event) => {
 
             if (user !== ''){
                 console.log('valid');
-                object1.userName.setAttribute('class','group success');
+                object1.userName.setAttribute('class','input-group success');
             } else{
                 console.log('invalid');
-                object1.userName.setAttribute('class','group error');
+                object1.userName.setAttribute('class','input-group error');
             }
         });
 
@@ -78,10 +78,10 @@ window.addEventListener('load', (event) => {
 
             if (passwd !== ''){
                 console.log('password is valid')
-                object1.passWord.setAttribute('class', 'group success');
+                object1.passWord.setAttribute('class', 'input-group success');
             } else{
                 console.log('password not valid')
-                object1.passWord.setAttribute('class','group error');
+                object1.passWord.setAttribute('class','input-group error');
             }
         });
 
@@ -97,13 +97,13 @@ window.addEventListener('load', (event) => {
         
             console.log(response);
             if(response.statusCode == 200){
-                object1.userName.setAttribute('class', 'group success');
-                object1.passWord.setAttribute('class', 'group success');
+                object1.userName.setAttribute('class', 'input-group success');
+                object1.passWord.setAttribute('class', 'input-group success');
                 alert("Success");
             } else{
                 alert("Wrong Input");
-                object1.userName.setAttribute('class', 'group error');
-                object1.passWord.setAttribute('class', 'group error');
+                object1.userName.setAttribute('class', 'input-group error');
+                object1.passWord.setAttribute('class', 'input-group error');
             }
         });
     })();
