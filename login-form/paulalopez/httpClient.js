@@ -24,11 +24,11 @@ export class httpClient {
           xhr.send(data);
         });
       }
-    
+
       async getRequest(endpoint) {
         return await this.#httpRequest('get', endpoint);
       }
-    
+
       async postRequest(endpoint, data) {
         return await this.#httpRequest('post', endpoint, data);
       }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Login</title>
     <link rel="stylesheet" href="Style.css" />
+    <script src="../extra/extra.js"></script>
     <script type="module" src="MainClass.js"></script>
 
 </head>
@@ -22,7 +23,11 @@
 
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" id="pwd" name="pwd" placeholder="Password" required>
+                        <input type="password" value="" id="pwd" name="pwd" placeholder="Password" required>
+                    </div>
+
+                    <div class="show">
+                        <input type="checkbox" onclick="showPwd()">Show Password
                     </div>
 
                     <div class="form-group">

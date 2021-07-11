@@ -10,6 +10,8 @@ body {
     background-image: url('./image/1.jpg');
     background-repeat: no-repeat;
     background-size: 1300px;
+    min-height: 100%;
+    /* background-position: center; */
 }
 
 .container-main {
@@ -45,13 +47,13 @@ h2 {
     outline-width: 1.5px;
 }
 
-input, label {
+.form-group input, label {
     display: block;
     font-size: 16px;
     margin: 10px 10px 10px 10px;
 }
 
-input{
+.form-group input{
     width: 100%;
     border: solid 2px rgb(186, 188, 211);
     padding: 10px 15px;
@@ -61,6 +63,16 @@ input{
 input:hover{
     border: solid 2px #fff;
 
+}
+
+.show{
+    color: rgb(153, 122, 194);
+    display: flex;
+    margin-left: 10px;
+    font-size: 14px;
+    width: fit-content;
+    align-items: center;
+    flex-direction: row;
 }
 
 button {

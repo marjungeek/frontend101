@@ -16,16 +16,18 @@ const loginClass = new LoginClass({
     let response = await loginClass.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username , password });
     
     console.log(response);
-
+        // to change
     if (username == "ghuser" && password == "secret") {
-        alert("Login Success")
+        alert("Login Success");
+        window.location.pathname = 'frontend101/login-form/extra/extra.html';
     }
-    // if (username == "" && password == "") {
-    //     alert("Please enter username and password!")
-    // }
+    else if (username == "" && password == "") {
+        alert("Please enter username and password!")
+    }
     else{
         alert("Login Failed")
     }
 
     });
 })();
+
