@@ -7,33 +7,49 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src ="registration.js"></script>
     </head>
-    <body>
+    <body onload=getCountries(),getTeams();>
         <div class="container main">
             <h2 class="mt-5">Registration Form</h2>
             <form name="myForm">
                     <div class="col">
                         <div class="mb-3">
                             <label for="firstNameControl" class="form-label">First Name: </label>
-                            <input type="text" class="form-control" id="firstNameControl" >
+                            <input type="text" class="form-control" id="firstname" >
                         </div>
         
                         <div class="mb-3">
                             <label for="lastNameControl" class="form-label">Last Name: </label>
-                            <input type="text" class="form-control" id="lastNameControl" >
+                            <input type="text" class="form-control" id="lastname" >
                         </div>
         
                         <div class="mb-3">
                             <label for="emailControl" class="form-label">Email: </label>
-                            <input type="email" class="form-control" id="emailControl" >
+                            <input type="email" class="form-control" id="email" >
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
+                            <label for="countryList" class="form-label">Country: </label>
+                            <select id="countryList" class="form-control" onchange="getCapital()">
+                                <option value="">Select Country</option>
+                            </select>
+
+                            <label for="cityList" class="form-label">City: </label>
+                            <input type="text" id="cityList" class="form-control" readonly>
+                                
                             <label for="teamList" class="form-label">Team: </label>
                             <select id="teamList" class="form-control">
-                                <option value="" disabled selected>Select Team</option>
-                             
+                                <option value="">Select Team</option>   
                             </select>
+
+                            <label for="genderList" class="form-label">Gender: </label>
+                            <select id="genderList" class="form-control">
+                                <option value="">-Select Gender-</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Don't want to disclose">Don't want to disclose</option>
+                            </select>
+
                         </div>
         
                         <div class="mb-3">
