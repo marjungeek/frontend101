@@ -18,7 +18,12 @@ const logForm = new LogForm({
 
     let response = await logForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
 
-    console.log(response);
-    alert("Logged in Successfully!")
+    console.log(response, username, password);
+    if (response.statusCode == "200"){
+      alert("Welcome" +username);
+    }
+    else{
+      alert("Invalid");
+    }
   });
 })();
