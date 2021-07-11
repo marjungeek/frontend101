@@ -33,17 +33,18 @@ export default class RegForm extends HttpClient {
       }
 
   }
-  async getCheck(username, rmCheck){
-    console.log(username);
-    console.log(rmCheck);
-    if (localStorage.checkbox && localStorage.checkbox !== ''){
-      rmCheck.setAttribute('checked', 'checked');
-      username.value = localStorage.name;
-    } else {
-      rmCheck.removeAttribute('checked');
-      username.value = "";
-    }
-  }
+  //getCheck(username, rmCheck){
+    //console.log(username);
+    //console.log(rmCheck);
+    //if (localStorage.checkbox && localStorage.checkbox !== ''){
+      //rmCheck.setAttribute('checked', 'checked');
+      //username.value = localStorage.name;
+    //} else {
+      //rmCheck.removeAttribute('checked');
+      //username.value = "";
+    //}
+  //}
+  
 
   async getAPI() {
     return await this.getRequest(this.APIUrl);
