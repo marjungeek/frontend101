@@ -8,7 +8,6 @@ export default class loginForm extends HttpClient{
         // class property
         this.loginUrl = options.loginUrl;
 
-        this.txtEmail = document.getElementById('email');
         this.txtUsername = document.getElementById('username');
         this.txtPassword = document.getElementById('password');
 

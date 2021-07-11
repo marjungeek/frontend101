@@ -7,7 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src ="registration.js"></script>
     </head>
-    <body onload="getTeams()">
+    <body onload="Exercise()">
         <div class="container main">
             <h2 class="mt-5">Registration Form</h2>
             <form name="form1" action="#">
@@ -27,7 +27,6 @@
                     <label for="emailControl" class="form-label">Email: </label>
                     <input type="email" class="form-control" id="emailControl" name="email1">
                     <span id = "annyMsg" style="color:red"> </span>
-                    <button class="btn btn-success1" type="button" onclick="ValidateEmail1(document.form1.email1);">Verify</button>
                 </div>
 
                 <div class="mb-3">
