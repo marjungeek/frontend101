@@ -1,16 +1,18 @@
 export class HttpClient{
     constructor(){
+        console.log("HttpClient Loaded.");
     }
-
-    //use this reusable function to call APIs
-    getAPIs(method,endpoint,data=undefined){
+//ajax call
+ 
+ async getAPIs(method,endpoint,data=undefined){
         return new Promise(function (resolve, reject) {
+          
             var xhr = new XMLHttpRequest();
             xhr.open(method,endpoint, true);
             if(method == 'post'){
                 xhr.setRequestHeader('Content-Type','application/json')
                 data = JSON.stringify(data);
-                console.log(data);
+                // console.log(data);
             }
             xhr.responseType = 'json';
             xhr.onload = function () {
@@ -24,4 +26,12 @@ export class HttpClient{
             xhr.send(data);
         });
     }
+
+    //psot request method for const result at ./Loginform
+    async postRequest(method, endpoint, data){
+        return await this.getAPIs(method, endpoint, data);
+    
+
+    }
+
 }
