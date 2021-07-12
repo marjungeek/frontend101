@@ -18,13 +18,16 @@ const logForm = new LogForm({
 
     console.log(response);
 
+        
 
-
-    if (username == 'ghuser' && password == 'secret'){
+    if (response.statusCode == 200){
+        console.log('Username:',  username, ',', 'Password:', password);
         alert("Login success");
     }else if(username == '' || password == '') {
+        console.log('Empty Field');
         alert('Username or Password must be filled out');
     }else {
+        console.log('Username: ', username, ',', 'Password:', password);
         alert('Invalid Username or Password')
     }
 
