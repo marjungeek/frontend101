@@ -21,7 +21,12 @@ export class httpclient{
                 }
             };
             xhr.send(data);
+
+
         });
-        
+
     }
+    async postRequest(endpoint, data) {
+        return await this.getAPIs("post", endpoint, data);
+      }
 }
