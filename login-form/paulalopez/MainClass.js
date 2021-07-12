@@ -17,9 +17,9 @@ const loginClass = new LoginClass({
     
     console.log(response);
 
-    if (username == "ghuser" && password == "secret") {
+    if (response.statusCode === 200) {
         alert("Login Success");
-        window.location.pathname = 'extra.html';
+        window.location.pathname = 'frontend101/login-form/paulalopez/extra.html';
     }
     else if (username == "" && password == "") {
         alert("Please enter username and password!")
