@@ -3,7 +3,7 @@ export class HttpClient{
     constructor(){
         console.log('HttpClient Successfully Loaded...')
     }
-    getAPIs(method,endpoint,data=undefined){
+    getAPI(method,endpoint,data=undefined){
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open(method,endpoint, true);
@@ -23,5 +23,9 @@ export class HttpClient{
             };
             xhr.send(data);
         });
+        
     }
+    async postRequest(endpoint, data) {
+        return await this.getAPI("post", endpoint, data);
+      }
 }
