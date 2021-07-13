@@ -9,7 +9,7 @@ login.submit.addEventListener('click',function(){
     
 }); 
 login.showpass.addEventListener('change', function() {
-    var x = document.getElementById("pass");
+    const x = document.getElementById("pass");
     if (x.type === "password") {
         x.type = "text";
         console.log("Password is shown..");
