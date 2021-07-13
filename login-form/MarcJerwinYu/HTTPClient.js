@@ -3,7 +3,7 @@ export class HttpClient {
     console.log('HttpClient was laoded...');
   }
 
-    gethttpRequest(method, endpoint, data = undefined) {
+   async gethttpRequest(method, endpoint, data = undefined) {
     return new Promise(function (resolve, reject) {
       var xhr = new XMLHttpRequest();      
       xhr.open(method, endpoint, true);
