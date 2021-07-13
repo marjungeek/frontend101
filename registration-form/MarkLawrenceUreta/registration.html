@@ -5,43 +5,47 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="registration.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src ="registration.js"></script>
+        <script type="module" src ="main.js"></script>
     </head>
-    <body onload=getCountries(),getTeams();>
+    <body>
         <div class="container main">
             <h2 class="mt-5">Registration Form</h2>
-            <form name="myForm">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="firstNameControl" class="form-label">First Name: </label>
-                            <input type="text" class="form-control" id="firstname" >
-                        </div>
-        
-                        <div class="mb-3">
-                            <label for="lastNameControl" class="form-label">Last Name: </label>
-                            <input type="text" class="form-control" id="lastname" >
-                        </div>
-        
-                        <div class="mb-3">
-                            <label for="emailControl" class="form-label">Email: </label>
-                            <input type="email" class="form-control" id="email" >
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="countryList" class="form-label">Country: </label>
-                            <select id="countryList" class="form-control" onchange="getCapital()">
-                                <option value="">Select Country</option>
-                            </select>
+            <form>
+                <div class="mb-3">
+                    <label for="firstNameControl" class="form-label">First Name: </label>
+                    <input type="text" class="form-control" id="firstNameControl" >
+                </div>
 
-                            <label for="cityList" class="form-label">City: </label>
-                            <input type="text" id="cityList" class="form-control" readonly>
-                                
-                            <label for="teamList" class="form-label">Team: </label>
-                            <select id="teamList" class="form-control">
-                                <option value="">Select Team</option>   
-                            </select>
+                <div class="mb-3">
+                    <label for="lastNameControl" class="form-label">Last Name: </label>
+                    <input type="text" class="form-control" id="lastNameControl" >
+                </div>
 
+                <div class="mb-3">
+                    <label for="emailControl" class="form-label">Email: </label>
+                    <input type="email" class="form-control" id="email" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="countryList" class="form-label">Country: </label>
+                    <select id="countryList" class="form-control">
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cityControl" class="form-label">City: </label> 
+                    <input type="text" id="city" class="form-control" readonly>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="teamList" class="form-label">Team: </label>
+                    <select id="teamList" class="form-control">
+                        <option> - Select - </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                             <label for="genderList" class="form-label">Gender: </label>
                             <select id="genderList" class="form-control">
                                 <option value="">-Select Gender-</option>
@@ -49,25 +53,26 @@
                                 <option value="Female">Female</option>
                                 <option value="Don't want to disclose">Don't want to disclose</option>
                             </select>
-
-                        </div>
-        
-                        <div class="mb-3">
-                            <label for="passwordControl" class="form-label">Password: </label>
-                            <input type="password" class="form-control" id="passwordControl" >
-                        </div>
-        
-                        <div class="mb-3">
-                            <label for="repasswordControl" class="form-label">Re-type Password: </label>
-                            <input type="password" class="form-control" id="repasswordControl" >
-                        </div>
-                    </div>
-
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="clear" type="reset">Clear</button>
-                        <button class="register" type="button" onclick="myFunction()">Register</button>
-                    </div>
                 </div>
+
+
+                <div class="mb-3">
+                    <label for="passwordControl" class="form-label">Password: </label>
+                    <input type="password" class="form-control" id="passwordControl" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="repasswordControl" class="form-label">Re-type Password: </label>
+                    <input type="password" class="form-control" id="repasswordControl" >
+                </div>
+
+               
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="clear" type="clear">Clear</button>
+                    <button class="register" type="button" id="test-submit">Register Now</button>
+                </div>
+
+        
             </form>
         </div>
         
