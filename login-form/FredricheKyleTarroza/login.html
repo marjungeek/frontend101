@@ -8,29 +8,40 @@
       <script type="module" src ="MainLogin.js"></script>
       <link href="login.css" rel="stylesheet">
    </head>
-   <body>
-      <div class ="containerform">
+   <body>    
+      <div class ="containerform"  id="ContainerForm">
          <div class="content">
             <form form id="form">
-               <h1 style="text-align:center;" >Login</h1>
+               <h1 style="text-align:center;" >Login</h1>            
                <hr>
       <!-- UserName -->
-               <label>Username : </label>
                <input type="text"  placeholder="Username" minlength="8" id="UsernameID"  required>
                <br>    <br>
       <!-- PassWord -->
-               <label>Password</label>
                <input type="password" placeholder="Password" id="PasswordID" required>
                <br>    <br>
+               <br>
+     <!-- Buttons -->
                <div class ="button">
-      <!-- Buttons -->
                 <button type="button" class="submit" name="submit" id="LoginBTN">Login</button>
-                <button type="reset" class="clear"  >Clear</button>
+                <button type="reset" class="clear" id="ClearBTN" >Clear</button>
              </div>
               
       
             </form>
          </div>
       </div>
+
+    
+  <!-- Modal Validaiton -->
+               <div class ="modal" id ="modalpopup">      
+                <button class="close-button" id ="CloseBTN">Success hehe :D Press to continue!</button>       
+               </div>
+
+                  
+                  <p id="invalid" class ="modal" ><i>Invalid Credentials</i></p>
+                  <p id="missing" class ="modal" ><i>Missing Fields</i></p>
+               
+    
    </body>
 </html>

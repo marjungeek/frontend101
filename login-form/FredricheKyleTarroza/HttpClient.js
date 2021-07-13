@@ -12,7 +12,7 @@ export class HttpClient{
             if(method == 'post'){
                 xhr.setRequestHeader('Content-Type','application/json')
                 data = JSON.stringify(data);
-                // console.log(data);
+                
             }
             xhr.responseType = 'json';
             xhr.onload = function () {
@@ -27,7 +27,7 @@ export class HttpClient{
         });
     }
 
-    //psot request method for const result at ./Loginform
+    //post request method for const result at ./Loginform
     async postRequest(method, endpoint, data){
         return await this.getAPIs(method, endpoint, data);
     
