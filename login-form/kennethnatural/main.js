@@ -20,7 +20,7 @@ const logForm = new LogForm({
 
     console.log(response, username, password);
     if (response.statusCode == "200"){
-      alert("Welcome" +username);
+      alert("Welcome " + username);
     }
     else{
       alert("Invalid");
