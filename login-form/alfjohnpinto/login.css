@@ -1,7 +1,13 @@
 .main{
-    width: 400px;
+    width: 500px !important;
+    
 }
 .bodyDesign{
     background-color: rgb(95, 230, 230);
+    border: 5px;
+    margin-top: 200px;
 }
-
+.container{
+    max-width: 600px;
+    
+}

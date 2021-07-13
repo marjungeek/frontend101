@@ -25,10 +25,6 @@ export class HttpClient {
     });
   }
 
-  async getRequest(endpoint) {
-    return await this.httpRequest('get', endpoint);
-  }
-
   async postRequest(endpoint, data) {
     return await this.httpRequest('post', endpoint, data);
   }
