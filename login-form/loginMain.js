@@ -8,7 +8,7 @@ const loginForm = new LoginForm({
 });
 
 (async function(){
-
+    
     loginForm.btnSubmit.addEventListener('click', async function(event){
         event.preventDefault();
         
@@ -20,7 +20,7 @@ const loginForm = new LoginForm({
         let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
             console.log(response);
 
-    if (username == "ghuser" && password == "secret"){
+    if (response.statusCode == "200"){
         alert("Successfully Login");
         location.reload();
         loginForm.txtUsername.classList.remove('error');
