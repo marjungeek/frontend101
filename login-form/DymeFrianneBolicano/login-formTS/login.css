@@ -1,0 +1,57 @@
+input.error {
+    border-color: red;
+}
+
+.main{
+    max-width: 600px;
+}
+
+.input-group{
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+}
+
+body{
+    background-image: url('HTMLback.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.cn1{
+    background-color: black;
+    padding: 5mm;
+    border-style: solid;
+    border-color: aliceblue;
+}
+.cn2{
+    text-align: center;
+    background-color: black;
+    padding: 5mm;
+    border-style: solid;
+    border-color: aliceblue;
+    max-width: 200px;
+}
+
+#Header{
+    font-family: 'Times New Roman', Times, serif;
+    color: azure;
+    font-size: 50px;
+}
+h1{
+    color: black;
+    text-align: right;
+}
+
+#robot{
+    width: 100%;;
+    background-color: black;
+    margin-top: 20px;
+    display: none;
+}
+#Q{
+    color: azure;
+}
+#lab{
+    color: azure;
+}
