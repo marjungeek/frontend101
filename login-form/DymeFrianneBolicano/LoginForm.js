@@ -13,10 +13,14 @@ export default class logForm extends HttpClient {
 
     this.password = document.getElementById("password");
     this.passworddiv = document.getElementById("password-div");
+    // console.log(this.password);
+    // console.log(this.passworddiv);
+    // console.log(this.password.className);
+    // console.log(this.passworddiv.innerHTML.className);
   
     this.btnSubmit = document.getElementById('test-submit');
 
-    this.btnSubmit = document.getElementById('test-submit');
+    //this.btnSubmit = document.getElementById('test-submit');
     this.checkbox = document.getElementById('checkbox');
     this.clear = document.getElementById('reload');
 

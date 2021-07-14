@@ -40,7 +40,14 @@ window.addEventListener('load', () => {
       
     obj1.btnSubmit.addEventListener('click', async (event)=> {
       event.preventDefault();
-            
+      console.log("SUbmit Clicked!");
+      var btnStatus=obj1.btnSubmit.getAttribute("class").includes("disabled")
+      console.log(btnStatus);
+      if(btnStatus){
+        console.log("Btn is disabled!")
+        return;
+      }
+      console.log("Btn is enabled!")
       //var ans=document.getElementById("Ans").value;
       
       
