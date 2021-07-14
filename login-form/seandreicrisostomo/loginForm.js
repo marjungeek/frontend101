@@ -1,4 +1,4 @@
-import { loginHttpRequest } from "./loginHttpRequest.js";
+import { loginHttpRequest } from "./loginApiRequest.js";
 
 export default class LogInForm extends loginHttpRequest {
     constructor(options) {
@@ -16,7 +16,7 @@ export default class LogInForm extends loginHttpRequest {
 
     async getApiResponse() {
         return await this.getRequest(this.apiURL);
-      }
+    }
 
     async postApiResponse () {
         return await this.postRequest(this.apiURL);

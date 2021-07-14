@@ -6,25 +6,27 @@
         <link rel="stylesheet" href="login.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="module" src ="main.js"></script>
-        <script src="validation.js"></script>
+        
     </head>
     <body>
-        <div class="container main">
+        <div>
             <form name="myForm" class="box" method="POST">
-                <h2>Log In</h2>
+                <h1>Log In</h1>
                 <div>
-                    <label for="username" class="form-label"></label>
-                    <input type="text" class="form-control" id="username" placeholder="Username" pattern="[A-Za-z]{1,}" title="(Alphabet only)">
+                    <input type="text" class="form-control" id="username" placeholder="Username">
                 </div>
 
                 <div>
-                    <label for="password" class="form-label"></label>
                     <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+
+                <div>
+                    <p><a href="registration.html">Don't have an account yet? Sign up now!</a></p>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-primary me-md-2" type="reset">Clear</button>
-                    <button class="btn btn-success" type="click" id="test-submit" onclick="return validateForm()">Sign in</button>
+                    <button class="btn btn-success" type="click" id="test-submit">Sign in</button>
                 </div>
         
             </form>
