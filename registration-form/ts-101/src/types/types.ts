@@ -16,12 +16,12 @@ const btnLogin = document.getElementById('btnLogin')! as HTMLElement;
  * @param password 
  * @returns 
  */
-function sendLogin(username: string, password: string): string | boolean {
+function sendLogin1(username: string, password: string): string | boolean {
   return true;
 }
 
 // some comments
-let response: string | boolean = sendLogin(username.value, password.value);
+let response1: string | boolean = sendLogin1(username.value, password.value);
 
 // other comment
 console.log(response);
