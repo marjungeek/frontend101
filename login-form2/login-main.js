@@ -1,4 +1,4 @@
-import ClassForm from "./loginClass.js";
+import ClassForm from "./LoginClass.js";
 
 console.log("Log In Form is loaded")
 
