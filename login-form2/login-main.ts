@@ -1,6 +1,6 @@
-import ClassForm from "./LoginClass.js";
+import ClassForm from "./LoginClass.ts";
 
-console.log("Log In Form is loaded")
+console.log("Log In Form Loaded")
 
 const classForm = new ClassForm({
     LoginAPI: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
@@ -25,4 +25,3 @@ const classForm = new ClassForm({
         }
     });
 })();
-
