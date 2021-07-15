@@ -1,5 +1,4 @@
-import {HttpClient} from "./HttpClient";
+const username = document.getElementById('username')! as HTMLInputElement;
+const password = document.getElementById('password')! as HTMLInputElement;
 
-class LogIn {
-    
-}
+const btnLogIn = document.getElementById('submit')! as HTMLElement;
