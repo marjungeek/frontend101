@@ -11,7 +11,7 @@ loginForm.btnSubmit.addEventListener('click',async function(event){
 
      let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
      if (response.statusCode == 200){
-        window.location.href = "login-success.html"
+        window.location.href = "./login-success.html"
      }else{
          alert("Invalid Credentials")
         console.log(response);
