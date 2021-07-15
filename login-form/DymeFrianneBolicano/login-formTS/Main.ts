@@ -4,7 +4,7 @@ class HttpClient {
       console.log('HttpClient was laoded...');
     }
     
-    httpRequest(method:string, endpoint:string, data?:string) {
+    httpRequest(method:string, endpoint:string, data?:any) {
         console.log('httpReq!');
         console.log(data);
           
@@ -48,7 +48,7 @@ class HttpClient {
       this.httpRequest('get', endpoint);
     }
     
-    postRequest(endpoint:string,data:any ){
+    postRequest(endpoint:string,data:DT ){
         console.log('postReq!');
       this.httpRequest('post', endpoint, data);
     }
@@ -126,7 +126,9 @@ const obj1 = new logForm({
     postURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
 });
 
-
+interface DT {
+  username:string,password:string
+}
     
   // self-invoking function
 (()=> {
@@ -177,9 +179,7 @@ const obj1 = new logForm({
 
         let username = (<HTMLInputElement>obj1.userName).value;
         let password = (<HTMLInputElement>obj1.password).value;
-        interface DT {
-            username:string,password:string
-        }
+       
         let data:DT = {
             username:username,
             password:password
