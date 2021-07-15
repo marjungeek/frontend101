@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display-swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #38ADCE;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.form-container{
+    display: flex;
+    height: 98vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form-wrap{
+    background: whitesmoke;
+    width: 40%;
+    padding: 15px 20px;
+    border-radius: 3px;
+}
+
+.form-container .form-wrap h2{
+    text-align: center;
+    margin: 0px 0px 20px;
+    font-size: 19px;
+}
+
+.form-container .form-wrap .form-box{
+    margin: 0px 0px 15px;
+}
+
+.form-container .form-wrap .form-box input[type="email"]{
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid powderblue;
+    width: 100%;
+}
+
+.form-container .form-wrap .form-submit{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container .form-wrap .form-submit input[type="submit"]{
+    padding: 4px 10px;
+    border: none;
+    border-radius: 2px;
+    background: #F4E531;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 16px;
+}
