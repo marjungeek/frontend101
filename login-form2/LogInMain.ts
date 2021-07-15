@@ -6,13 +6,13 @@ const classForm = new ClassForm({
     LoginAPI: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
 });
 
-(async function(){
-    classForm.btnLogin.addEventListener('click', async function(event){
+function(){
+    classForm.btnLogin.addEventListener('click', function(event){
         event.preventDefault();
-        let username = classForm.txtUsername.value;
-        let password = classForm.txtPassword.value;
+        let username:any = classForm.txtUsername.value;
+        let password:any = classForm.txtPassword.value;
 
-        let response = await classForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', {username, password});
+        let response = classForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', {username, password});
 
         console.log(response);
 
