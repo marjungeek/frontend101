@@ -21,7 +21,7 @@ const loginForm = new LoginForm({
       );
       console.log(response)
       if (response.statusCode == 200) {
-          location.href = "http://13.250.185.82/";
+          location.href = "https://www.ibm.com/us-en/";
       }
       else{
         alert("Wrong Username or Password!");
