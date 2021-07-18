@@ -1,0 +1,19 @@
+body {
+  background-image: url('hey.jpg');
+}
+
+#h1text{
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-size: 80px;
+    color: #001756;
+}
+
+#p1text{
+    text-align: center;
+    position: relative;
+    top: 120px;
+    font-size: 30px;
+    color: #0F7E96;
+}
