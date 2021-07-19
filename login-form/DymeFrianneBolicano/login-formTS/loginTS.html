@@ -41,31 +41,34 @@
         </div>
 
         <div class="modal-body container cn1 main">
-          
+          <form id="modal-body-1">
+            <div class="input-group" id="UserName-div">
+                <span class="input-group-text" id="basic-addon1">&#128100;</span>
+                <input type="text" class="form-control" id="UserName" placeholder="User Name" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-                <div class="input-group" id="UserName-div">
-                    <span class="input-group-text" id="basic-addon1">&#128100;</span>
-                    <input type="text" class="form-control" id="UserName" placeholder="User Name" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+            <div class="input-group" id="password-div">
+                <span class="input-group-text" id="basic-addon1">&#128477;</span>
+                <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-                <div class="input-group" id="password-div">
-                    <span class="input-group-text" id="basic-addon1">&#128477;</span>
-                    <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+            <div class="checkbox">
+                <label id="lab"><input id = "checkbox" type="checkbox" >I am Not a robot</label>
+            </div>
 
-                <div class="checkbox">
-                    <label id="lab"><input id = "checkbox" type="checkbox" >I am Not a robot</label>
-                </div>
+            <div id="robot" class="input-group">
+                <label id="Q"></label>
+                <input type="text" id="Ans">
+            </div>
+          </form>
 
-                <div id="robot" class="input-group">
-                    <label id="Q"></label>
-                    <input type="text" id="Ans">
-                </div>
+               
 
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <button id="reload"class="btn btn-primary me-md-2" type="reset">Clear</button>
             <button class="btn btn-primary btn btn-success disabled" type="button" id="test-submit">Login Now</button>
         </div>
       </div>
@@ -82,11 +85,10 @@
         </div>
 
         <div class="modal-body container cn1 main">
-          
-
-                <div class="input-group" id="UserName-div">
+            <form id="modal-body-2">
+                <div class="input-group" id="idfirstname">
                     <span class="input-group-text" id="basic-addon1">&#128100;</span>
-                    <input type="text" class="form-control" id="UserName" placeholder="firstname" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" id="firstname" placeholder="firstname" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group" id ="idlastname">
@@ -120,7 +122,7 @@
 
                 <div class="input-group" id="idgenderList">
                     <span class="input-group-text" id="basic-addon1">Gender:</span>
-                    <select id="genderList" class="form-control" name="genderList">
+                    <select id="Gender" class="form-control" name="genderList">
                         <option> - Select - </option>
                         <option>Male</option>
                         <option>Female</option>
@@ -129,34 +131,43 @@
 
                 <div class="input-group" id="password-div">
                     <span class="input-group-text" id="basic-addon1">&#128477;</span>
-                    <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control" id="password2" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group" id="repassword-div">
                     <span class="input-group-text" id="basic-addon1">&#128477;</span>
-                    <input type="repassword" class="form-control" id="repassword" placeholder="Re-type Password" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control" id="repassword2" placeholder="Re-type Password" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
 
 
-                <!-- <div class="checkbox">
-                    <label id="lab"><input id = "checkbox" type="checkbox" >I am Not a robot</label>
+                <div class="checkbox2">
+                    <label id="lab"><input id = "checkbox2" type="checkbox" >I am Not a robot</label>
+                </div>
+                <div class="checkbox2" id="robot2" >
+                    <label id="Q2"></label>
                 </div>
 
-                <div id="robot" class="input-group">
-                    <label id="Q"></label>
-                    <input type="text" id="Ans">
-                </div> -->
+                <div class="input-group invisible" id="input-ans">
+                    <!-- <label id="Q2"></label> -->
+                    <span class="input-group-text" id="basic-addon1">Ans:</span>
+                    <input type="text" id="Ans2" class="form-control"placeholder="Cap" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+            </form>
+
+                
 
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            <button class="btn btn-primary btn btn-success" type="button" id="test-submit">Register Now</button>
+            <button id="reload2"class="btn btn-primary me-md-2" type="reset">Clear</button>
+            <button class="btn btn-primary btn btn-success disabled" type="button" id="test-submit2">Register Now</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script src ="JsFiles/Main.js"></script>
+  <script type="module"src ="JsFiles/Main.js"></script>
     </body>
 </html>

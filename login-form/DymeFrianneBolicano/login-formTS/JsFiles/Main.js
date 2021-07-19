@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,90 +7,48 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-class MyHttpClient {
-    constructor() {
-        console.log('HttpClient was laoded...');
-    }
-    httpRequest(method, endpoint, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            //var myProm: any;
-            return new Promise((resolve, reject) => {
-                var xhr = new XMLHttpRequest();
-                xhr.open(method, endpoint, true);
-                if (method === 'post') {
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    data = JSON.stringify(data);
-                    // console.log('data: ',data)
-                    // console.log(endpoint);
-                }
-                xhr.responseType = 'json';
-                xhr.onload = () => __awaiter(this, void 0, void 0, function* () {
-                    var status = xhr.status;
-                    if (status == 200) {
-                        //return await xhr.response;
-                        resolve(xhr.response);
-                    }
-                    else {
-                        reject(status);
-                        //return await xhr.response;
-                    }
-                });
-                xhr.send(data);
-            });
-            //return req;
-        });
-    }
-    getRequest(endpoint) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.httpRequest('get', endpoint);
-        });
-    }
-    postRequest(endpoint, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.httpRequest('post', endpoint, data);
-        });
-    }
-}
-class MylogForm extends MyHttpClient {
-    constructor(options) {
-        super();
-        this.myRandom = () => {
-            var num1 = Math.floor(Math.random() * 10);
-            var num2 = Math.floor(Math.random() * 10);
-            this.total = num1 + num2;
-            document.getElementById("Q").innerHTML = "" + num1 + "+" + num2 + "?";
-            //return total;
-        };
-        this.myCheck = () => {
-            var y = document.getElementById("robot");
-            if (y.style.display === "block") {
-                y.style.display = "none";
-                document.getElementById("test-submit").className = "btn btn-primary btn btn-success disabled";
-                //return NaN;
-            }
-            else {
-                y.style.display = "block"; //show
-                document.getElementById("test-submit").className = "btn btn-primary btn btn-success";
-                this.myRandom();
-            }
-        };
-        console.log('logForm was loaded...');
-        this.postURL = options.postURL;
-        this.total = NaN;
-        this.userName = document.getElementById("UserName");
-        this.userNamediv = document.getElementById("UserName-div");
-        this.password = document.getElementById("password");
-        this.passworddiv = document.getElementById("password-div");
-        this.btnSubmit = document.getElementById('test-submit');
-        this.checkbox = document.getElementById('checkbox');
-        this.clear = document.getElementById('reload');
-        this.ans = document.getElementById("Ans");
-    }
-}
+import { MylogForm } from "./LogForm.js";
+import { MyRegForm } from "./RegForm.js";
+import { Validation } from "./Validation.js";
 const myObj1 = new MylogForm({
     postURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
 });
+const myObj2 = new MyRegForm({
+    countryURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries',
+    cityURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites',
+    teamURL: 'https://api.first.org/data/v1/teams'
+});
+const validation = new Validation();
+// const validation = {
+//   fname:false,
+//   lname:false,
+//   email:false,
+//   password:false,
+//   CList:false,
+//   Gender:false,
+//   teamList:false,
+//   status: function():boolean{
+//     if(this.fname&&this.lname&&this.email&&this.password&&this.Gender&&this.CList&&this.teamList){
+//     //if(this.fname&&this.lname&&this.email&&this.password&&this.Gender){
+//       return true;
+//     }
+//     else{
+//       return false;
+//     }
+//   },
+//   myReset: function():void{
+//     this.fname=false;
+//     this.lname=false;
+//     this.email=false;
+//     this.password=false;
+//     this.CList=false;
+//     this.Gender=false;
+//     this.teamList=false;
+//   }
+// };
+//for login
 (() => {
+    //for loginform
     myObj1.userName.addEventListener('blur', (event) => {
         event.preventDefault();
         const user = event.target.value;
@@ -144,20 +101,208 @@ const myObj1 = new MylogForm({
                 myObj1.password.setAttribute('class', 'form-control is-invalid');
                 alert("Fail!, invalid Credentials");
             }
-            //console.log(response.statusCode);
         }
         else {
             alert('Wrong Capacha!');
             myObj1.myRandom();
         }
-        return response;
+        //return response;
     }));
     myObj1.checkbox.addEventListener('click', () => {
         console.log('Check box triggered');
         myObj1.myCheck();
     });
-    // myObj1.clear.addEventListener('click', ()=> {
-    //   console.log('reloading...');
-    //   location.reload();
-    // });
+    myObj1.clear.addEventListener('click', () => {
+        console.log('reloading...');
+        myObj1.modalForm1.reset();
+        //myObj1.robo.style
+        myObj1.robo.style.display = "none";
+        //location.reload();
+    });
 })();
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    //for registration form -------------------------------------------------------------------------------------------------------->>>>
+    // load the data
+    let countries = yield myObj2.getCountries(myObj2.countryURL); // fetch API, retrieve data response
+    myObj2.loadCountries(countries); // render country options
+    let teams = yield myObj2.getTeams(myObj2.teamURL);
+    myObj2.loadTeams(teams.data);
+    //event listener
+    myObj2.CList.addEventListener('change', (event) => __awaiter(void 0, void 0, void 0, function* () {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box != '') {
+            console.log('valid Country ', typeof (box), box);
+            myObj2.CList.setAttribute('class', 'form-control is-valid');
+            validation.CList = true;
+        }
+        else {
+            console.log('invalid GCountry');
+            myObj2.CList.setAttribute('class', 'form-control is-invalid');
+            validation.CList = false;
+        }
+        let cities = yield myObj2.getCities(myObj2.cityURL);
+        myObj2.loadCity(box, cities);
+    }));
+    myObj2.firstname.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box !== '') {
+            console.log('valid name');
+            myObj2.firstname.setAttribute('class', 'form-control is-valid');
+            validation.fname = true;
+        }
+        else {
+            console.log('invalid name');
+            myObj2.firstname.setAttribute('class', 'form-control is-invalid');
+            validation.fname = false;
+        }
+    });
+    myObj2.lastname.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box !== '') {
+            console.log('valid name');
+            myObj2.lastname.setAttribute('class', 'form-control is-valid');
+            validation.lname = true;
+        }
+        else {
+            console.log('invalid name');
+            myObj2.lastname.setAttribute('class', 'form-control is-invalid');
+            validation.lname = false;
+        }
+    });
+    myObj2.email.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(box)) {
+            console.log('valid email');
+            myObj2.email.setAttribute('class', 'form-control is-valid');
+            validation.email = true;
+        }
+        else {
+            console.log('invalid email');
+            myObj2.email.setAttribute('class', 'form-control is-invalid');
+            validation.email = false;
+        }
+    });
+    myObj2.password2.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box !== '') {
+            console.log('valid pass');
+            if (box === myObj2.repassword2.value) {
+                console.log('password match');
+                myObj2.password2.setAttribute('class', 'form-control is-valid');
+                myObj2.repassword2.setAttribute('class', 'form-control is-valid');
+                validation.password = true;
+            }
+            else {
+                console.log('password mis-match');
+                myObj2.password2.setAttribute('class', 'form-control is-invalid');
+                myObj2.repassword2.setAttribute('class', 'form-control is-invalid');
+                validation.password = false;
+            }
+        }
+        else {
+            console.log('invalid pass');
+            myObj2.password2.setAttribute('class', 'form-control is-invalid');
+            validation.password = false;
+        }
+    });
+    myObj2.repassword2.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box !== '') {
+            console.log('valid pass');
+            if (box === myObj2.password2.value) {
+                console.log('password match');
+                myObj2.password2.setAttribute('class', 'form-control is-valid');
+                myObj2.repassword2.setAttribute('class', 'form-control is-valid');
+                validation.password = true;
+            }
+            else {
+                console.log('password mis-match');
+                myObj2.password2.setAttribute('class', 'form-control is-invalid');
+                myObj2.repassword2.setAttribute('class', 'form-control is-invalid');
+                validation.password = false;
+            }
+        }
+        else {
+            console.log('invalid pass');
+            myObj2.repassword2.setAttribute('class', 'form-control is-invalid');
+            validation.password = false;
+        }
+    });
+    myObj2.Gender.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box != '- Select -') {
+            console.log('valid Gender');
+            myObj2.Gender.setAttribute('class', 'form-control is-valid');
+            validation.Gender = true;
+        }
+        else {
+            console.log('invalid Gender');
+            myObj2.Gender.setAttribute('class', 'form-control is-invalid');
+            validation.Gender = false;
+        }
+    });
+    myObj2.teamList.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = event.target.value;
+        if (box != '') {
+            console.log('valid team');
+            myObj2.teamList.setAttribute('class', 'form-control is-valid');
+            validation.teamList = true;
+        }
+        else {
+            console.log('invalid team');
+            myObj2.teamList.setAttribute('class', 'form-control is-invalid');
+            validation.teamList = false;
+        }
+    });
+    myObj2.checkbox.addEventListener('click', () => {
+        console.log('Check box triggered');
+        myObj2.myCheck();
+    });
+    myObj2.btnSubmit.addEventListener('click', (event) => __awaiter(void 0, void 0, void 0, function* () {
+        event.preventDefault();
+        console.log("Submit Clicked!");
+        console.log("Validation Status: ", validation.status());
+        if (validation.status()) {
+            myObj2.addData();
+        }
+        else {
+            console.log("error, make sure all inputs are correct");
+            alert("error, make sure all inputs are correct");
+        }
+    }));
+    myObj2.clear.addEventListener('click', () => {
+        console.log('reloading...');
+        myObj2.modalForm2.reset();
+        localStorage.clear();
+        validation.myReset();
+        myObj2.btnSubmit.className = "btn btn-primary btn btn-success disabled";
+        myObj2.inputans.className = "input-group invisible";
+        //localStorage.clear();
+        //myObj1.robo.style
+        myObj2.robo.style.display = "none";
+        //location.reload();
+    });
+    myObj2.ans.addEventListener('blur', (event) => {
+        event.preventDefault();
+        const box = parseInt(event.target.value);
+        if (box == myObj2.total) {
+            console.log('Correct ans');
+            myObj2.ans.setAttribute('class', 'form-control is-valid');
+            validation.ans = true;
+        }
+        else {
+            console.log('invalid ans');
+            myObj2.ans.setAttribute('class', 'form-control is-invalid');
+            validation.ans = false;
+            myObj2.myRandom();
+        }
+    });
+}))();
