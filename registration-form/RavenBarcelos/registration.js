@@ -41,8 +41,8 @@ const regForm = new RegForm({
         let user = regForm.optCountries.value;
         let password = regForm.txtCity.value;
 
-        let response = await regForm.postRequest('http://192.168.1.8:8080/registration.html', {user, password});
+        let response = await regForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/countries', 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/citites', 'https://api.first.org/data/v1/teams',{user, password});
 
         console.log(response);
     });
-})();
+});
