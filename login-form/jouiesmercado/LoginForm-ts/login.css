@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(140, 212, 240);
+    background-size: cover;
+    opacity: inherit;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main {
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: solid 3px;
+    border-color: dimgray;
+    border-radius: 5px;
+    height: fit-content;
+    width: 300px;
+    opacity: 0.8;
+}
+h2{
+    text-align: center;
+    color: black;
+}
+form > span.toggle {
+    margin-bottom: 20px;
+    font-size: 10px;
+    margin-top: -8px;
+    display: block;
+    cursor: pointer;
+    color: #444444;
+  }
+  form > span.toggle:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+  input[type=text],
+  input[type=password] {
+    width: 200px;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    display: block;
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Log in Form</title>
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" >
+        <link rel="stylesheet" href="login.css">
+
+        <script type="module" src="dist/main.js"></script>
+
+    </head>
+
+    <body>
+    
+    <div class="main">
+        <h2>Log In </h2>
+        <form >
+
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter Username" name="uname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" autocomplete="off" />
+            </div>
+            
+           
+                <span class="toggle" id="toggle">Show Password</span>
+           
+
+            <div>
+                <input class="btn btn-success" type="button" id="btnsubmit" value="Submit">
+            </div>
+
+        </form>
+    </div>
+
+    </body>
+
+</html>
