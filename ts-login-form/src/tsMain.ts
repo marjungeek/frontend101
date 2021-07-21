@@ -16,4 +16,3 @@ const loginObbj = new TsLogin({
 });
 
 loginObbj.listener();
-//console.log(loginObbj.)
