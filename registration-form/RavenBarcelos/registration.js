@@ -45,4 +45,4 @@ const regForm = new RegForm({
 
         console.log(response);
     });
-});
+})();

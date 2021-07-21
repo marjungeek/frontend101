@@ -1,4 +1,4 @@
-import { HttpClient } from "./HttpClient.js";
+import { HttpClient } from "./HTTPClient.js";
 
 export default class RegForm extends HttpClient {
     constructor(options){
