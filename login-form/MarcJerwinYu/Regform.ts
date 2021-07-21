@@ -6,6 +6,7 @@ export default class Regform extends HttpClient {
     $password : HTMLInputElement;
 
     $btnLogin : HTMLButtonElement;
+    $isCheck : HTMLInputElement;
 
     url : string;
 
@@ -19,6 +20,8 @@ export default class Regform extends HttpClient {
         this.$password = document.getElementById('password')! as HTMLInputElement;
 
         this.$btnLogin = document.getElementById('btn-login')! as HTMLButtonElement;
+
+        this.$isCheck = document.getElementById('rememberMe')! as HTMLInputElement;
 
         this.success = options.success;
         this.error = options.error;
@@ -53,6 +56,15 @@ export default class Regform extends HttpClient {
                 _this.validateLogin(response);
             }
         });
+
+        this.$isCheck.addEventListener('click', async function(event){
+            event.preventDefault();
+            
+            if (_this.$username.value !== '' && _this.$isCheck.checked) {
+                localStorage.name = _this.$username.value;
+                localStorage.checkbox = _this.$isCheck.value;
+            }
+        })
     }
 
     private validateLogin(response : LoginApiResponse) {
