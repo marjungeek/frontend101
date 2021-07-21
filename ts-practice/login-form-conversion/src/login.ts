@@ -5,6 +5,7 @@ export default class login extends httpClient {
     $username: HTMLInputElement;
     $password: HTMLInputElement;
     $btnLogin: HTMLButtonElement;
+    $btnShowPwd: HTMLInputElement;
     loginURL: string;
     success: () => void;
     error: () => void;
@@ -15,6 +16,7 @@ export default class login extends httpClient {
         this.$username = document.getElementById('uname')! as HTMLInputElement;
         this.$password = document.getElementById('pwd')! as HTMLInputElement;
         this.$btnLogin = document.getElementById('login')! as HTMLButtonElement;
+        this.$btnShowPwd = document.getElementById('show')! as HTMLInputElement;
 
         this.loginURL = property.loginURL;
         this.success = property.success;
