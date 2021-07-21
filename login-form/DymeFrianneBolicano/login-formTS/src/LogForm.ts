@@ -1,5 +1,5 @@
 import { MyHttpClient } from "./HTTP";
-//import { DT } from "./Interface";
+import { logOption } from "./Interface";
 
 export class MylogForm extends MyHttpClient {
     postURL:string;
@@ -13,9 +13,7 @@ export class MylogForm extends MyHttpClient {
     modalForm1:HTMLElement;
     total:number;
   
-    constructor(options:{
-        postURL:string,
-    }) {
+    constructor(options:logOption) {
     super();
     console.log('logForm was loaded...');
       

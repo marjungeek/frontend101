@@ -13,7 +13,6 @@ export class MyHttpClient {
     }
     httpRequest(method, endpoint, data) {
         return __awaiter(this, void 0, void 0, function* () {
-            //var myProm: any;
             return new Promise((resolve, reject) => {
                 var xhr = new XMLHttpRequest();
                 xhr.open(method, endpoint, true);

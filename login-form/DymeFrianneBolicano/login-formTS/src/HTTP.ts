@@ -7,8 +7,7 @@ export class MyHttpClient {
       
     }
     private async httpRequest(method:string, endpoint:string, data?:any) {
-      //var myProm: any;
-      return new Promise<any>( (resolve:any, reject:any) =>{
+      return new Promise<any>( (resolve:Function, reject:Function) =>{
         var xhr = new XMLHttpRequest();      
         xhr.open(method, endpoint, true);
         if (method === 'post') {

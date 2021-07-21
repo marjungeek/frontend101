@@ -1,5 +1,5 @@
 import { MyHttpClient } from "./HTTP";
-//import { DT } from "./Interface";
+import { regOption } from "./Interface";
 
 export class MyRegForm extends MyHttpClient {
     countryURL:string;
@@ -27,11 +27,7 @@ export class MyRegForm extends MyHttpClient {
     modalForm2:HTMLElement;
     total:number;
   
-    constructor(options:{
-        countryURL:string,
-        cityURL:string;
-        teamURL:string;
-    }) {
+    constructor(options:regOption) {
     super();
     console.log('regForm was loaded...');
       
@@ -117,7 +113,7 @@ export class MyRegForm extends MyHttpClient {
       }
     }
   
-    constructDropDown(data:any, type:any){
+    constructDropDown(data:any, type:string){
       let options = '<option value="">Select</option>';  
       //construct list of dropdown based from api response using loops
       for (var i = 0; i < data.length; i++) {    

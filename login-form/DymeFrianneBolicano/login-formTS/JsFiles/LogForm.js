@@ -1,5 +1,4 @@
 import { MyHttpClient } from "./HTTP.js";
-//import { DT } from "./Interface";
 export class MylogForm extends MyHttpClient {
     constructor(options) {
         super();

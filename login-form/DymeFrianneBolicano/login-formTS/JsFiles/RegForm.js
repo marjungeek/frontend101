@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { MyHttpClient } from "./HTTP.js";
-//import { DT } from "./Interface";
 export class MyRegForm extends MyHttpClient {
     constructor(options) {
         super();
