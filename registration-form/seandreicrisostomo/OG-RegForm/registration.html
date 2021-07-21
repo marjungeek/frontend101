@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration 101</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="registration.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="module" src="main.js"></script>
+    </head>
+    <body>
+        <div class="container main">
+            <h1 class="mt-5">Log in</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="firstNameControl" class="form-label">First Name: </label>
+                    <input type="text" class="form-control" id="firstNameControl" pattern="[A-Za-z]{1,}" title="(Alphabet only)" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastNameControl" class="form-label">Last Name: </label>
+                    <input type="text" class="form-control" id="lastNameControl" pattern="[A-Za-z]{1,}" title="(Alphabet only)" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="emailControl" class="form-label">Email: </label>
+                    <input type="text" class="form-control" id="emailControl" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="countryList" class="form-label">Country: </label>
+                    <select id="countryList" class="form-control">
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cityControl" class="form-label">City: </label> 
+                    <input type="text" id="city" class="form-control" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="teamList" class="form-label">Team: </label>
+                    <select id="teamList" class="form-control" required>
+                        <option value= ""> - Choose One - </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passwordControl" class="form-label">Enter Password: </label>
+                    <input type="password" class="form-control" id="passwordControl" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="repasswordControl" class="form-label">Confirm Password: </label>
+                    <input type="password" class="form-control" id="repasswordControl" required>
+                </div>
+
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="reset">Reset</button>
+                    <button class="btn btn-success" type="submit" id="test-submit">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

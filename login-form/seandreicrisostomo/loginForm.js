@@ -1,6 +1,6 @@
-import { loginHttpRequest } from "./loginApiRequest.js";
+import { LogInApiRequest } from "./loginApiRequest.js";
 
-export default class LogInForm extends loginHttpRequest {
+export default class LogInForm extends LogInApiRequest {
     constructor(options) {
       console.log('LoginForm was loaded...');
       super();

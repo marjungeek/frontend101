@@ -1,4 +1,4 @@
-export class loginHttpRequest {
+export class LogInApiRequest {
 
     constructor(){
         console.log('LogInApiRequest was loaded... ');

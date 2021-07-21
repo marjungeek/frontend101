@@ -4,10 +4,16 @@ export class HttpClient {
     }
 
     //resuable function
-    async #getAPI(method, endpoint){
+    async #getHttpRequest(method, endpoint, data = undefined){
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open(method, endpoint, true);
+            if (method === 'post') {
+                xhr.setRequestHeader('Content-Type', 'application/json');  
+                data = JSON.stringify(data);
+            }
+
+
             xhr.responseType = 'json';
             xhr.onload = function () {
                 var status = xhr.status;
@@ -17,12 +23,16 @@ export class HttpClient {
                 reject(status);
             }
          };
-            xhr.send();
+            xhr.send(data);
         });
     }
 
     async getRequest(endpoint) {
-        return await this.#getAPI('get', 'https://api.first.org/data/v1/teams');
+        return await this.#getHttpRequest('get', endpoint);
+    }
+    
+    async postRequest(endpoint, data) {
+        return await this.#getHttpRequest('post', endpoint, data);
     }
 
     
