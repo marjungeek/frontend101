@@ -1,0 +1,64 @@
+.main{
+    background-color: cadetblue;
+    width: 320px;
+    height: 420px;
+    font-family: monospace;
+    padding-top: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: xx-large;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(20, 51, 51);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+#username {
+    background-color: rgb(205, 255, 255);
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+#password {
+    background-color:  rgb(205, 255, 255);
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+body {
+    padding: 70px 30px;
+    background: url(ombre.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+form {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    color: rgb(41, 68, 68);
+}
+#btn {
+    border-radius: 15px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: center;
+    background-color: rgb(17, 65, 65);
+    margin-top: 15px;
+    height: 40px;
+    width: 100%;
+
+}
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    position: absolute;
+    top: 30px;
+    left: calc(50% - 40px);
+}
+a {
+    color: rgb(16, 35, 36);
+}
