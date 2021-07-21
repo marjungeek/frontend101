@@ -35,64 +35,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _loginclient_instances, _loginclient_httpRequest;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loginclient = void 0;
 var loginclient = /** @class */ (function () {
     function loginclient() {
-        _loginclient_instances.add(this);
         console.log('loginclient loaded');
     }
-    loginclient.prototype.getRequest = function (endpoint, data) {
+    loginclient.prototype.httpRequest = function (options) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, __classPrivateFieldGet(this, _loginclient_instances, "m", _loginclient_httpRequest).call(this, 'get', endpoint, data)];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    loginclient.prototype.postRequest = function (endpoint, data) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, __classPrivateFieldGet(this, _loginclient_instances, "m", _loginclient_httpRequest).call(this, 'post', endpoint, data)];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        var method = options.method;
+                        var endpoint = options.endpoint;
+                        var headers = options.headers;
+                        var data = options.requestBody;
+                        var rensponseType = options.responseType;
+                        var xhr = new XMLHttpRequest();
+                        xhr.open(method, endpoint, true);
+                        for (var _i = 0, _a = Object.keys(headers); _i < _a.length; _i++) {
+                            var key = _a[_i];
+                            xhr.setRequestHeader(key, headers[key]);
+                        }
+                        xhr.responseType = rensponseType;
+                        xhr.onload = function () {
+                            var status = xhr.status;
+                            if (status == 200) {
+                                resolve(xhr.response);
+                            }
+                            else {
+                                reject(status);
+                            }
+                        };
+                        xhr.send(data);
+                    })];
             });
         });
     };
     return loginclient;
 }());
-exports.loginclient = loginclient;
-_loginclient_instances = new WeakSet(), _loginclient_httpRequest = function _loginclient_httpRequest(method, endpoint, data) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/, new Promise(function (resolve, reject) {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open(method, endpoint, true);
-                    if (method === 'post') {
-                        xhr.setRequestHeader('Content-Type', 'application/json');
-                        data = JSON.stringify(data);
-                    }
-                    xhr.responseType = 'json';
-                    xhr.onload = function () {
-                        var status = xhr.status;
-                        if (status == 200) {
-                            resolve(xhr.response);
-                        }
-                        else {
-                            reject(status);
-                        }
-                    };
-                    xhr.send(data);
-                })];
-        });
-    });
-};
+exports.default = loginclient;

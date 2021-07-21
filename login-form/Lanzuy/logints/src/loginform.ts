@@ -1,5 +1,5 @@
 import { loginclient } from "./loginclient.js";
-import { LoginApiResponse, LoginFromOptions } from "./interface";
+import { LoginApiResponse, LoginFromOptions } from "./interface.js";
 
 export default class loginform extends loginclient {
     loginApi: string;

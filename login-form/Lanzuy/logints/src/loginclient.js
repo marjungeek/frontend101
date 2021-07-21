@@ -35,33 +35,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var loginform_js_1 = require("./loginform.js");
-console.log('login loaded');
-var loginForm = new loginform_js_1.default({
-    loginApi: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
-});
-(function () {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            loginForm.btnLogin.addEventListener('click', function (event) {
-                event.preventDefault();
-                var username = document.getElementById('userName').value;
-                var password = document.getElementById('passWord').value;
-                var response = yield loginForm.postRequest(username, password);
-                console.log(response);
-                var stat = new response.statusCode;
-                if (username == '' || password == '') {
-                    alert("Enter Username and Password");
-                }
-                else if (stat == '200') {
-                    document.location.href = 'http://www.google.com';
-                }
-                else {
-                    alert("Login Fail");
-                }
+exports.__esModule = true;
+var loginclient = /** @class */ (function () {
+    function loginclient() {
+        console.log('loginclient loaded');
+    }
+    loginclient.prototype.httpRequest = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        var method = options.method;
+                        var endpoint = options.endpoint;
+                        var headers = options.headers;
+                        var data = options.requestBody;
+                        var rensponseType = options.responseType;
+                        var xhr = new XMLHttpRequest();
+                        xhr.open(method, endpoint, true);
+                        for (var _i = 0, _a = Object.keys(headers); _i < _a.length; _i++) {
+                            var key = _a[_i];
+                            xhr.setRequestHeader(key, headers[key]);
+                        }
+                        xhr.responseType = rensponseType;
+                        xhr.onload = function () {
+                            var status = xhr.status;
+                            if (status == 200) {
+                                resolve(xhr.response);
+                            }
+                            else {
+                                reject(status);
+                            }
+                        };
+                        xhr.send(data);
+                    })];
             });
-            return [2 /*return*/];
         });
-    });
-})();
+    };
+    return loginclient;
+}());
+exports["default"] = loginclient;
