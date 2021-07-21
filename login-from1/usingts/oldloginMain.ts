@@ -1,8 +1,8 @@
-import LoginForm from "./LoginForm.js";
+import oldLoginForm from "./oldloginForm.js";
 
 console.log('Application was loaded..');
 
-const loginForm = new LoginForm({
+const loginForm = new oldLoginForm({
  loginURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
  
 });

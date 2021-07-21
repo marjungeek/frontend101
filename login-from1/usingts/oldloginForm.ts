@@ -1,6 +1,6 @@
 import { httpClient } from "./httpClient.js";
 
-export default class loginForm extends httpClient{
+export default class oldloginForm extends httpClient{
    
     loginUrl: string;
     txtUsername: HTMLInputElement;

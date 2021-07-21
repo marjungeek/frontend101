@@ -1,0 +1,49 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  div.form {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  
+  form > span.toggle {
+    margin-bottom: 20px;
+    font-size: 10px;
+    margin-top: -8px;
+    display: block;
+    cursor: pointer;
+    color: #444444;
+  }
+  form > span.toggle:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+  
+  
+  input[type=text],
+  input[type=password] {
+    width: 200px;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    display: block;
+  }
+  
+  button {
+    border: 1px solid #444;
+    width: 215px;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    display: block;
+    cursor: pointer;
+  }
