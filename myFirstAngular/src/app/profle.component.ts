@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <p>{{ loadstate }}</p>
-    <button type="button">Click Me!</button>
-  `
+    <button type="button" (click)="changeName()">finished</button>
+  `,
 })
 export class AppComponent {
   title = 'myFirstAngular';
