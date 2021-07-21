@@ -1,1 +1,0 @@
-alert('Welcome! Basic Frontend');
