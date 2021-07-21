@@ -1,7 +1,7 @@
 export class HttpClient {
   constructor() {
     console.log('HttpClient was laoded...');
-  }
+  } 
 
   async #httpRequest(method, endpoint, data = undefined) {
     return new Promise(function (resolve, reject) {
@@ -21,6 +21,7 @@ export class HttpClient {
               reject(status);
           }
       };
+      
       xhr.send(data);
     });
   }

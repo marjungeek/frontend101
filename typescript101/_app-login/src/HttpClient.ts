@@ -7,6 +7,7 @@ export default class HttpClient {
 
   httpRequest(options: HttpRequestOptions) {
     return new Promise(function(resolve: Function, reject: Function) {
+      
       // set properties
       const method = options.method;
       const endpoint = options.endpoint;

@@ -1,4 +1,5 @@
 import { LoginApiResponse, LoginFormOptions } from "./interfaces";
+
 import HttpClient from "./HttpClient";
 
 export default class LoginForm extends HttpClient {

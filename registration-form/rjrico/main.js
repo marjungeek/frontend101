@@ -1,4 +1,4 @@
-import RegForm from "./RegForm.js";
+import {RegForm} from "./RegForm.js";
 
 console.log('Application was loaded...');
 
@@ -46,7 +46,10 @@ const regForm = new RegForm({
     let user = regForm.optCountries.value;
     let password = regForm.txtCity.value;
 
-    let response = await regForm.postRequest('http://localhost:5000/registration.html', { user, password });
+    var a = ghuser;
+    var b = secret;
+
+    let response = await regForm.postRequest('http://172.0.0.1:8080/registration.html', { a, b });
 
     console.log(response);
   });

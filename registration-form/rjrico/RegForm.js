@@ -5,7 +5,7 @@ export default class RegForm extends HttpClient {
     console.log('RegForm was loaded...');
     super();
 
-    // class property - sort of like configuration
+    // class property - sort of like configuration 
     this.countryUrl = options.countryUrl;
     this.cityUrl = options.cityUrl;
     this.teamUrl = options.teamUrl;
