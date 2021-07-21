@@ -1,0 +1,97 @@
+body {
+      background-image: url("minimalist.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;   
+}
+
+.containerform{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.content {
+width: 400px;
+border-radius: 15px;
+padding: 20px;
+background: rgba(0, 0, 0, .5);
+box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+input {
+width: 355px;
+padding: 5px;
+outline-width: 0;
+outline: none;
+border-top-style: hidden;
+border-right-style: hidden;
+border-left-style: hidden;
+border-bottom-style: groove;
+border-bottom-color: white;
+background-color:rgba(0, 0, 0, 0);  
+color: white;
+}
+
+.clear,.submit{
+    border-radius: 50px;
+    width: 150px;
+    background: rgba(0, 0, 0, 0);
+    border-color: white;
+    color: white;
+}
+.submit{
+    float:right;
+}
+
+h1, p, label, hr {
+    color: white;
+}
+
+
+/*Modal*/
+#modalpopup{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+width: 300px;
+height: 75px;
+border-radius: 15px;
+padding: 20px;
+background: rgba(0, 0, 0, .5);
+box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+
+}
+.close-button{
+  float:right;
+ 
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+/*Validation*/
+#invalid, #missing{
+    color: red;
+    position:absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+width: auto;
+height: auto;
+}
+
+/*hover and focus*/
+input:hover,
+button:hover, 
+input:focus{
+    transform: scale(1.1);
+    border-bottom-color: white;
+   
+}
+/*place holder*/
+input::placeholder {
+    color: rgb(204, 187, 187);
+}

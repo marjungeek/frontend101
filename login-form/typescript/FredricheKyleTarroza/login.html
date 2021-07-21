@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Page Title</title>
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     
+      <link href="login.css" rel="stylesheet">
+   </head>
+   <body>    
+      <div class ="containerform"  id="ContainerForm">
+         <div class="content">
+            <form form id="form">
+               <h1 style="text-align:center;" >Login</h1>            
+               <hr>
+      <!-- UserName -->
+               <input type="text"  placeholder="Username" minlength="8" id="UsernameID"  required>
+               <br>    <br>
+      <!-- PassWord -->
+               <input type="password" placeholder="Password" id="PasswordID" required>
+               <br>    <br>
+               <br>
+     <!-- Buttons -->
+               <div class ="button">
+                <button type="button" class="submit" name="submit" id="LoginBTN">Login</button>
+                <button type="reset" class="clear" id="ClearBTN" >Clear</button>
+             </div>
+              
+      
+            </form>
+         </div>
+      </div>
+
+    
+  <!-- Modal Validaiton -->
+               <div class ="modal" id ="modalpopup">      
+                <button class="close-button" id ="CloseBTN">Success hehe :D Press to continue!</button>       
+               </div>
+
+                  
+                  <p id="invalid" class ="modal" ><i>Invalid Credentials</i></p>
+                  <p id="missing" class ="modal" ><i>Missing Fields</i></p>
+               
+                  <script type="module" src ="MainLoginTS.js" defer></script>
+   </body>
+</html>
