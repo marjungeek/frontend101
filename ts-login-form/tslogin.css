@@ -1,0 +1,35 @@
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .card {
+    width: 400px;
+  }
+  
+  body {
+    background-color: lightsteelblue;
+    background-image: url("https://images2.fanpop.com/image/photos/13900000/grassy-field-distant-mountains-beautiful-places-13908065-1440-900.jpg");
+  }
+  
+  .newtitle {
+    border: 0px;
+  }
+  
+  h6 {
+    color: white;
+  }
+  
+  button {
+    border-radius: 8px;
+    border: black;
+    padding: 7px 7px;
+    width: 365px;
+    background-color: mediumaquamarine;
+    /* position: relative;
+    left: 250px; */
+  }
