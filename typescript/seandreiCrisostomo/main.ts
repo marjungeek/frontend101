@@ -1,23 +1,20 @@
-import LogInForm from "./loginForm.js";
+import LogInForm from "./loginForm";
 
 console.log('Application was loaded... ');
 
-(async function() {
+
 const loginForm = new LogInForm ({
-    apiURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
+    apiURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',
+    success: function() {
+        alert('success');
+    },
+    error: function() {
+        alert('error');
+    }
 });
 
-    loginForm.btnSubmit.addEventListener('click', async function(event) {
-        event.preventDefault();
+loginForm.listener();
 
-        let username = loginForm.logInUsername.value;
-        let password = loginForm.logInPassword.value;
-        let user = document.myForm.username.value;
-        let passWd = document.myForm.password.value;
-
-        let response = await loginForm.postRequest( 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
-
-        console.log(response);
 
         //validation
         if((user == null && passWd == null) || (user == "" && passWd == "")){
@@ -43,6 +40,5 @@ const loginForm = new LogInForm ({
             location.href='https://www.google.com'
         }
 
-    })
 
-})
+
