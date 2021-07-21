@@ -7,6 +7,7 @@ export default class logincontrol extends httpclient{
         this.username = document.getElementById('uname');
         this.password = document.getElementById('pass');
         this.showpass = document.getElementById('showpass')
+        this.clear = document.getElementById('loginclear')
     }
  async loginFunc(username,password){
         console.log(username);
@@ -29,6 +30,7 @@ const result = await this.postRequest("https://22pnpc80ni.execute-api.ap-southea
         console.log('Username:', username , 'Password:' , password, stat);
 }
 }    
+    
 
 }    
     }

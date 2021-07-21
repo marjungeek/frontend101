@@ -18,3 +18,8 @@ login.showpass.addEventListener('change', function() {
         console.log("Password is hidden..");
       }
   });
+  
+  const clearbtn = function(){
+    alert ("Hello World!");  
+    login.clear.addEventListener('click',clearbtn);
+  }
