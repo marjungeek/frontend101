@@ -55,7 +55,7 @@ export default class LogInClass extends HttpClient {
         });
     }
 
-    private validateLogIn(response: LoginApiResponse){
+    validateLogIn(response: LoginApiResponse){
         if(response.statusCode == 200){
             this.success();
         } else{
