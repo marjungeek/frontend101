@@ -9,12 +9,11 @@ const loginForm = new LoginForm({
 
 (async function() { 
 
-    loginForm.
-    loginForm.btnLogin.addEventListener('click', async function(event) {
+    loginForm.inBtnLogin.addEventListener('click', async function(event) {
       event.preventDefault();
   
-      let username = loginForm.username.value;
-      let password = loginForm.password.value;
+      let username = loginForm.inUsername.value ;
+      let password = loginForm.inPassword.value;
       let response = await loginForm.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
   
       console.log(response);
