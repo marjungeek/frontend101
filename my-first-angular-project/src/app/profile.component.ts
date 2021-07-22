@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: ' app-root',
   template: '
-  <p>loadState :</p>
-  <p id ="demo"> {{loading...}} </p>
-  <button type = "button" onclick="loading()"> Click Here </button>'
-})
+    <p>Exercise</p>
+    <p> {{loadState}} </p>
+    <button (click)="(loadState='finished')"> Click Here </button>
+    <br>
+    <br>
+    <input name="user" type="text" [(ngModel)]="loadState" >
+  '
+});
 
 export class ProfileComponent {
-  function loading(){
-    document.getElementById("demo")?.innerHTML = "finished";
-  }
+  title = 'Exercise #1';
+  loadState = 'loading...'
 }
