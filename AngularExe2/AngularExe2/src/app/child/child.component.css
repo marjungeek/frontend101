@@ -1,0 +1,11 @@
+.postarea{
+  background-color: rgb(233, 235, 144);
+  width: 400px;
+  border: 5px solid rgb(10, 10, 10);
+  padding: 150px;
+  margin: auto;
+  margin-top: 10px;
+}
+h1{
+  text-align: left;
+}

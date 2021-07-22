@@ -1,0 +1,9 @@
+<div align="center">
+<textarea id="text" cols="100" rows="8" name="Npost" #Npost  ></textarea>
+</div>
+
+<p>{{"Likes:"+likes}}</p>
+<div class="submit">
+  <button (click)="postHu(Npost.value)">Submit!</button>
+</div>
+<app-child [Hupost]="Hupost" (likes)=likeshu(1) > </app-child>
