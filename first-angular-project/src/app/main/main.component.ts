@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  // @Input() : string;
+  // @Output() userReaction = new EventEmitter<number>();
+
+  // feed:string = [{post: 'abcdefg'}, {post: 'testtest'}];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  submit(post:string){
-    // this.something.push(post);
-  }
+  // submit(post:string){
 
-  contentPost(content:string) {
-
-  }
+  // }
 }
