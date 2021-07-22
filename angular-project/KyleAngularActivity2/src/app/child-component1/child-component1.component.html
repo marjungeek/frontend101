@@ -1,0 +1,18 @@
+
+<!-- CHILD COMPONENT -->
+
+<div class ="child">
+    <tbody>
+      <h1 style="font-size: large;">child component</h1>
+      <tr *ngFor="let post of NewsFeed">
+
+          <td >{{ "Anonymous:" + " " + post.samplepost}} <button (click)="addlike(1)" class ="like">like </button> <hr> </td>
+      </tr>
+  </tbody>
+
+</div>
+
+
+
+
+

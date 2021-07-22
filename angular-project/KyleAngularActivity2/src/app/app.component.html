@@ -1,0 +1,17 @@
+<!-- PARENT COMPONENT-->
+<div class="container">
+  <p>{{title}}</p>
+  <div class = "textareaContent">
+     <h2 style="font-size: large;">{{"likes: " + likes}}</h2>
+     <textarea type="text" name="samplepost" #samplepost class="textarea" placeholder="Say something!"></textarea>
+     <button (click)="PostContent(samplepost.value)" class ="submit">submit</button>
+  </div>
+  <br>
+
+  <br> <br> <br>
+  <div class ="child">
+     <app-child-component1 [NewsFeed]="NewsFeed" (likes)=humethod(1) ></app-child-component1>
+     <!-- (likes)=humethod(2) came from parent that was declared-->
+  </div>
+  <br><br>
+</div>
