@@ -5,14 +5,14 @@ import { Component } from '@angular/core';
   template: `
     <!-- <input name="user" type="text" (input)="onUserInput($event)" [value]="name"/> -binding of value-->
     <!-- <input name="user" type="text" (input)="onUserInput($event)" value = {{name}}/> -hardcoded binding-->
-
-    <input name="user" type="text" [(ngModel)]="name" /><br><br><br>
     <!-- two way-binding using ngModel -->
+    <p></p><br><br>
     <p><b>{{ title }}</b></p>
-    <p><b>{{ name }}</b></p>
     <p><b>{{ loadState }}</b></p>
-    <input name="user" type="text" [(ngModel)]="loadState" /><br /><br />
-    <button type="button" (click)="onClickEvent($event)">Load Me!</button>
+    <button name="button" (click)="onClickEvent($event)">Load Me!</button><br>
+    <p><b>{{ name }}</b></p>
+    <input name="user" type="text" [(ngModel)]="name" /><br>
+
 
   `,
 })
