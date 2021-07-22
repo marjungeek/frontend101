@@ -1,17 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
   selector: ' app-root',
-  templateUrl: 'profile.component.html'
-  // template:'
-  // <p>Exercise</p>
-  // <p> {{loadState}} </p>
-  // <button (click)="(loadState='finished')"> Click Here </button>
-  // <br>
-  // <br>
-  // <input name="user" type="text" [(ngModel)]="loadState">
-  // '
+  templateUrl: './profile.component.html'
 })
 
 export class ProfileComponent {
