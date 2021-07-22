@@ -1,0 +1,36 @@
+<div class="border">
+<p>Name: Master Raven</p>
+<p >Age: 26</p>
+<p>Address: Caloocan</p>
+<p>Favorite Color: Skyblue</p>
+
+<div *ngIf="isLogin == true">
+    <p style="font-size: 34px;">you're already logged in!</p>
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Favorite Color</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of listOfNames">
+                <td>{{user.firstName}}</td>
+                <td>{{user.favColor}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr/>
+    <input  type="text" name="firstName" #firstName/>
+    <input  type="text" name="favColor" #favColor/>
+    <button (click)="addNewUser(firstName.value, favColor.value)">Add New User</button>
+
+
+</div>
+
+<button *ngIf="isLogin" (click)="logoutMethod()">Logout</button>
+<button *ngIf="!isLogin" (click)="loginMethod()">Login</button>
+
+
+</div>
