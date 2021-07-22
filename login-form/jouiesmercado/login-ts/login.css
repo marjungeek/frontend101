@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(140, 212, 240);
+    background-size: cover;
+    opacity: inherit;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main {
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: solid 3px;
+    border-color: dimgray;
+    border-radius: 5px;
+    height: fit-content;
+    width: 300px;
+    opacity: 0.8;
+}
+h2{
+    text-align: center;
+    color: black;
+}
