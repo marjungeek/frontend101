@@ -8,20 +8,30 @@ import { Component } from '@angular/core';
 // })
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-profile-component',
   template:`
     <p>This is my work :D</p>
+    <button (click)="onClick($event)" >Click me</button>
     <p>{{loadState}}</p>
-    <input name="click me" type="button" (input)="onclick(event:any)">
+    <input placeholder="text here" [(ngModel)]="textfield"  (input)="input($event)">
+    <p>{{textfield}}</p>
+
+
+
   `
 
 })
 
 export class ProfileComponent {
-  loadState = "loading...";
+  loadState:string = "loading...";
+  textfield:string = "";
+  label!:string;
 
-  onclick(event:any){
-    this.loadState = event.target.value;
+  onClick(event:any){
+    this.loadState = event.target.value="finished";
+  }
+  input(event:any){
+    this.label = event.target.value;
   }
 }
 
