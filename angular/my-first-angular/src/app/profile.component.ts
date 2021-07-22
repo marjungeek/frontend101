@@ -1,18 +1,19 @@
-import { profileComponent } from '@angular/core';
+import { Component } from '@angular/core';
 
-@profileComponent ({
+@Component({
   selector: 'app-root',
   template: `
-  <button type="submit" (click)="onClick($event)">Click!</button>
-
-  <p>loadstate {{ loadState }}</p>
-
-  `
+  <p>{{ title }}}</p>
+  <p> loadstate {{ loadState }} </p>
+    <button (click)="clickme()">Click me!</button>
+    <input name="load" type="text" [()]="loadState">
+    `
 })
-
-export class clickfinishedComponent {
+export class profileComponent {
+  title = 'Angular Button';
   loadState = 'loading..';
-  onClick($event: any){
-    this.loadState = 'finished';
+
+  clickme() {
+    this.loadState = 'finished!';
   }
 }
