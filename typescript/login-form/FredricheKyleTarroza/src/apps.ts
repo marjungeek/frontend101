@@ -1,9 +1,10 @@
+//dummy file
 class login{
 user:any;
 pass:any;
 submit:any;
 constructor(){
-
+ 
     // let user:HTMLElement = document.getElementById("UsernameID");
     // let UsernameID:HTMLInputElement = document.getElementById("UsernameID");
 this.user = document.querySelector('UsernameID')as HTMLInputElement;

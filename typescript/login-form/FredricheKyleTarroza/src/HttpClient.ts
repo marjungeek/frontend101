@@ -1,27 +1,37 @@
 export interface logininterface{
     method: string;
     endpoint: string;
-    data?: string;
+    data?: any;
 
 }
 
-export interface LoginApiResponse {
-    statusCode: number;
-    message: string;    
+// export interface LoginApiResponse {
+//     statusCode: number;
+//     message?: string;    
+//   }
+
+export interface User{
+    username:string,
+    password:string
+
+}  
+
+  export interface postURL{
+    postURL:string
   }
 
 
 export class HttpClientTS{
     constructor(){      
     }
-    async getAPIs(FullData: logininterface){
+    async getAPIs(method:string, endpoint:string, data?:any){
         return new Promise(function (resolve, reject) {
           
             var xhr = new XMLHttpRequest();
-            xhr.open(FullData.method,FullData.endpoint, true);
-            if(FullData.method == 'post'){
+            xhr.open(method,endpoint, true);
+            if(method == 'post'){
                 xhr.setRequestHeader('Content-Type','application/json')
-                FullData.data = JSON.stringify(FullData.data);
+                data = JSON.stringify(data);
                 
             }
             xhr.responseType = 'json';
@@ -33,13 +43,14 @@ export class HttpClientTS{
                     reject(status);
                 }
             }; 
-            xhr.send(FullData.data);
+            xhr.send(data);
         });
     } 
  
     //post request method for const result at ./Loginform
-    async postRequest(FullData: logininterface){
-        return await this.getAPIs(FullData);
+    async postRequest(endpoint:string, data?:any){
+        console.log(data);
+        return await this.getAPIs('post',endpoint, data);
         
         // return await this.getAPIs();
      

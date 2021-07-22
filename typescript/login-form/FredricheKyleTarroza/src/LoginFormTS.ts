@@ -1,7 +1,7 @@
-import { HttpClientTS, logininterface } from './HttpClient';
+import { HttpClientTS, logininterface, postURL, User } from './HttpClient.js';
 export default class LoginFormTS extends HttpClientTS{
-    public $username: HTMLInputElement; 
-    public $password: HTMLInputElement;
+    public username: HTMLInputElement; 
+    public password: HTMLInputElement;
   
     public $btnLogin?: HTMLButtonElement;
     // public $btnToggle: HTMLSpanElement;
@@ -11,45 +11,67 @@ export default class LoginFormTS extends HttpClientTS{
         console.log("LoginForm Loaded.");
         
         
-        this.$username = document.getElementById('UsernameID')! as HTMLInputElement;
-        this.$password = document.getElementById('PasswordID')! as HTMLInputElement;
+        this.username = document.getElementById('UsernameID')! as HTMLInputElement;
+        this.password = document.getElementById('PasswordID')! as HTMLInputElement;
         this.$btnLogin = document.getElementById('LoginBTN')! as HTMLButtonElement;
-        this.$btnLogin = document.getElementById('LoginBTN')! as HTMLButtonElement;
+        // this.$btnLogin = document.getElementById('LoginBTN')! as HTMLButtonElement;
 
         // //button modal for success hehe :D
         // this.CloseButton = document.getElementById('CloseBTN');
     }
 
+
     // elements(): void{
-    //     // let $username = document.getElementById('UsernameID')! as HTMLInputElement;
-    //     // let $password = document.getElementById('PasswordID')! as HTMLInputElement;
-    //     // let $btnLogin = document.getElementById('LoginBTN')! as HTMLButtonElement;
-    //     // this.getUserPass($username.value, $password.value);
+    //     let $username = document.getElementById('UsernameID')! as HTMLInputElement;
+    //     let $password = document.getElementById('PasswordID')! as HTMLInputElement;
+    //     let $btnLogin = document.getElementById('LoginBTN')! as HTMLButtonElement;
+    //     this.getUserPass($username.value, $password.value);
         
 
     // }
 
-    async getUserPass($username: string, $password: string){
+    async getUserPass(username: string, password: string){
       
 
         //validation of missing fields
-        if($username=='' && $password==''){
+        if(username=='' && password==''){
             // document.getElementById('missing').style.display='block'
             // document.getElementById('invalid').style.display='none'
             alert("Missing inputs!");
  
         //validation of user and pass if the credentials are correct or not.(below)  
         // validation if ghuser and secret, alerts status code 200
-        }else{
-            let dataa: logininterface = {method:'post', endpoint:'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',data: JSON.stringify({ $username, $password })
-        };
-            const result = await this.postRequest(dataa);
-            console.log(result);
+        }else{ 
+           
+
+//--------------------------------------------------------------------
+
+// const myObj1 = new LoginForm(){
+//     postURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
+// });
+//   var response:any = await myObj1.postRequest(myObj1.postURL, data);
+//   if(response.statusCode==200){
+//       console.log(response);
+//       alert("Success!");
+
+
+
+//-----------------------------------------------------------
+// let dataa: logininterface = {method:'post', endpoint:'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',data: JSON.stringify({ $username, $password })
+// };       
+var response:any = await this.postRequest('https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login', { username, password });
+console.log(response.statusCode)
+            // const result = await this.postRequest( 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',{ $username, $password });
+
+
+            // console.log(result);
             // var stat = result.statusCode;
-            var stat = result;
-            console.log(stat);
-            if(stat == 200){
-                alert("success");
+            // var stat = result.statusCode;
+            // console.log(stat);
+            if(response.statusCode == 200){
+
+
+                alert("success"); 
             //     document.getElementById('modalpopup').style.display='block'
 
 
