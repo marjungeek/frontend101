@@ -1,0 +1,18 @@
+.border{
+  text-align: center;
+  border: 1px solid black;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightslategray;
+}
+.parent{
+  text-align: center;
+}
+.input{
+  height: 100px;
+  width: 400px;
+  border-radius: 10px;
+}
+

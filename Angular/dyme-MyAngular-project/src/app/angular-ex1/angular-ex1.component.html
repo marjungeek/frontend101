@@ -1,0 +1,22 @@
+<div class="border">
+  <p>Exercise 1</p>
+  <p>{{ title }}</p>
+  <button name="userButton" (click)="onUserClick()">Click me!</button>
+  <p>{{ loadstate }}</p>
+  <hr>
+    <!-- directives, two way binding -->
+    <input name="userInput"type="text" [(ngModel)]="name">
+    <p>this value is changing! {{name}}</p>
+    <hr>
+    <p>Guessing game!</p>
+    <div>
+      <p>Guese the next number (0-9)</p>
+      <button name="high"(click)="highButton()">Higher!</button>
+      <button name="low"(click)="lowButton()">Lower!</button>
+      <button name="same"(click)="sameButton()">Same!</button>
+      <p>Current number: {{rand}} score: {{score}}</p>
+      <p>{{mes}}</p>
+    </div>
+    <hr>
+</div>
+

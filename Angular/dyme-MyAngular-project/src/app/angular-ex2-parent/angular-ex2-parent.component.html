@@ -1,0 +1,11 @@
+<div class='border'>
+  <p>Parent Component Total like: {{totalLikeP}}</p>
+  <div class="parent">
+    <input class="input"type="text" #inputData><br>
+    <button class="button" (click)='child.addMethod(inputData.value)'>Submit</button>
+  </div>
+
+
+  <app-angular-ex2-child #child (totalLike2)='totalMethod($event)'></app-angular-ex2-child>
+</div>
+

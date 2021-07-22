@@ -1,0 +1,18 @@
+<table class="myTable">
+    <thead>
+        <tr>
+            <td>Child Component</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of listOfPost;let indexOfelement=index">
+            <td><p> {{user.body}}</p>
+              <br>
+              <button (click)='likeMe(user.likeCount,indexOfelement)'>Like</button>
+              <button (click)='unlikeMe(user.likeCount,indexOfelement)'>Unlike</button>
+              {{user.likeCount}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+

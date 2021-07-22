@@ -1,30 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `
-    <p>{{ title }}</p>
-    <button name="userButton" (click)="onUserClick()">Click me!</button>
-    <p>{{ loadstate }}</p>
-    <hr>
-    <!-- directives, two way binding -->
-    <input name="userInput"type="text" [(ngModel)]="name">
-    <p>this value is changing! {{name}}</p>
-    <hr>
-    <p>Guessing game!</p>
-    <div>
-      <p>Guese the next number (0-9)</p>
-      <button name="high"(click)="highButton()">Higher!</button>
-      <button name="low"(click)="lowButton()">Lower!</button>
-      <button name="same"(click)="sameButton()">Same!</button>
-      <p>Current number: {{rand}} score: {{score}}</p>
-      <p>{{mes}}</p>
-    </div>
-    <hr>
-  `
+  selector: 'app-angular-ex1',
+  templateUrl: './angular-ex1.component.html',
+  styleUrls: ['./angular-ex1.component.css']
 })
 
-export class MyComponent {
+export class AngularEx1Component implements OnInit {
   title = 'dyme-angular-project';
   name = 'Dyme';
   placeholder = 'Type something...';
@@ -33,6 +15,11 @@ export class MyComponent {
   temp=NaN;
   mes='';
   score=0;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 
   onUserInput(gg: any) {
 
