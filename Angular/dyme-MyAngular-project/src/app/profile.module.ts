@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule //additional
   ],
   providers: [],
-  bootstrap: [MyComponent]
+  bootstrap: [MyComponent] //change name from profile.component
 })
-export class MyModule { }
+export class MyModule { } //change and link to main.ts
 

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <p>{{ loadstate }}</p>
     <hr>
     <!-- directives, two way binding -->
-    <input name="userInput"type="text" [(ngModel)]="placeholder">
+    <input name="userInput"type="text" [(ngModel)]="name">
     <p>this value is changing! {{name}}</p>
     <hr>
     <p>Guessing game!</p>
