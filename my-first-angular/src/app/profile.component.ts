@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 @Component ({
-selector: 'app-root',
+selector: 'app-profile-component',
 template:`
        <p> {{loadstate}} </p>
       <input  type='text' (input)="onUserInput($event)" [value]= "loadstate" />
@@ -11,7 +11,7 @@ template:`
 `
 
 })
-export class AppComponent{
+export class ProfileComponent{
 title = 'Angular';
 loadstate = 'loading';
 
