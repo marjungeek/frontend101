@@ -1,0 +1,21 @@
+
+
+
+header{
+  background-color: red;
+  display: grid;
+  place-items: center;
+  padding-bottom: 20px;
+
+}
+
+label{
+  font-size: 100px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+button{
+  height: 50px;
+  width: 150px;
+}

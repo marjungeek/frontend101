@@ -5,7 +5,7 @@ export class HttpClient{
     constructor(){
         console.log('HttpClient.ts LOADED!');
     }
-
+ 
     httpRequest(options: HttpRequests) {
         return new Promise(function(resolve: Function, reject: Function) {
           

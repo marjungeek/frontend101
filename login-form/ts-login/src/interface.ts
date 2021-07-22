@@ -9,4 +9,5 @@ export interface HttpRequests {
 
 export interface LoginOpt {
     url: string;
-  }
+    
+  } 

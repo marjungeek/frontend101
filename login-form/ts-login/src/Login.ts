@@ -19,7 +19,7 @@ export default class login extends HttpClient{
         this.url = options.url;
 
         this.user = document.getElementById('user')! as HTMLInputElement;
-        this.pass = document.getElementById('pass')! as HTMLInputElement;
+        this.pass = document. getElementById('pass')! as HTMLInputElement;
 
         this.subButton = document.getElementById('subButton')! as HTMLButtonElement;
 
