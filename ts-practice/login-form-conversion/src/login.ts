@@ -1,4 +1,4 @@
-import { loginProperties } from "./interface";
+import { loginProperties, loginResponse } from "./interface";
 import httpClient from "./httpClient";
 
 export default class login extends httpClient {
@@ -21,6 +21,46 @@ export default class login extends httpClient {
         this.loginURL = property.loginURL;
         this.success = property.success;
         this.error = property.error;
+    }
+
+    async httpRequest() {
+        console.log("The Request");
+    }
+
+    async sendLogin(): Promise<loginResponse|any>{
+        const username = this.$username.value;
+        const password = this.$password.value;
+
+        return await super.httpRequest({
+            method: 'post',
+            endpoint: this.loginURL,
+            headers: { 'content-type': 'application/json'},
+            requestBody: JSON.stringify({ username , password}),
+            responseType: 'json'
+        });
+    }
+
+    listener() {
+        const object = this;
+
+        this.$btnLogin.addEventListener('click', async function(event) {
+            event.preventDefault();
+
+            if(object.$username.value !== '' && object.$password.value !== '') {
+                let response = await object.sendLogin();
+                object.validation(response);
+            }
+        });
+        // showpwd
+    }
+
+    private validation(response: loginResponse) {
+        if(response.statusCode === 200) {
+            this.success();
+        }
+        else {
+            this.error();
+        }
     }
 }
 

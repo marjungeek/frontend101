@@ -1,19 +1,24 @@
-import {login} from "./login";
+import login from './login';
 
-console.log("main");
+const Login = new login({
+    loginURL: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',
 
-const user = document.getElementById('uname')! as HTMLInputElement;
-const pass = document.getElementById('pwd')! as HTMLInputElement;
-const btnLogin = document.querySelector('login')
-
-
-const login: string({
-    loginUrl: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login'
+    success: function() {
+        alert('ok');
+    },
+    error: function() {
+        alert('error');
+    }
 });
 
-btnLogin.addEventListener("click", function() {
-    .preventDefault();
-})
+Login.listener();
+
+
+
+
+// btnLogin.addEventListener("click", function() {
+//     .preventDefault();
+// })
 
 // btnLogin.addEventListener((event:any) => {
 //     event.preventDefault();
@@ -21,9 +26,9 @@ btnLogin.addEventListener("click", function() {
 
 // const user = event.target.value;
 
-login.password.addEventListener((event:any) => {
+// login.password.addEventListener((event:any) => {
 
-})
+// })
 // (async function(){
 //     loginClass.btnLogin.addEventListener('click',async function(event) {
 //     event.preventDefault();
