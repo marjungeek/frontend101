@@ -5,15 +5,15 @@ import { Component } from '@angular/core';
   template: `
   <p>{{ title }}}</p>
   <p> loadstate {{ loadState }} </p>
-    <button (click)="clickme()">Click me!</button>
-    <input name="load" type="text" [()]="loadState">
+  <input name="load" type="text" [(ngModel)]="loadState">
+  <button (click)="clickComponent()">Click me!</button>
     `
 })
 export class profileComponent {
   title = 'Angular Button';
   loadState = 'loading..';
 
-  clickme() {
+  clickComponent() {
     this.loadState = 'finished!';
   }
 }
