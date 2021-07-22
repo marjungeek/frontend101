@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+input{
+  border-radius: 25px;
+  border: 2px solid violet;
+  padding: 20px;
+  width: 75%;
+  height: 20%;
+  font-family: 'Poppins';
+  margin-bottom: 1em;
+  margin-right: 2em;
+}
+
+div{
+  font-family: 'Poppins';
+}
+
+.home-btn{
+  border-radius: 25px;
+  background: violet;
+  padding: 2%;
+  width: 13%;
+  height: 13%;
+  font-family: 'Poppins';
+  font-size: medium;
+}
+

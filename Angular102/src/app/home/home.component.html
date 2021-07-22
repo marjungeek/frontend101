@@ -1,0 +1,8 @@
+
+<div>
+  <p class="currentUser" >Welcome Ferry Winsley,</p>
+  <p class="likesCount" > {{"Likes Count: " + gusto}} </p>
+  <input type="text" name="status" placeholder="What's on your mind, Ferry?" #status>
+  <button class="home-btn" (click)="addPost(status.value)" >Submit</button>
+  <app-feed [list]="list" (gusto)="dagdagGusto(1)" ></app-feed>
+</div>
