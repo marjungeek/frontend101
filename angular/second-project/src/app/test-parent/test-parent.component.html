@@ -1,3 +1,13 @@
 <p>Parent Component</p>
-<input type="text" name="feedinput"><br/>
-<button (click)="submitToFeed">Submit</button>
+<p>Likes: {{ likeCounterParent }}</p>
+<input type="text" name="feedinput" id="input" #input><br/>
+<p *ngIf="forCheck">Please input something! White spaces are also not allowed!</p>
+<button (click)="submitToFeed(input.value, input)">Submit</button>
+<!--
+  Notes for Line 5(Submit button):
+  "input.value" is the value
+  "input" is like a link of the input so I sent it to the TS file to be able to manipulate
+  the DOM of this html???? Not sure though
+-->
+<hr/>
+<app-test-child (likeEvent)="likeEventFromChild($event)" [feedList]="feedList"></app-test-child>
