@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'profile-root',
   template: `
   {{loadState}}<br>
-  <button (click)="onClickMe()">Click me!</button>
+  <button (click)="onClickMe()">Click me!</button><br>
+  <input name="user" type="text" [(ngModel)]="loadState" >
   `
 
 })
@@ -17,6 +18,10 @@ export class ProfileComponent {
       this.loadState = 'Finished';
     }else if(this.loadState == 'Finished'){
       this.loadState = 'loading...';
+    }else if(this.loadState == ''){
+      this.loadState = 'loading...';
+    }else{
+      this.loadState = 'Finished';
     }
 
   }
