@@ -1,4 +1,3 @@
-import { NgModel } from "@angular/forms";
 import { Component } from "@angular/core";
 
 @Component({
@@ -8,7 +7,7 @@ import { Component } from "@angular/core";
     <input name="user" type="text" [(ngModel)]="name" />
     <p>{{ title }}</p>
     <p>My name is {{ name }}<p>
-    <input name ="user" type="text" [{ngModel}]="loadstate"/> <br>
+    <input name ="user" type="text" [(ngModel)]="loadstate"/> <br>
     <button type="button" id="btn" (click)="onClickEvent($event)">Click</button>
     `,
 })
