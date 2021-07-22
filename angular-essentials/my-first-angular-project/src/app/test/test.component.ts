@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
 
 
 @Component({
@@ -7,10 +7,10 @@ import { Component, OnInit, } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  
-  isLogin: boolean = false;
-  // firstName: string;
-  // favColor: string;
+
+  //using input decorator
+  @Input() isUserLoggedIn: boolean = false; //child listener
+  @Output() isUserLoggedOut = new EventEmitter<boolean>(); //parent listener
 
   listOfNames:any = [
         { firstName: 'Raven', favColor: 'SkyBlue'}, 
@@ -27,12 +27,9 @@ export class TestComponent implements OnInit {
     console.log(this.listOfNames);
   }
 
-  loginMethod(): void {
-    this.isLogin = true;
-  }
-
   logoutMethod(): void {
-    this.isLogin = false;
+    this.isUserLoggedIn = false;
+    this.isUserLoggedOut.emit(this.isUserLoggedIn);
   }
 
   addNewUser(firstName: string, favColor: string){
