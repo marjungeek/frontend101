@@ -11,5 +11,9 @@ import { Component } from '@angular/core';
   // loadState: (gawing loading)
 })
 export class ProfileComponent {
-  title = 'first-angular-project';
+  title = 'Activity';
+  // loadState = 'loading';
 }
+// `<input name="test" type="text"`[{ngModel}]="loadState">
+//   <p>{{loadState}}</p>
+//   <button (click)="(loadState='Finished')">Click to Finish</button>`,
