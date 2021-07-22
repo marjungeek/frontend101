@@ -7,15 +7,9 @@
   padding: 10px;
   background-color: lightslategray;
 }
-
-
-/* .myTable{
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-  border-radius: 1px;
-  background-color: azure;
-} */
+span{
+  font-size: x-small;
+}
 table {
   border-collapse: collapse;
   width: 90%;

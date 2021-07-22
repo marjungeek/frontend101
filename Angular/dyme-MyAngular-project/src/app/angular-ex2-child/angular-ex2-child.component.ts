@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -16,7 +16,11 @@ export class AngularEX2ChildComponent implements OnInit {
   @Output() totalLike2= new EventEmitter<number>();
   totalLike:number=0;
 
-  constructor() { }
+  get now() : string { return Date(); }
+    constructor() {
+
+    }
+
 
   ngOnInit(): void {
   }
