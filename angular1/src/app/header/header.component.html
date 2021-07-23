@@ -1,0 +1,23 @@
+<div class="border">
+  <div *ngIf="isWritePost == true">
+      <table>
+        <thead>
+          <tr class="feednews">
+            <td>News Feed</td>
+          </tr>
+    </thead>
+          <tbody>
+      <tr *ngFor="let submit of postFeed">
+      <td class="postfeed">{{submit.Post}}</td>
+        <td>
+      <button *ngIf="isWritePost" (click)="likePost()">Like</button>
+        </td>
+      </tr>
+          </tbody>
+    </table>
+    <!-- <app-body (parentFucntion)="parentFunction($event)"></app-body> -->
+      <input  type="text" name="Post" #Post/>
+      <button (click)="addPost( Post.value)">POST</button>
+
+      </div>
+    </div>
