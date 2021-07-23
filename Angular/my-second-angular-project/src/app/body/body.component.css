@@ -1,0 +1,17 @@
+.border{
+  border: 1px solid black;
+  background-color: skyblue;
+  padding: 10px;
+}
+.floatright{
+  float: right;
+}
+.floatleft{
+  float: left;
+}
+#postBtn{
+  background-color:whitesmoke
+}
+#feedtext{
+  padding-left: 10px;
+}

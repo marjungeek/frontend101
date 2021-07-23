@@ -1,0 +1,9 @@
+<div class="border">
+    <p>Likes {{totalLikes}}</p>
+    <input id="feedtext"placeholder="How are you ?" [(ngModel)]="inputString">
+    <button id="postBtn" (click)="post()">Post</button>
+  <app-content [newfeed]="feed" (like)="total($event)"></app-content>
+
+</div>
+
+

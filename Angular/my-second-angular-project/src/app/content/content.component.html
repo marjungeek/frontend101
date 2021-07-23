@@ -1,0 +1,12 @@
+<div class="border">
+    <b><p>Feeds</p></b>
+    <button (click)="addComment()">Refresh</button>
+
+    <div class="comment">
+      <p *ngFor="let comment of comment">
+        {{comment.feed}}
+        <br><button (click)="addLike()">like</button>
+
+      </p>
+    </div>
+</div>
