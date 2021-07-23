@@ -1,0 +1,21 @@
+​li {
+  display: inline;
+
+}
+
+a{
+  margin-inline: 10px;
+  border-style: groove;
+  font-size: 20px;
+  padding-inline: 20px;
+  font-family: sans-serif;
+}
+
+nav{
+ text-align: center;
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+
+
+

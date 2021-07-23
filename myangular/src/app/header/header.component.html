@@ -1,0 +1,19 @@
+<h3 style="text-align: center;">Exercise 2</h3>
+<header style="border-style: dashed;">
+  <div>
+    <label>Total likes: {{ like }}</label>
+  </div>
+  <div>
+    <textarea id="txtA" #txtA style="resize: none;" rows="5" cols="50" placeholder="Say something!" [(ngModel)]="inputTxt"></textarea>
+  </div>
+  <div>
+    <button (click)="submitTxt()">SUBMIT</button>
+  </div>
+</header>
+
+
+
+<div>
+  <app-child-content (likeCounter)="likeCount($event)" [txtArea]="txtArea"></app-child-content>
+
+</div>

@@ -19,8 +19,11 @@ export class ProfileComponentComponent implements OnInit {
   }
 
   inputName(event: any) {
-    // this.inp = event.target.value;
-    this.title=event.target.value;
+    if(event.target.value!=""){
+      this.title=event.target.value;
+    }else{
+      this.title="_____";
+    }
   }
 
 

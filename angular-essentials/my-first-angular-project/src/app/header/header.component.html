@@ -6,5 +6,6 @@
     <input type="password" name="password" #password> <!--- #password : one way data binding-->
     <button (click)="loggIn(username.value, password.value)">Login</button>
 </div>
-<app-test (isUserLoggedOut)="onLogOut($event)" [isUserLoggedIn]="isValidUser" ></app-test> <!-- app test : child component -->
+  <app-test (isUserLoggedOut)="onLogOut($event)" [isUserLoggedIn]="isValidUser"></app-test> <!-- app test : child component -->
+
 </div>

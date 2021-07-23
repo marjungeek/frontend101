@@ -1,12 +1,12 @@
-
+<h3 style="text-align: center;">Exercise 1</h3>
   <header #hdr id="hdr">
 
 
-    <h1>Hi I'm {{ title }}, and this is my first Angular!</h1>
+    <h3>Hi I'm {{ title }}, and this is my first Angular!</h3>
 
     <input (input)="inputName($event)" [(ngModel)]="inp" placeholder="Enter Your Name">
 
-    <label #lbl id='lbl'>{{ loadState }}</label>
+    <label #lbl id= 'lbl'>{{ loadState }}</label>
 
     <button (click)="changeLabel(lbl.id, hdr.id)">CLICK ME!</button>
 

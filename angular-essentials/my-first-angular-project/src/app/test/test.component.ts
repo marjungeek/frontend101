@@ -13,14 +13,14 @@ export class TestComponent implements OnInit {
   @Output() isUserLoggedOut = new EventEmitter<boolean>(); //parent listener
 
   listOfNames:any = [
-        { firstName: 'Raven', favColor: 'SkyBlue'}, 
+        { firstName: 'Raven', favColor: 'SkyBlue'},
         { firstName: 'Dyme', favColor: 'Pink'},
         { firstName: 'Megan', favColor: 'Yellow'},
         { firstName: 'Princess', favColor: 'Black'},
       ];
 
-  constructor() { 
-    
+  constructor() {
+
   }
 
   ngOnInit(): void {
