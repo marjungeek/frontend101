@@ -1,4 +1,4 @@
-<app-textbox-component (newSulat)="bago($event)"></app-textbox-component>
+<app-textbox-component [likeCount]="total" (newSulat)="bago($event)"></app-textbox-component>
 <div *ngFor="let fff of newsfeed; let i = index">
   <p>Profile {{i+1}}</p>
   <p>{{fff.Sinulat}}</p>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-textbox-component',
@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class TextboxComponentComponent implements OnInit {
   @Output() newSulat = new EventEmitter<string>();
+  @Input() likeCount = 0;
   constructor() { }
 
   ngOnInit(): void {
