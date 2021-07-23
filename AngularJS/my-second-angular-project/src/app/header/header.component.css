@@ -1,0 +1,20 @@
+.border{
+  max-width: 100%;
+  background-color: skyblue;
+}
+
+.status{
+  height: 100px;
+  width: 99.6%;
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: #D8D8D8;
+}
+
+.postbtn{
+  float: right;
+  font-size: 30px;
+  background-color: lightblue;
+}
+
+

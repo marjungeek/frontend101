@@ -1,0 +1,13 @@
+<table>
+    <thead>
+            <h1>News feed</h1>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of feederList">
+            <td>
+              <p>{{user.share}}</p>
+              <button class="like" (click)='liked()'>Like</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
