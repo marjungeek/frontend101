@@ -1,9 +1,10 @@
-<div class="border">
-<p>Parent Component</p>
-<h3 *ngFor="let number of likes" *ngIf="!validFeed">Likes: {{Count}}</h3>
+<div class="border" *ngIf="Status">
+<h3>Parent Component</h3>
+<p>Likes: {{TotalLike}}</p>
 <div class="center">
-  <textarea name="description" cols="100" rows="5" #description></textarea>
-  <button (click)="decscribe(description.value)"> Submit </button>
+  <textarea name="description" cols="100" rows="5" #Input></textarea>
+  <button (click)='child.addNewFeed(Input.value)'> Submit </button>
 </div>
-  <app-child></app-child>
+<p>Child Component</p>
+  <app-child #child></app-child>
 </div>

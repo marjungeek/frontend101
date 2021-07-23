@@ -1,10 +1,20 @@
 <div class="border">
-  <p>Child Component</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Child Component</th>
+      </tr>
+    </thead>
 
-  <div>
-    <p>Feeds</p>
-
-    <p>{{listofFeeds}}</p>
-  </div>
-
+    <tbody>
+      <tr *ngFor="let user of ListOfFeeds; let indexOfelement=index">
+        <td>
+          <p><span>post# {{now}}</span>{{user.body}}</p>
+          <br>
+          <button (click)='like(user.likeCount,indexOfelement)'></button>
+          {{user.likeCount}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

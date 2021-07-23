@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import * as EventEmitter from 'events';
+
 
 @Component({
   selector: 'app-child',
@@ -7,21 +9,26 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  listOfFeeds: any = [
-    {describe : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'},
-    {describe: 'Hello World is at finest!!!'},
-    {describe: 'I got the Best of Both Worlds'},
+  ListOfFeeds: any = [
+    {body: "Welcome Minna-San!!!!", likeCount:0}
   ];
 
+  @Output() TotalLike1 = new EventEmitter();
+  TotalLike:number=0;
+
+  get now() : string {return Date();}
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.listOfFeeds);
   }
 
-  addNewFeed(describe: any){
-    console.log('Testing')
-    this.listOfFeeds.push({describe});
+  like(event:any, data:number){
+    this.ListOfFeeds[data].likeCount++;
+    this.TotalLike++;
+  }
+
+  addNewFeed(data: string){
+    this.ListOfFeeds.unshift({body:data, likeCount:0});
   }
 
 }

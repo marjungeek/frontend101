@@ -7,20 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  validFeed: boolean = true;
-  Count: number = 0;
-  constructor() { }
+  input: string = 'none';
+  TotalLike: number = 0;
+  Status:boolean = false;
 
   ngOnInit(): void {
   }
 
-  ngFor(){
-
+  onSubmit(event: string){
+    this.input=event;
+    console.log('submitted', this.input);
   }
 
-  describe(description: string){
-    this.validFeed = true;
+  Method(data:number){
+    this.TotalLike=data;
   }
 
+  Change(){
+    this.Status=!this.Status;
+    console.log('Exercise No. 2 current status is ${this.Status}');
+  }
+
+  Terminate(){
+    this.Status = false;
+  }
 
 }
