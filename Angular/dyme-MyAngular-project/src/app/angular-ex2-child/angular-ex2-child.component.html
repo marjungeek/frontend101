@@ -8,6 +8,7 @@
         <tr *ngFor="let user of listOfPost;let indexOfelement=index">
             <td><p><span>post# {{now}}</span><br><br> {{user.body}}</p>
               <br>
+              <button (click)='remove(indexOfelement)'>Remove</button>
               <button (click)='likeMe(user.likeCount,indexOfelement)'>Like</button>
               <button (click)='unlikeMe(user.likeCount,indexOfelement)'>Unlike</button>
               {{user.likeCount}}

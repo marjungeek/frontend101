@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./angular-ex2-parent.component.css']
 })
 export class AngularEX2ParentComponent implements OnInit {
-  inputfeed:string='noinput';
+  //inputfeed:string='noinput';
   totalLikeP:number=0;
   activeStatus:boolean=false;
 
@@ -14,13 +14,15 @@ export class AngularEX2ParentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(event:string){
-    this.inputfeed=event;
-    console.log('submitted: ',this.inputfeed)
-  }
+  // onSubmit(event:string){
+  //   this.inputfeed=event;
+  //   console.log('submitted: ',this.inputfeed)
+  // }
   totalMethod(data:number){
     this.totalLikeP=data;
   }
+
+
   changeStatus(){
     this.activeStatus=!this.activeStatus;
     console.log(`Ex2 current status is: ${this.activeStatus}`)

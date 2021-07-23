@@ -41,9 +41,18 @@ export class AngularEX2ChildComponent implements OnInit {
     }
     console.log(`I was clicked! ${event} index: ${data} total likes: ${this.totalLike}`);
   }
-  childMethod(){
-    console.log('I was called from parent!')
+  remove(index:number){
+    if(this.listOfPost[index].likeCount>0){
+      this.totalLike=this.totalLike-this.listOfPost[index].likeCount;
+      this.totalLike2.emit(this.totalLike);
+    }
+    this.listOfPost.splice(index,1);
+
   }
+  // childMethod(){
+  //   console.log('I was called from parent!')
+  // }
+
   addMethod(data:string){
     this.listOfPost.unshift({body:data,likeCount:0})
   }
