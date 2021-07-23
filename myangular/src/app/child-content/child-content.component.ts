@@ -9,13 +9,13 @@ export class ChildContentComponent implements OnInit {
 
   @Input() public txtArea!:string;
 
+  @Input() show!: boolean;
+
   @Output() public likeCounter = new EventEmitter<number>();
 
   like:number=0;
 
   strInput:any = [{status: 'Hello World! :D'}];
-
-  arrLen:number =0;
 
   constructor() {}
 
@@ -29,7 +29,10 @@ export class ChildContentComponent implements OnInit {
   addTxt(lbl:any){
     if(this.txtArea!=''){
       console.log(this.strInput.length);
-      this.strInput.push({status: this.txtArea});
+      this.strInput.unshift({status: this.txtArea});
+
+        this.txtArea='';
+
 
     }else{
       alert('Nothing to post.')

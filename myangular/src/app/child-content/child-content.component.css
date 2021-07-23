@@ -1,4 +1,17 @@
 .center{
   text-align: -webkit-center;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.br{
+  size: 30px;
+  border-style: outset;
+  inline-size: 700px;
+}
+
+table{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
