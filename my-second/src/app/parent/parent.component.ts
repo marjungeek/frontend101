@@ -1,5 +1,4 @@
-import { Variable } from '@angular/compiler/src/render3/r3_ast';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -8,24 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  add:number = 0;
+
   post: any = [
-    {Comment: 'sentence'},
+    {status: 'print mo to'},
+    {status: 'print mo sabi'},
   ];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.loadpost();
   }
 
-  loadpost(){
-    this.post()
-  }
-
-  submit(){
-    console.log('testing')
-    this.post.push({});
-  }
-
+ addpost(status:string){
+ this.post.push({status:status})
+}
+addagain(){
+  this.add++;
+}
 
 }

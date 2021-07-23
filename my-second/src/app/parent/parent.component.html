@@ -1,18 +1,11 @@
-<p>parent comp</p>
+<p>FRIDAY NIGHTS</p>
 
 <div class="parent">
 
-  <div class="like">
-    <label for="like">like</label>
-  </div>
-
-  <div class="textbox">
-    <textarea name="textbox" id="textbox" cols="30" rows="10" placeholder="What's on your mind?" #object></textarea>
-  </div>
-
-  <div>
-    <button id="submit" (click)="submit()" class="button" >Submit</button>
-  </div>
-
-
+    <p class ="likescount">{{"Likes Count:" + add}}</p>
+    <input type="status" name="status" placeholder="Wag ka mag isip" #status>
+    <button class ="submit" (click)="addpost(status.value)">Submit</button>
+    <app-child [post]="post" (add)="addagain"></app-child>
 </div>
+
+
