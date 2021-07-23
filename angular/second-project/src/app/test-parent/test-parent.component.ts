@@ -27,10 +27,11 @@ export class TestParentComponent implements OnInit {
       let tempFeedIDCounter = this.feedIDCounter++
       let uFeedID: string = "id" + String(tempFeedIDCounter);
       //console.log(typeof uFeedID);
-      this.feedList.push({cfeedValue: input, feedID: uFeedID});
+      //this.feedList.push({cfeedValue: input, feedID: uFeedID}); //push to append behind of array
+      this.feedList.unshift({cfeedValue: input, feedID: uFeedID}); //unshift to append infront of array
       domInput.value = '';
       this.forCheck = false;
-      console.log(this.feedList);
+      //console.log(this.feedList);
     }
   }
 

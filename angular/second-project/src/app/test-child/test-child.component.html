@@ -1,6 +1,7 @@
-<p>Child Component</p>
+<div class="center">
+<p><b>Child Component</b></p>
 <h4>Feed:</h4>
-<table>
+<table class="center">
   <thead>
     <tr>
       <td>Message</td>
@@ -10,7 +11,7 @@
   <tbody>
     <tr *ngFor="let feedValue of feedList">
       <td>{{ feedValue.cfeedValue }}</td>
-      <td>{{ feedValue.feedID }}</td>
+      <!-- <td>{{ feedValue.feedID }}</td> -->
       <td><button id="feedValue.feedID" (click)="addLikeEvent(feedValue.feedID)">Like</button></td>
       <!-- July 23: Plan to turn like to dislike when clicked see TS File
       Also, need to add styling
@@ -18,4 +19,4 @@
     </tr>
   </tbody>
 </table>
-
+</div>

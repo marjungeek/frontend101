@@ -1,0 +1,18 @@
+/* div {
+  height: 100vh;
+  background-color:darkseagreen;
+  background-image: url("https://bit.ly/3BvvBAH");/* Image Credit: http://www.miscellaneoushi.com/
+  background-repeat: repeat;
+} */
+
+::ng-deep body,
+::ng-deep html {
+  /* height:100%; */
+  margin: 0;
+  /* background-color:steelblue; */
+  color: #330000;
+  height: 100vh;
+  background-color:rgb(199, 213, 238);
+  background-image: url("https://bit.ly/3BvvBAH");/* Image Credit: http://www.miscellaneoushi.com/ */
+  background-repeat: repeat;
+}
