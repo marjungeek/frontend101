@@ -51,8 +51,8 @@ export class AngularEX2ChildComponent implements OnInit {
   //   console.log('I was called from parent!')
   // }
 
-  addMethod(data:string){
-    this.listOfPostC.unshift({body:data,likeCount:0})
-  }
+  // addMethod(data:string){
+  //   this.listOfPostC.unshift({body:data,likeCount:0})
+  // }
 
 }
