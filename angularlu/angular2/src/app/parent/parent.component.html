@@ -1,0 +1,19 @@
+
+<div class="parental">
+<p>Parent Component</p>
+<div class="feeddiv">
+    <!-- <input > -->
+    <textarea class="feedtxt" type="text" [(ngModel)]="testParent"></textarea>
+
+</div>
+<div class="buttondiv">
+  <button class="submitbtn" (click) = "addNewFeed()">Submit </button>
+</div>
+
+<div>
+  <app-child [feedChild]= "newFeed"></app-child>
+
+</div>
+</div>
+
+

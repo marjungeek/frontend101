@@ -1,0 +1,24 @@
+.parental{
+
+  color: orange;
+  height: 600px;
+  width: 500px;
+  padding: 10px;
+  margin-left: 20px;
+
+}
+.feedtxt{
+  margin-top: 15px;
+width: 448px;
+height: 70px;
+margin-right: 40px;
+}
+textarea{
+  resize: none;
+}
+.submitbtn{
+  clear: both;
+  float: right;
+  margin-top: 20px;
+  margin-right: 48px;
+}
