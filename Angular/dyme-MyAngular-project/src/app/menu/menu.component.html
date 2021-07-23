@@ -1,0 +1,9 @@
+<div class="border">
+  <p>Menu</p>
+  <button (click)='Ex1.changeStatus();Ex2.closeMe()'>Exercise 1</button>
+  <button (click)='Ex2.changeStatus();Ex1.closeMe()'>Exercise 2 </button>
+</div>
+
+<app-angular-ex2-parent #Ex2></app-angular-ex2-parent>
+<app-angular-ex1 #Ex1></app-angular-ex1>
+

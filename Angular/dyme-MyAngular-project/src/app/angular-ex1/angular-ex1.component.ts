@@ -15,6 +15,7 @@ export class AngularEx1Component implements OnInit {
   temp=NaN;
   mes='';
   score=0;
+  activeStatus:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
@@ -63,5 +64,12 @@ export class AngularEx1Component implements OnInit {
   }
   randomGen(){
     return Math.floor(Math.random() * 10);
+  }
+  changeStatus(){
+    this.activeStatus=!this.activeStatus;
+    console.log(`Ex2 current status is: ${this.activeStatus}`)
+  }
+  closeMe(){
+    this.activeStatus=false;
   }
 }

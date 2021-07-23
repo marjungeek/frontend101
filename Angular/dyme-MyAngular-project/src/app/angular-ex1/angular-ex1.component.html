@@ -1,4 +1,4 @@
-<div class="border">
+<div class="border" *ngIf="activeStatus">
   <p>Exercise 1</p>
   <p>{{ title }}</p>
   <button name="userButton" (click)="onUserClick()">Click me!</button>

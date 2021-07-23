@@ -10,6 +10,7 @@ export class AngularEX2ChildComponent implements OnInit {
 
   //@Input() submitData:string='';
 
+
   listOfPost:any = [
     {body:'Welcome! Try posting Something!',likeCount:0}
   ];
@@ -46,4 +47,5 @@ export class AngularEX2ChildComponent implements OnInit {
   addMethod(data:string){
     this.listOfPost.unshift({body:data,likeCount:0})
   }
+
 }

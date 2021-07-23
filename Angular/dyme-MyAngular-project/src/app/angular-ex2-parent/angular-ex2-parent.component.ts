@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AngularEX2ParentComponent implements OnInit {
   inputfeed:string='noinput';
   totalLikeP:number=0;
+  activeStatus:boolean=false;
 
   constructor() { }
 
@@ -19,6 +20,13 @@ export class AngularEX2ParentComponent implements OnInit {
   }
   totalMethod(data:number){
     this.totalLikeP=data;
+  }
+  changeStatus(){
+    this.activeStatus=!this.activeStatus;
+    console.log(`Ex2 current status is: ${this.activeStatus}`)
+  }
+  closeMe(){
+    this.activeStatus=false;
   }
 
 }
