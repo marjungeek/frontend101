@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import * as EventEmitter from 'events';
 
 
@@ -22,7 +22,7 @@ export class ChildComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  like(event:any, data:number){
+  addlike(event:any, data:number){
     this.ListOfFeeds[data].likeCount++;
     this.TotalLike++;
   }

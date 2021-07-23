@@ -11,7 +11,7 @@
         <td>
           <p><span>post# {{now}}</span>{{user.body}}</p>
           <br>
-          <button (click)='like(user.likeCount,indexOfelement)'></button>
+          <button (click)='addlike(user.likeCount,indexOfelement)'>Like</button>
           {{user.likeCount}}
         </td>
       </tr>
