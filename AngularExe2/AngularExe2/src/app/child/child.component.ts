@@ -12,10 +12,7 @@ export class ChildComponent implements OnInit {
 
 
 
-constructor() { }
-
-
-
+constructor() {}
   ngOnInit(): void {
   }
 hulikes(likemo:number){

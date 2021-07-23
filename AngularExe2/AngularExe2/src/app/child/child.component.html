@@ -1,10 +1,14 @@
 
 <div class="postarea">
+  <p>Child Component</p>
   <h1>Feeds:</h1>
+  <hr>
   <tbody>
     <tr *ngFor="let posthuhu of Hupost" >
+      <hr>
       <td>{{posthuhu.Npost}}</td>
-      <button (click)="hulikes(1)">Like</button>
+      <button (click)="hulikes(0)">Like</button>
+      <hr>
     </tr>
   </tbody>
 </div>

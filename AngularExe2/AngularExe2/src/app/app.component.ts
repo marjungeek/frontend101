@@ -1,4 +1,4 @@
-import { Component , OnInit, Output, EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,11 @@ import { Component , OnInit, Output, EventEmitter} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'Parent Component';
 
 
-  likes:number = 1;
+  likes:number = 0;
 
   Hupost:any = [
     { Npost: 'Lorem ipsum dolor sit amet, te per idque timeam vulputate, est te mollis vocent. Eum summo inciderint voluptatibus eu.'},
@@ -19,14 +19,12 @@ export class AppComponent implements OnInit {
   ];
 
   constructor() {
-
-  }
-
-  ngOnInit(): void {
-  }
+}
   postHu(Npost:string){
+    if (Npost == ''){
+      alert('No Input!');
+    }else
     this.Hupost.push({Npost: Npost});
-    console.log(this.likes);
   }
   likeshu(numlikes:number){
     this.likes++;
