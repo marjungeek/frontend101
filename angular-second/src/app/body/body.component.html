@@ -1,0 +1,15 @@
+<table class="table" style="border: 1px solid blue">
+  <thead>
+      <tr>
+          <td>What's</td>
+          <td>new?</td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let userStatus of statusList">
+          <td>{{userStatus.user}}</td>
+          <td>{{userStatus.status}}</td>
+          <td><button>Like</button></td>
+      </tr>
+  </tbody>
+</table>
