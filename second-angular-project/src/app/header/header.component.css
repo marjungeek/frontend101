@@ -1,0 +1,15 @@
+.border {
+  background-color: rgb(69, 69, 204);
+  border: 2px solid rgb(25, 52, 53);
+  height: 170px;
+}
+h1 {
+  font-size: large;
+  color: rgb(2, 2, 2);
+  font-family: monospace;
+}
+p {
+  font-size: large;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
