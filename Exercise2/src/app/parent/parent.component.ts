@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  validFeed: boolean = true;
+  Count: number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  ngFor(){
+
+  }
+
+  describe(description: string){
+    this.validFeed = true;
+  }
+
 
 }

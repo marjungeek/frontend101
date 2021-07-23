@@ -3,8 +3,7 @@
 }
 
 .border{
+  border: aqua;
   background-color: steelblue;
   color: cornsilk;
-  height: 200px;
-  width: 1000px;
 }
