@@ -5,7 +5,7 @@
   padding: 10px;
   background-color: lightsalmon;
   height: 100%;
-  box-shadow: lightslategray;
+  box-shadow: 1px lightslategray;
 }
 
 .postfeed {
@@ -21,4 +21,24 @@
 .likebtn {
   float: right;
 
+}
+.box{
+  border:2px black;
+  padding: 1px;
+}
+.post {
+  width: 90%;
+  height: 100px;
+  box-sizing: inherit;
+}
+
+.buttonsub {
+  float: right;
+  margin-right: 10%;
+  margin-top: 10px;
+}
+
+.likepost{
+  margin-left: 50%;
+  float: right;
 }

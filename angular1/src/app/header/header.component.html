@@ -1,23 +1,24 @@
+<input class="post"  type="text" name="Post" placeholder="What's on your mind?" #Post/>
+<button  class="buttonsub" (click)="addPost( Post.value)">POST</button>
+
 <div class="border">
-  <div *ngIf="isWritePost == true">
+  <div *ngIf="isWritePost">
+
       <table>
         <thead>
           <tr class="feednews">
             <td>News Feed</td>
           </tr>
     </thead>
-          <tbody>
-      <tr *ngFor="let submit of postFeed">
+          <tbody >
+      <tr class="box" *ngFor="let submit of postFeed">
       <td class="postfeed">{{submit.Post}}</td>
         <td>
-      <button *ngIf="isWritePost" (click)="likePost()">Like</button>
+      <button class="likepost" *ngIf="isWritePost" (click)="likePost()">Like</button>
         </td>
       </tr>
           </tbody>
     </table>
-    <!-- <app-body (parentFucntion)="parentFunction($event)"></app-body> -->
-      <input  type="text" name="Post" #Post/>
-      <button (click)="addPost( Post.value)">POST</button>
 
       </div>
     </div>

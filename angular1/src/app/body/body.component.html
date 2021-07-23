@@ -1,15 +1,12 @@
+<h1 style= "text-align: center;">Exercise 2</h1>
+
 <div class="border">
-  <h3 *ngIf="isMessage">{{  message }}</h3>
+  <h3 *ngIf="isMessage"></h3>
   <div class="float-right">
     <div class="divpost">
-      <input class="post"  type="text" name="Post" #Post/>
       <p class="like"> LIKES {{ numberOfLikes }}</p>
-    </div>
-
-      <div class="buttonsub">
-      <button (click)="postSubmit(Post.value)">POST</button>
     </div>
 
   </div>
   <app-header (likingPost)="postLike()" [isWritePost]="isMessage" ></app-header>
-  </div>
+</div>

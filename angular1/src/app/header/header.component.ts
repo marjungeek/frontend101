@@ -22,11 +22,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // parentFunction(data:any){
-  //   this.postFeed=data.post;
-
-  // }
-
   likePost(): void {
     this.isWritePost = true;
     this.likingPost.emit(this.isWritePost);
