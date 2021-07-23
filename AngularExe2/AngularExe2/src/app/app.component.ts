@@ -24,7 +24,7 @@ export class AppComponent{
     if (Npost == ''){
       alert('No Input!');
     }else
-    this.Hupost.push({Npost: Npost});
+    this.Hupost.unshift({Npost: Npost});
   }
   likeshu(numlikes:number){
     this.likes++;
