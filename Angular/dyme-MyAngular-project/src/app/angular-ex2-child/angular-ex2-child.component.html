@@ -5,7 +5,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of listOfPost;let indexOfelement=index">
+        <tr *ngFor="let user of listOfPostC;let indexOfelement=index">
             <td><p><span>post# {{now}}</span><br><br> {{user.body}}</p>
               <br>
               <button (click)='remove(indexOfelement)'>Remove</button>

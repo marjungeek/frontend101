@@ -10,14 +10,18 @@ export class AngularEX2ParentComponent implements OnInit {
   totalLikeP:number=0;
   activeStatus:boolean=false;
 
+  listOfPostP:any = [
+    {body:'Welcome! Try posting Something!',likeCount:0}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
-  // onSubmit(event:string){
-  //   this.inputfeed=event;
-  //   console.log('submitted: ',this.inputfeed)
-  // }
+  onSubmit(data:string){
+    this.listOfPostP.unshift({body:data,likeCount:0})
+    //console.log('submitted: ',this.inputfeed)
+  }
   totalMethod(data:number){
     this.totalLikeP=data;
   }
