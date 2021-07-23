@@ -9,8 +9,6 @@ export class ChildContentComponent implements OnInit {
 
   @Input() public txtArea!:string;
 
-  @Input() show!: boolean;
-
   @Output() public likeCounter = new EventEmitter<number>();
 
   like:number=0;

@@ -10,8 +10,6 @@ export class HeaderComponent implements OnInit {
   txtArea:string='';
   inputTxt:string='';
 
-  // show:boolean=false;
-
   like:number = 0;
 
   constructor() {}
