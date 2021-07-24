@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,9 +12,9 @@ import { FormsModule } from '@angular/forms';
     ChildComponent
   ],
   imports: [
-    BrowserModule, CommonModule, FormsModule
+    BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent, ParentComponent, ChildComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

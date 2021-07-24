@@ -1,0 +1,19 @@
+<div class="parental">
+    <div class="header">
+      <p>Parent Component</p>
+     
+      <label>Likes: {{myLike}}</label>
+    </div> 
+      
+      
+      
+      <div class="feeddiv">
+          <textarea class= "feedtxt" type="text" name="feedPost" #feedPost></textarea>
+      </div>
+      <div class="buttondiv">
+          <button class="submitbtn" (click) ="addNewFeed(feedPost.value)">Submit</button>
+      </div>
+  
+      <app-child [feedChild] = "feed" [likeCounter] = "myLike" (change)="likeChange($event)">
+      </app-child>
+  </div>
