@@ -1,0 +1,22 @@
+.prnt {
+  margin-left: 10px;
+}
+.parent {
+  border: 1px solid greenyellow;
+  width: 62%;
+}
+
+.btn {
+  margin-left: 90%;
+}
+
+.txtarea {
+  margin-left: 10px;
+}
+
+.like {
+  margin-top: 20px;
+  margin-left: 87%;
+  font-size: 20px;
+  font-weight: bold;
+}

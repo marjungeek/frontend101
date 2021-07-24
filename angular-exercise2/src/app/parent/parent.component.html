@@ -1,0 +1,13 @@
+<div class="parent">
+
+<p class="prnt">Parent Component</p>
+
+<p class="like">Likes: 0</p>
+
+<textarea class="txtarea" name="newPost" id="" cols="100%" rows="5" #newPost></textarea> <br>
+<!--<input type="text" name="input" #input/>-->
+<button class="btn" (click)="addNewPost(newPost.value)">Submit</button>
+
+
+<app-child [newPosts]="newPosts"></app-child>
+</div>
