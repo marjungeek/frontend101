@@ -6,9 +6,9 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="post list">
+          <tr *ngFor="let item of post">
               <td>
-                {{post.status}}
+                {{item.status}}
               </td>
                <button class = "post-btn" (click)="clicker">LIKE</button>
           </tr>

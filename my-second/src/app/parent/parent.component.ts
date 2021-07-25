@@ -20,6 +20,7 @@ export class ParentComponent implements OnInit {
   }
 
  addpost(status:string){
+   console.log(status, + 'charan')
  this.post.push({status:status})
 }
 addagain(){
