@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
@@ -13,7 +14,6 @@ export class ChildCompComponent implements OnInit {
 
   constructor() { 
     console.log("child is loaded...");
-    console.log(this.myChat);
   }
 
   ngOnInit(): void {
@@ -23,5 +23,10 @@ export class ChildCompComponent implements OnInit {
     let likesChild = this.myLikesCount++;
     this.liked.emit(likesChild);
   }
+
+  arrayClear(){
+    this.myChat.length = 0;
+  }
+  
 
 }

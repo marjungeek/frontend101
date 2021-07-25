@@ -1,17 +1,18 @@
 <div class="parent">
     <div class="header">
-        <h1>Talk with Yourself</h1>
+        <h1>Talk with Simsimi</h1>
     </div>
 
     <div>
         <h2>Type here: </h2>
         <input type="text" name="myMessageValue" id="myMessage" #myMessage> <br> <br>
         <button (click)="sendMessage(myMessage.value, myMessage)">Send</button> 
-        <p>Likes on yourself: {{ myLikes }}</p>
+        <p>Likes on Simsimi: {{ myLikes }}</p>
     </div>
 
     <div>
         <h2>Your Chatbox: </h2>
+        <p>Simsimi: Hello!</p>
     </div>
 
     <app-child-comp (liked) = "numberOfLikes($event)" [myChat] = "myChat"></app-child-comp>

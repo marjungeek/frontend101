@@ -1,6 +1,10 @@
 <div class="border">
-    <p *ngFor="let chat of myChat">
+    <table>
+    <tbody *ngFor="let chat of myChat">
      {{ chat.message }}
-     <button (click)="userLiked()">Like</button>
-    </p>
+     {{ chat.reply }}
+     <button (click)="userLiked()" style="margin-right: 10px;">Like</button> 
+     <button (click)="arrayClear()">Clear</button>
+    </tbody>
+    </table>
 </div>
