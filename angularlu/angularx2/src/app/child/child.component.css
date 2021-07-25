@@ -2,15 +2,22 @@
     color:orange;
     margin-top: 45px;
 }
+p{
+    margin-left: 20px;
+    margin-top: 20px;
+}
 
 .divfeed-body{
     background-color: orange;
-    height: 300px;
+    height: 350px;
     width: 448px;
+    margin-left: 20px;
+    padding: 5px;
 }
 .divfeed{
     color: black;
-    padding: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 button{
     float: right;

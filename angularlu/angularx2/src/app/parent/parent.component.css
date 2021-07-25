@@ -6,6 +6,16 @@
     padding: 10px;
     margin-left: 20px;
 }
+p{
+    margin-left: 20px;
+}
+label{
+    margin-left: 20px;
+}
+.feeddiv{
+    margin-left: 20px;
+
+}
 .parent{
     width: 50px;
 }
@@ -14,17 +24,20 @@
 }
 .feedtxt{
     margin-top: 15px;
-    width: 448px;
+    width: 451px;
     height: 70px;
     margin-right: 40px;
-
 }
-textarea{
+.buttondiv{
+    float: right;
+    margin-left: 20px;
+}
+.textarea{
     resize: none;
 }
 .submitbtn{
     clear: both;
     float: right;
     margin-top: 20px;
-    margin-right: 48px;
+    margin-right: 22px;
 }
