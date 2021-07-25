@@ -5,7 +5,7 @@
     <p class ="likescount">{{"Likes Count:" + add}}</p>
     <input type="status" name="status" placeholder="Wag ka mag isip" #status>
     <button class ="submit" (click)="addpost(status.value)">Submit</button>
-    <app-child [post]="post" (add)="addagain"></app-child>
+    <app-child [post]="post" (add)="addagain()"></app-child>
 </div>
 
 

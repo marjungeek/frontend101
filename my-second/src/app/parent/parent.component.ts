@@ -10,8 +10,9 @@ export class ParentComponent implements OnInit {
   add:number = 0;
 
   post: any = [
-    {status: 'print mo to'},
-    {status: 'print mo sabi'},
+    {status: 'pag di makasabay iwan mo'},
+    {status: 'iwan, iwan, iwan'},
+
   ];
 
   constructor() { }
@@ -21,7 +22,7 @@ export class ParentComponent implements OnInit {
 
  addpost(status:string){
    console.log(status, + 'charan')
- this.post.push({status:status})
+  this.post.push({status:status})
 }
 addagain(){
   this.add++;

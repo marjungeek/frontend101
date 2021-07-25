@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -9,14 +8,16 @@ import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   @Input() post:any
-  @Output() add = new EventEmitter<number>();
+  @Output() count = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  clicker(counts:number){
-  this.add.emit(counts);
+
+  clicker(count:number){
+    console.log(count, + 'bang')
+    this.count.emit(count);
 }
 }
 
