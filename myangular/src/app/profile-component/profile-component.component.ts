@@ -10,7 +10,7 @@ export class ProfileComponentComponent implements OnInit {
   title:string = '_____';
   loadState:string = 'Loading . . . ';
   readyState:string = "Finished !!!";
-  count:number = 0;
+  count:number = 1;
   inp!:string;
 
   constructor() {}

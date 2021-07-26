@@ -3,6 +3,12 @@
 
 }
 
+div{
+  display: inline;
+-webkit-text-emphasis-style: circle;
+vertical-align: super;
+}
+
 a{
   margin-inline: 10px;
   border-style: groove;
@@ -16,6 +22,5 @@ nav{
  padding-top: 5px;
  padding-bottom: 5px;
 }
-
 
 

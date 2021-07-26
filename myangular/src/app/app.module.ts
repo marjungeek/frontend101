@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { ChildContentComponent } from './child-content/child-content.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Exercise3Component } from './exercise3/exercise3.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import { AppRoutingModule } from './app-routing.module';
     ProfileComponentComponent,
     HeaderComponent,
     ChildContentComponent,
-    MenuComponent
+    MenuComponent,
+    Exercise3Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

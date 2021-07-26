@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   txtArea:string='';
   inputTxt:string='';
 
-  showModal:boolean=false;
+  showModal!:boolean;
 
   like:number = 0;
 
@@ -21,6 +21,11 @@ export class HeaderComponent implements OnInit {
   likeCount(like:any): void{
     this.like=like;
     console.log(this.like);
+  }
+
+  hideModal(bool:any):void{
+    this.showModal=bool;
+    console.log(bool);
   }
 
   submitTxt(){

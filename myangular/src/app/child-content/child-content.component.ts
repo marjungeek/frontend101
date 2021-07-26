@@ -10,26 +10,36 @@ export class ChildContentComponent implements OnInit {
   @Input() public txtArea!:string;
   @Output() public likeCounter = new EventEmitter<number>();
 
-  @Input() showModal!:boolean;
+  @Output() public hideModal = new EventEmitter<boolean>();
+  @Input() showModal:boolean = false ;
 
   like:number=1;
 
   strInput:any = [{status: 'Hello World! :D'}];
 
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+  }
 
   likeCount(){
     this.likeCounter.emit(this.like++);
     // console.log(this.like);
   }
 
+  clearPost(){
+    this.showModal=false;
+    this.hideModal.emit(this.showModal);
+  }
+
+
   addTxt(){
     if(this.txtArea!=''){
       console.log(this.strInput.length);
       this.strInput.unshift({status: this.txtArea});
-      this.txtArea='';
       this.showModal=false;
+      this.hideModal.emit(this.showModal);
 
     }else{
       alert('Nothing to post.')
