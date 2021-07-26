@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // import { EventEmitter } from 'stream';
 
 @Component({
@@ -14,6 +14,19 @@ export class BodyComponent implements OnInit {
   }
 
   @Input() userPost: any;
+  @Output() likeEvent = new EventEmitter<number>();
+
+  likenum = 0;
+
+  handleLike() {
+    this.likenum = this.likenum + 1;
+    this.result()
+    this.likeEvent.emit(this.likenum)
+  }
+
+  result(){
+    console.log(this.likenum)
+  }
 
   statusList:any = [
     {user: 'Apple',status: 'Apple announces iPhone 12 and iPhone 12 mini: A new era for iPhone with 5G.'},

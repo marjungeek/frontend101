@@ -1,4 +1,4 @@
+<p>Number of likes: {{likenum}}</p>
 <textarea class="area" name="status" #status placeholder="Hey, What's Up?"></textarea>
-
 <button>Post</button>
-<app-body><button (click)="postStatus(status.value)">Post</button></app-body>
+<app-body (likeEvent)="displayLike($event)"></app-body>

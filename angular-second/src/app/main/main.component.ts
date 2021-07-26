@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   constructor() { }
+  likenum = 0;
 
   ngOnInit(): void {
+  }
+
+  displayLike($event: any) {
+    this.likenum = $event;
   }
 }
