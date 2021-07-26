@@ -6,4 +6,16 @@
   border: aqua;
   background-color: steelblue;
   color: cornsilk;
+  text-align: center;
+  border: none;
+  border-radius: 10%;
+}
+
+.Bigger{
+ background: aquamarine;
+ width: 100px;
+ height: 30px;
+ color: #fff;
+ border-radius: 5%;
+ border: none;
 }
