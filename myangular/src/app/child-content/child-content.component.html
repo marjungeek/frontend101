@@ -15,9 +15,9 @@
 
 <div class="center">
   <table class="container" *ngFor="let user of strInput">
-   <div class="br">
+   <mat-card class="br">
      <tr class="row">{{ user.status }} <hr style="width: 697px;"> <button class="row" (click)="likeCount()">Like</button></tr>
-   </div>
+   </mat-card>
   </table>
 </div>
 

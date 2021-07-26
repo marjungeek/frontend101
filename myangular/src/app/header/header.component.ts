@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
       this.txtArea = this.inputTxt;
       this.inputTxt='';
       this.showModal=true;
+
     }else{
       alert('Empty Fields!');
     }
