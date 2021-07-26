@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   childevent(data: number) {
-    this.collectedLikes = data;
+    this.collectedLikes = data; // data = total like from the child emitted to the sum event
   }
 }
 
