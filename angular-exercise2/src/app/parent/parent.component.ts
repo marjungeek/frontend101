@@ -7,17 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  addnewPosts: boolean = false;
+  //addnewPosts: boolean = false;
+
+  addChika: any = [
+    { newChismis: 'Mare, may chika ako!'}
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  newPosts: string = "New Post";
+  //newPosts: string = "New Post";
 
-  addNewPost(newPosts: string) {
+  pindot(newChismis: string) {
     console.log('new post');
-    this.addnewPosts = true;
+    this.addChika.unshift({newChismis: newChismis});
   }
 }

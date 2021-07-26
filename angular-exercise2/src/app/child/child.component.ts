@@ -7,9 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output,  } from '@angular/core'
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-  @Input()
-  newPosts!: string;
-  addNewPost!: string;
+  @Input() addChika: any;
+  //newPosts!: string;
 
   constructor() { }
 

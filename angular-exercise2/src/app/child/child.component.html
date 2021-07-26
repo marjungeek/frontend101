@@ -1,9 +1,13 @@
 <p class="child">Child Component</p>
 
 <div class="div">
+  <h4>Chika Minute:</h4>
+  <!--<p>{{ newPosts }}</p>-->
+  <div *ngFor="let addNewPostss of addChika">
+    <div>
+    <p>{{ addNewPostss.newChismis }} </p>
+    <button>Like</button> <hr>
+    </div>
 
-  <p>{{ newPosts }}</p>
-
-  <p>{{ addNewPost }}</p>
-
+  </div>
 </div>
