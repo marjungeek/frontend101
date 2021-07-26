@@ -8,7 +8,6 @@
   <input type="text" name="FeedPost" id="input" #input>
   <br>
   <p *ngIf="Checking">Please Input Something!!! We don't allow blank expressions!!!</p>
-  <button (click)="sumbitToFeed(input.value, input)">Submit</button>
-  <hr>
+  <button (click)="submitToFeed(input.value, input)">Submit</button>
   <app-child (likeEvent)="likeEventFromChild($event)" [FeedList]="FeedList"></app-child>
 </div>
