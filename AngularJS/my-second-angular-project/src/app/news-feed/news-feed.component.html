@@ -6,7 +6,7 @@
         <tr *ngFor="let user of childList">
             <td>
               <p>{{user.share}}</p>
-              <button class="like" (click)='liked()'>Like</button>
+              <button class="like" id="likebutton" (click)='liked()'><img src="assets/like.png" ></button>
             </td>
         </tr>
     </tbody>
