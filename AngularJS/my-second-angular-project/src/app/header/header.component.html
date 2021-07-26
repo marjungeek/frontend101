@@ -3,10 +3,10 @@
   <div class='head' style="overflow: hidden;">
     <p style="float: left; font-size: xx-large;">What's on your mind?</p>
     <p style="float: right; font-size: xx-large;">Likes: {{collectedLikes}}</p>
-  </div>
-    <input class="status"type="text" #status><br>
-    <button class="postbtn" (click)='feed.feedAdd(status.value)'>Post</button>
-</div>
-     <app-news-feed (sum)='childevent($event)' #feed></app-news-feed>
-</div>
+    <input class="status"type="text"  [(ngModel)]="inputStatus" id="inputStatus" #status><br>
+    <button class="postbtn" id='postbutton' [disabled]="!inputStatus" (click)='feedAdd(status.value)' >Post</button>
 
+  </div>
+</div>
+     <app-news-feed [childList]='feederList' (sum)='childevent($event)' ></app-news-feed>
+</div>

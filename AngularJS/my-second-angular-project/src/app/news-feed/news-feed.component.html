@@ -3,7 +3,7 @@
             <h1>News feed</h1>
     </thead>
     <tbody>
-        <tr *ngFor="let user of feederList">
+        <tr *ngFor="let user of childList">
             <td>
               <p>{{user.share}}</p>
               <button class="like" (click)='liked()'>Like</button>

@@ -1,13 +1,13 @@
 import LoginForm from "./LoginForm";
 
 const login = new LoginForm({
-  url: 'http://localhost:7071/api/login',
-  success: function() {
-    alert('success');
+  url: "https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login",
+  success: function () {
+    alert("success");
   },
-  error: function() {
-    alert('error');
-  }
+  error: function () {
+    alert("error");
+  },
 });
 
 var x = 'hello ulit';
