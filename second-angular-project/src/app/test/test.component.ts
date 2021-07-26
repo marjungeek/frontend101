@@ -7,21 +7,19 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  @Output()  = new EventEmitter;
-  @Input() userSubmit: ;
-
-  listOfPost: any = [
-    {post: "Hello"}
-  ];
+  @Output() likes = new EventEmitter<number>();
+  @Input() addPost: any;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    console.log(this.listOfPost);
   }
-  userSubmit(post: string){
-    this.listOfPost.push({post: post})
+
+  likePost(layk:number){
+    console.log('Like added')
+    this.likes.emit(layk);
   }
-}
+
+  }

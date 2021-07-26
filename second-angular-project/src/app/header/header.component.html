@@ -1,8 +1,8 @@
 <div class="border">
 <p>Facebook</p>
-<h1>Likes</h1>
+<p class = "likesCount">{{"Likes: " + likes}}</p>
 <div class="float-right"></div>
-  <input type="text" name="post" #post>
+  <textarea class="text" name="post" #post></textarea>
   <button (click)="userSubmit(post.value)">Submit</button>
-
+  <app-test [addPost]="addPost" (likes)="likePost(1)"></app-test>
 </div>

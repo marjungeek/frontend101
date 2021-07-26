@@ -1,17 +1,13 @@
 <div class="border">
 <h1>Newsfeed</h1>
 
-<div *ngIf="userSubmit">
   <table style="border: 2px solid black">
-    <tr>
       <td>My Feed</td>
+    <tr *ngFor="let addNP of addPost">
     </tr>
-  </table>
+    <p>{{ addNP.post }}</p>
+      <button (click)="likePost(1)">Like</button>
 
 
-
-</div>
-
-
-
+    </table>
 </div>
