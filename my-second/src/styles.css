@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+html{
+  justify-content: center;
+  display: flex;
+  height: 100%;
+}
+
+body{
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 10px;
+}
+
+input{
+  font-size: 20px;
+  width: 600px;
+  height: 50px;
+}
+
+.submit{
+  display: flex;
+  font-size: medium;
+  margin-left: 542px;
+}
+
+table{
+  padding-top: 25px;
+}
+
+.like-btn{
+  margin-left: 360px;
+}
+
+.DROP{
+  padding-bottom: 20px;
+}

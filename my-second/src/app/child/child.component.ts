@@ -8,16 +8,16 @@ import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   @Input() post:any
-  @Output() count = new EventEmitter<number>();
+  @Output() add = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  clicker(count:number){
+  like(count:number){
     console.log(count, + 'bang')
-    this.count.emit(count);
+    this.add.emit(count);
 }
 }
 
