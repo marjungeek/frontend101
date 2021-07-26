@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import * as EventEmitter from 'events';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 
 @Component({
@@ -9,26 +9,18 @@ import * as EventEmitter from 'events';
 })
 export class ChildComponent implements OnInit {
 
-  ListOfFeeds: any = [
-    {body: "Welcome Minna-San!!!!", likeCount:0}
-  ];
+  @Input() FeedList: any = [];
 
-  @Output() TotalLike1 = new EventEmitter();
-  TotalLike:number=0;
+  @Output () likeEvent = new EventEmitter<number>();
+  likeCounter: number = 1;
 
-  get now() : string {return Date();}
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addlike(event:any, data:number){
-    this.ListOfFeeds[data].likeCount++;
-    this.TotalLike++;
+  addLikeEvent(IDName: string){
+    let eventCounter = this.likeCounter++
+    this.likeEvent.emit(eventCounter);
   }
-
-  addNewFeed(data: string){
-    this.ListOfFeeds.unshift({body:data, likeCount:0});
-  }
-
 }

@@ -1,20 +1,22 @@
 <div class="border">
-  <table>
+
+  <h4>Child Component</h4>
+  <p>Feed:</p>
+
+  <table class="center">
     <thead>
       <tr>
-        <th>Child Component</th>
+        <td>Messages</td>
+        <td>Actions</td>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let user of ListOfFeeds; let indexOfelement=index">
-        <td>
-          <p><span>post# {{now}}</span>{{user.body}}</p>
-          <br>
-          <button (click)='addlike(user.likeCount,indexOfelement)'>Like</button>
-          {{user.likeCount}}
-        </td>
+      <tr *ngFor="let feedValue of FeedList">
+        <td>{{feedValue.cFeedValue}}</td>
+        <td><button id="FeedValue.FeedID" (click)="addLikeEvent(feedValue)">Like</button></td>
       </tr>
     </tbody>
   </table>
+
 </div>

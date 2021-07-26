@@ -1,10 +1,14 @@
-<div class="border" *ngIf="Status">
-<h3>Parent Component</h3>
-<p>Likes: {{TotalLike}}</p>
-<div class="center">
-  <textarea name="description" cols="100" rows="5" #Input></textarea>
-  <button (click)='child.addNewFeed(Input.value)'> Submit </button>
-</div>
-<p>Child Component</p>
-  <app-child #child TotalLike1='Method($event)'></app-child>
+<br>
+<div class="border">
+
+  <h2>Parent Component</h2>
+  <p>Likes: {{ParentLikeCounter}}</p>
+  <label for="Input">Bakit Kaibigan ano nasa isip mo?</label>
+  <br>
+  <input type="text" name="FeedPost" id="input" #input>
+  <br>
+  <p *ngIf="Checking">Please Input Something!!! We don't allow blank expressions!!!</p>
+  <button (click)="sumbitToFeed(input.value, input)">Submit</button>
+  <hr>
+  <app-child (likeEvent)="likeEventFromChild($event)" [FeedList]="FeedList"></app-child>
 </div>
