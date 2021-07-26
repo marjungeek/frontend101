@@ -8,15 +8,15 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class ChildContentComponent implements OnInit {
 
   @Input() public txtArea!:string;
-
   @Output() public likeCounter = new EventEmitter<number>();
 
-  like:number=0;
+  @Input() showModal!:boolean;
+
+  like:number=1;
 
   strInput:any = [{status: 'Hello World! :D'}];
 
   constructor() {}
-
   ngOnInit(): void {}
 
   likeCount(){
@@ -24,20 +24,16 @@ export class ChildContentComponent implements OnInit {
     // console.log(this.like);
   }
 
-  addTxt(lbl:any){
+  addTxt(){
     if(this.txtArea!=''){
       console.log(this.strInput.length);
       this.strInput.unshift({status: this.txtArea});
-
-        this.txtArea='';
-
+      this.txtArea='';
+      this.showModal=false;
 
     }else{
       alert('Nothing to post.')
     }
-
-
-
   }
 
 

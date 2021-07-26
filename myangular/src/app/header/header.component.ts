@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
   txtArea:string='';
   inputTxt:string='';
 
+  showModal:boolean=false;
+
   like:number = 0;
 
   constructor() {}
@@ -19,7 +21,6 @@ export class HeaderComponent implements OnInit {
   likeCount(like:any): void{
     this.like=like;
     console.log(this.like);
-    // this.show=true;
   }
 
   submitTxt(){
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
 
       this.txtArea = this.inputTxt;
       this.inputTxt='';
-
+      this.showModal=true;
     }else{
       alert('Empty Fields!');
     }
