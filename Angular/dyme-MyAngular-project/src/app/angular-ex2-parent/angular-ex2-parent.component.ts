@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AngularEX2ParentComponent implements OnInit {
   //inputfeed:string='noinput';
   totalLikeP:number=0;
-  activeStatus:boolean=false;
+  // activeStatus:boolean=false;
 
   listOfPostP:any = [
     {body:'Welcome! Try posting Something!',likeCount:0}
@@ -19,7 +19,7 @@ export class AngularEX2ParentComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(data:string){
-    this.listOfPostP.unshift({body:data,likeCount:0})
+    this.listOfPostP.unshift({body:data,likeCount:0});
     //console.log('submitted: ',this.inputfeed)
   }
   totalMethod(data:number){
@@ -27,12 +27,12 @@ export class AngularEX2ParentComponent implements OnInit {
   }
 
 
-  changeStatus(){
-    this.activeStatus=!this.activeStatus;
-    console.log(`Ex2 current status is: ${this.activeStatus}`)
-  }
-  closeMe(){
-    this.activeStatus=false;
-  }
+  // changeStatus(){
+  //   this.activeStatus=!this.activeStatus;
+  //   console.log(`Ex2 current status is: ${this.activeStatus}`)
+  // }
+  // closeMe(){
+  //   this.activeStatus=false;
+  // }
 
 }

@@ -1,0 +1,8 @@
+<div class="border" *ngIf="activeStatus">
+  <button (click)='getAPI()'>GetAPI</button>
+  <ul *ngFor ="let key of listOfTeams;index as i">
+    <!-- <li>{{i}} | {{key.id}} | {{key.team}}</li> -->
+    <li><app-ex3-team [index]='i' [id]='key.id' [team]='key.team'></app-ex3-team></li>
+  </ul>
+
+</div>

@@ -12,7 +12,7 @@ export class AngularEX2ChildComponent implements OnInit {
 
 
   @Input() listOfPostC:any = [];
-  @Output() totalLike2= new EventEmitter<number>();
+  @Output() totalLikeC= new EventEmitter<number>();
   totalLike:number=0;
 
   get now() : string { return Date(); }
@@ -26,14 +26,14 @@ export class AngularEX2ChildComponent implements OnInit {
   likeMe(event:any,data:number){
     this.listOfPostC[data].likeCount++;
     this.totalLike++;
-    this.totalLike2.emit(this.totalLike);
+    this.totalLikeC.emit(this.totalLike);
     console.log(`I was clicked! ${event} index: ${data} total likes: ${this.totalLike}`);
   }
   unlikeMe(event:any,data:number){
     if(this.listOfPostC[data].likeCount>0){
       this.listOfPostC[data].likeCount--;
       this.totalLike--;
-      this.totalLike2.emit(this.totalLike);
+      this.totalLikeC.emit(this.totalLike);
     }else{
       console.log(`The count is zero no need to unlike! ${this.listOfPostC[data].likeCount}`)
     }
@@ -42,7 +42,7 @@ export class AngularEX2ChildComponent implements OnInit {
   remove(index:number){
     if(this.listOfPostC[index].likeCount>0){
       this.totalLike=this.totalLike-this.listOfPostC[index].likeCount;
-      this.totalLike2.emit(this.totalLike);
+      this.totalLikeC.emit(this.totalLike);
     }
     this.listOfPostC.splice(index,1);
 

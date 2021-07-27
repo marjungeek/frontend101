@@ -1,9 +1,29 @@
-<div class="border">
+<div class='border'>
+  <nav>
+    <span routerLink='Home'>@dyme </span>
+    <span routerLink='Home/Ex1'>Exercise 1 </span>
+    <span routerLink='Home/Ex2'>Exercise 2 </span>
+    <span routerLink='Home/Ex3'>Exercise 3 </span>
+
+    <!-- <a routerLink='Ex1'>Exercise 1</a>
+    <a routerLink='Ex2'>Exercise 2</a>
+    <a routerLink='Ex3'>Exercise 3</a> -->
+  </nav>
+</div>
+<br>
+
+<router-outlet></router-outlet>
+
+
+
+<!-- <div class="border">
   <p>Menu</p>
-  <button (click)='Ex1.changeStatus();Ex2.closeMe()'>Exercise 1</button>
-  <button (click)='Ex2.changeStatus();Ex1.closeMe()'>Exercise 2 </button>
+  <button (click)='Ex2.closeMe();Ex3.closeMe();Ex1.changeStatus()'>Exercise 1</button>
+  <button (click)='Ex1.closeMe();Ex3.closeMe();Ex2.changeStatus()'>Exercise 2 </button>
+  <button (click)='Ex1.closeMe();Ex2.closeMe();Ex3.changeStatus()'>Exercise 3 </button>
 </div>
 
 <app-angular-ex2-parent #Ex2></app-angular-ex2-parent>
 <app-angular-ex1 #Ex1></app-angular-ex1>
+<app-ex3-teamlist #Ex3></app-ex3-teamlist> -->
 

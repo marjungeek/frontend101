@@ -1,4 +1,4 @@
-<div class='border' *ngIf="activeStatus">
+<div class='border'>
   <p>Parent Component Total like: {{totalLikeP}}</p>
   <div class="parent">
     <input class="input"type="text" #inputData><br>
@@ -6,6 +6,6 @@
   </div>
 
 
-  <app-angular-ex2-child (totalLike2)='totalMethod($event)' [listOfPostC]='listOfPostP'></app-angular-ex2-child>
+  <app-angular-ex2-child (totalLikeC)='totalMethod($event)' [listOfPostC]='listOfPostP'></app-angular-ex2-child>
 </div>
 
