@@ -30,6 +30,7 @@ export class ProfileComponent {
   onClick(event:any){
     this.loadState = event.target.value="finished";
   }
+
   input(event:any){
     this.label = event.target.value;
   }
