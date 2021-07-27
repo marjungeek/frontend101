@@ -1,0 +1,32 @@
+
+<div *ngIf="hideTable==false" style="overflow-x: hidden;overflow-y: auto; height: 100%;">
+
+  <table mat-table [dataSource]="teamL" style="inline-size: -webkit-fill-available;">
+
+    <ng-container matColumnDef="Team ID">
+      <th mat-header-cell *matHeaderCellDef> {{columnsToDisplay[0]}} </th>
+      <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Team List">
+      <th mat-header-cell *matHeaderCellDef> {{columnsToDisplay[1]}} </th>
+      <td mat-cell *matCellDef="let user"> {{user.team}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef> {{columnsToDisplay[2]}} </th>
+      <td mat-cell *matCellDef="let user"> {{user.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Time Zone">
+      <th mat-header-cell *matHeaderCellDef> {{columnsToDisplay[3]}} </th>
+      <td mat-cell *matCellDef="let user"> {{user.timezone}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay" class="trhead"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay" class="tr-data"></tr>
+
+
+  </table>
+</div>

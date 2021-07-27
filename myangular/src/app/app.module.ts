@@ -16,6 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TeamListComponent } from './exercise3/team-list/team-list.component';
+import { TeamComponent } from './exercise3/team/team.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +31,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     HeaderComponent,
     ChildContentComponent,
     MenuComponent,
-    Exercise3Component
+    Exercise3Component,
+    TeamListComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     MatSliderModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

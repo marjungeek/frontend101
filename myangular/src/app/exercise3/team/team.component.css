@@ -1,0 +1,15 @@
+.trhead{
+  background-color: aliceblue;
+  font-size: large;
+  border-style: inset !important;
+
+}
+
+tr.tr-data:hover {
+  background: rgb(243, 170, 170);
+}
+
+th{
+  font-size: 20px;
+    color: black
+}
