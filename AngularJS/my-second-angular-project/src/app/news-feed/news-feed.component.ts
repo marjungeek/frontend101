@@ -18,7 +18,7 @@ export class NewsFeedComponent implements OnInit {
 
   liked() {
     this.Likes++;
-    this.sumEvent.emit(this.Likes);
+    this.sum.emit(this.Likes);
   }
 }
 
