@@ -1,0 +1,11 @@
+<div class="container">
+  <button (click)="getAPI()">
+  Start
+  </button>
+  <ul *ngFor="let data of listOfTeams">
+      <li>
+        <app-team [team]="data">
+        </app-team>
+      </li>
+  </ul>
+</div>
