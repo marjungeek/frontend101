@@ -26,7 +26,7 @@ export class TeamListComponent implements OnInit {
         }
         return res.response;
       }),
-      retry(4), //retry up tpp 4 times before failing
+      retry(4), //retry up to 4 times before failing
       catchError(() => of([]))
     );
     data$.subscribe({
