@@ -1,0 +1,7 @@
+<button (click)=GETAPI()>
+Get Team
+</button>
+
+<ul *ngFor="let data of listOfTeams">
+  <app-teams [teamData]="data.id" [teamIdData]="data.team"></app-teams>
+</ul>
