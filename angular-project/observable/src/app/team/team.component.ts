@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  @Input() team: any;
+  @Input() getData: any;
 
   constructor() { }
 
