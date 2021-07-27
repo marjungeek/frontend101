@@ -1,0 +1,18 @@
+<!-- <li *ngFor="let teamData of teamListen">
+  <ul>{{ teamData.id }} || {{ teamData.team }}</ul>
+</li> -->
+
+<table class="center">
+  <thead>
+    <tr>
+      <td><strong>Shortcut Team Name</strong></td>
+      <td><strong>Contact Us (EMAIL)</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teamData of teamListen">
+      <td>{{ teamData.team }}</td>
+      <td>{{ teamData.email }}</td>
+    </tr>
+  </tbody>
+</table>
