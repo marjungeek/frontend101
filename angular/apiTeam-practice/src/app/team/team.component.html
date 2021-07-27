@@ -5,13 +5,20 @@
 <table class="center">
   <thead>
     <tr>
-      <td><strong>Shortcut Team Name</strong></td>
+      <td><strong>Full Team Name</strong></td>
       <td><strong>Contact Us (EMAIL)</strong></td>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let teamData of teamListen">
-      <td>{{ teamData.team }}</td>
+      <td>{{ teamData['team-full'] }}</td>
+      <!--Cannot directly use the "dot notation" if name have "-" in it
+          (teamData.team-full) will have error
+          need to use this method.
+          Source:
+          https://stackoverflow.com/questions/5516106/are-dashes-allowed-
+          in-javascript-property-names/5516115
+      -->
       <td>{{ teamData.email }}</td>
     </tr>
   </tbody>
