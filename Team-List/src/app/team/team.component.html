@@ -1,0 +1,15 @@
+<table>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Contacts</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let DataOfTeams of ListenTeam">
+        <td>{{ DataOfTeams['team-full'] }}</td>
+        <td>{{ DataOfTeams.email }}</td>
+      </tr>
+    </tbody>
+</table>
