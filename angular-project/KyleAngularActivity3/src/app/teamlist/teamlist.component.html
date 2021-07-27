@@ -1,0 +1,11 @@
+
+
+<button (click)="GetAPI()" >show teams</button>
+
+
+<ul *ngFor="let post of listofteams">
+
+<li><app-teams [team]="post.team"  [id]="post.id" ></app-teams></li>
+
+
+</ul>
