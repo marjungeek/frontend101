@@ -15,7 +15,9 @@ export class ChildComponent implements OnInit {
 constructor() {}
   ngOnInit(): void {
   }
-hulikes(likemo:number){
-this.likes.emit(likemo);
+
+  hulikes(likemo:number){
+    this.likes.emit(likemo);
 }
+
 }
