@@ -1,0 +1,6 @@
+<p>API call using observable</p>
+<button (click)="getAPI()">Click</button>
+
+<ul *ngFor="let data of listofTeams">
+  <li><app-team [team]="data"></app-team></li>
+</ul>
