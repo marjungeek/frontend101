@@ -14,7 +14,7 @@ export class PostService {
   getList(): Observable<data[]>{
     return this.http.get<data[]>(this.apiURL);
   }
-  getPost(id:any): Observable<any> {
-    return this.http.get(`${this.apiURL}/${id}`);
+  getPost(id:any): Observable<data> {
+    return this.http.get<data>(`${this.apiURL}/${id}`);
   }
 }
