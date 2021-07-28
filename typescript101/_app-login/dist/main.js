@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import LoginForm from "./LoginForm.js";
 var login = new LoginForm({
+<<<<<<< HEAD
     url: "https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login",
     success: function () {
         alert("success");
@@ -43,6 +44,15 @@ var login = new LoginForm({
     error: function () {
         alert("error");
     },
+=======
+    url: 'https://22pnpc80ni.execute-api.ap-southeast-1.amazonaws.com/dev/login',
+    success: function () {
+        alert('success');
+    },
+    error: function () {
+        alert('error');
+    }
+>>>>>>> e6e7781c51ce96d60bf3c44c2cbdc95522c2e989
 });
 var x = 'hello ulit';
 // use self invoke async function 

@@ -1,6 +1,8 @@
 <div class="border">
 <p>header component</p>
+<h3 *ngIf="!isValidUser">{{loggedOutMessage}}</h3>
 <div class="float-right">
+<<<<<<< HEAD
     <input type="text" name="username">
     <input type="password" name="password">
     <button>Login</button>
@@ -8,3 +10,11 @@
 <app-test></app-test>
 
 </div>
+=======
+    <input type="text" name="username" #username> <!--- #username : one way data binding-->
+    <input type="password" name="password" #password> <!--- #password : one way data binding-->
+    <button (click)="loggIn(username.value, password.value)">Login</button>
+</div>
+<app-test (isUserLoggedOut)="onLogOut($event)" [isUserLoggedIn]="isValidUser" ></app-test> <!-- app test : child component -->
+</div>
+>>>>>>> e6e7781c51ce96d60bf3c44c2cbdc95522c2e989
