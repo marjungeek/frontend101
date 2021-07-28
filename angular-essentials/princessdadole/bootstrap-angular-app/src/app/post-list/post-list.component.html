@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let list of list">
+    <tr *ngFor="let list of list" routerLink='posts/{{list.id}}'>
 
       <td>{{list.id}}</td>
       <td>{{list.title}}</td>
