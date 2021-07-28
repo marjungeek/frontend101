@@ -6,9 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { HomeComponent } from './home/home.component';
-import { FeaturesComponent } from './features/features.component';
-import { PricingComponent } from './pricing/pricing.component';
 import { PostComponent } from './post/post.component';
 
 @NgModule({
@@ -16,10 +13,7 @@ import { PostComponent } from './post/post.component';
     AppComponent,
     NavbarComponent,
     PostListComponent,
-    HomeComponent,
-    FeaturesComponent,
-    PricingComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     BrowserModule,
