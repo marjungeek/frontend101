@@ -1,16 +1,21 @@
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
+      <th scope="col">userID</th>
       <th scope="col">ID</th>
       <th scope="col">Title</th>
       <th scope="col">Body</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = "let post of posts">
+    <tr *ngFor = "let post of posts" routerLink="{{post.id}}">
+      <td>{{post.userId}}</td>
       <td>{{post.id}}</td>
       <td>{{post.title}}</td>
       <td>{{post.body}}</td>
     </tr>
   </tbody>
 </table>
+
+
+
