@@ -14,6 +14,9 @@ getList(): Observable <PostInterface[]> {
  return this.http.get<PostInterface[]>('https://jsonplaceholder.typicode.com/posts');
 
 }
+getPost(id:number): Observable <PostInterface> {
+  return this.http.get<PostInterface>('https://jsonplaceholder.typicode.com/posts/'+ id);
 
+ }
 
 }
