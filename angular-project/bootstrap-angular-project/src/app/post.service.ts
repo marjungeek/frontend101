@@ -8,7 +8,6 @@ import { dataname } from 'src/app/data';
 })
 export class PostService {
 
-  dataname = [];
   getAPI = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {}
@@ -17,5 +16,11 @@ export class PostService {
      return this.http.get<dataname[]>(this.getAPI);
     }
 
+    getPost(id: any): Observable<any>{
+      return this.http.get(`${this.getAPI}/${id}`);
+    }
+    // getPost(id: number) : Observable<[]>{
+    //   return this.http.get<[]>(``);
+    // }
   }
 
