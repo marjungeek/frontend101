@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'di-http-client';
+  title = 'renzo-bootstrap-angular-project';
 }
-
