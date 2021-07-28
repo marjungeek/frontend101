@@ -1,4 +1,6 @@
-<table class="table hoverable">
+<body>
+<div class="container">
+<table class="table table-dark table-hover">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -6,7 +8,7 @@
       <th scope="col">body</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="">
     <tr *ngFor="let list of list" [routerLink]="['/post',list.id]">
 
       <td>{{list.id}}</td>
@@ -15,3 +17,5 @@
     </tr>
   </tbody>
 </table>
+</div>
+</body>

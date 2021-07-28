@@ -29,5 +29,8 @@ export class PostComponent implements OnInit {
        })
    });
   }
+  onBack(): void {
+    this._router.navigate(['post']);
+ }
 
 }
