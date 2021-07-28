@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">title</th>
+      <th scope="col">body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of data" routerLink="{{post.id}}" >
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </tbody>
+</table>
