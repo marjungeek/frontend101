@@ -8,9 +8,13 @@ import { PostInterface } from './post';
 })
 export class PostService {
 
-  globalAPI = 'https://jsonplaceholder.typicode.com/posts'
+  globalAPI = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private http: HttpClient ) { }
   getList() : Observable<PostInterface[]> {
     return this.http.get<PostInterface[]>(this.globalAPI);
+  }
+
+  getPost(id: any): Observable<any> {
+    return this.http.get(`${this.globalAPI}/${id}`);
   }
 }
