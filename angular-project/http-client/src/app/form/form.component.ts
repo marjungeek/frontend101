@@ -8,16 +8,18 @@ import { ApiService } from '../api.service';
 })
 export class FormComponent implements OnInit {
 
-  contentMessage!: string;
+  contentMessage:string = "";
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+
+  }
+  updateMessage(message: HTMLTextAreaElement){
+    this.apiService.updateMessage(message.value);
+    // this.contentMessage="hello";
   }
 
-  updateMessage(message: HTMLInputElement){
-    this.apiService.updateMessage(message.value);
-  }
   // or updateMessage(message: string){
   //   this.apiService.updateMessage(message);
   // }

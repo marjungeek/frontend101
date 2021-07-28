@@ -6,13 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
 
-   private message$ = new BehaviorSubject<string>("Default Message");
-   messageData = this.message$.asObservable();
+  private message$ = new BehaviorSubject<string>("Default Message");
+  messageData = this.message$.asObservable();
 
   constructor() { }
 
   updateMessage(newMessage: string){
-    this.message$.next(newMessage);//gagamitin para iupdate yung default message
-
+    this.message$.next(newMessage);
   }
 }
+//gagamitin para iupdate yung default message

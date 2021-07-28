@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  contentMessage : string = "";
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.apiService.messageData.subscribe(data => {
+      this.contentMessage = data;
+    })
   }
-
 }
