@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeaturesComponent } from './features/features.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post/post.component';
 import { PricingComponent } from './pricing/pricing.component';
 
 
@@ -11,8 +12,7 @@ const routes: Routes = [
   {path: 'features', component: FeaturesComponent},
   {path: 'pricing', component: PricingComponent},
   {path: 'post-list', component: PostListComponent},
-
-
+  {path: 'post-list/:id', component: PostComponent}
 ];
 
 @NgModule({

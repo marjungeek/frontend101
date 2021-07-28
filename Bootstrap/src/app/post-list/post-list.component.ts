@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
-import { data } from '../interface'
+import { data } from 'src/app/interface'
 
 @Component({
   selector: 'app-post-list',
@@ -8,14 +8,14 @@ import { data } from '../interface'
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  post!: data[]
+  post! : data [];
   constructor(private postService : PostService) { }
 
   ngOnInit(): void {
     const result = this.postService.getList();
-    result.subscribe(result =>{
+    result.subscribe(result => {
       this.post = result;
-    })
-  }
+    });
 
+  }
 }
