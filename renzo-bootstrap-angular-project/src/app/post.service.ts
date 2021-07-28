@@ -8,12 +8,16 @@ import { myData } from './interface';
 })
 export class PostService {
 
+  myApi = 'https://jsonplaceholder.typicode.com/posts';
+
   constructor(private http: HttpClient) { }
 
   getList(): Observable<myData[]>{
+    return this.http.get<myData[]>(this.myApi);
+  }
 
-    return this.http.get<myData[]>('https://jsonplaceholder.typicode.com/posts');
-
+  getPost(id : any): Observable<any> {
+    return this.http.get(`${this.myApi}/${id}`);
   }
 
 }

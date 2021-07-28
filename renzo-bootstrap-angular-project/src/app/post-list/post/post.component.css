@@ -1,0 +1,11 @@
+.media{
+  text-align: -webkit-center;
+}
+
+.media-body{
+  width: 750px;
+}
+
+img{
+  border-style: outset;
+}

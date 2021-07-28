@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FeatureComponent } from './feature/feature.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { PostComponent } from './post-list/post/post.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PricingComponent } from './pricing/pricing.component';
     PostListComponent,
     HomeComponent,
     FeatureComponent,
-    PricingComponent
+    PricingComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

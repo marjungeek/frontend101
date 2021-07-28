@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeatureComponent } from './feature/feature.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post-list/post/post.component';
 import { PricingComponent } from './pricing/pricing.component';
 
 const routes: Routes = [
 
   {path: '', pathMatch: 'prefix' , component: HomeComponent},
+  {path: 'post-list/:id', component: PostComponent},
   {path: 'home', component: HomeComponent},
   {path: 'post-list', component: PostListComponent},
   {path: 'feature', component: FeatureComponent},

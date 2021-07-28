@@ -7,7 +7,7 @@ import { Exercise3Component } from './exercise3/exercise3.component';
 
 
 const routes: Routes = [
-{path: 'profile-component', component:ProfileComponentComponent},
+{path: 'profile-component', component: ProfileComponentComponent},
 {path: 'header', component:HeaderComponent},
 {path: 'exercise3', component: Exercise3Component}
 
