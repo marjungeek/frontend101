@@ -1,1 +1,12 @@
-<app-post-list></app-post-list>
+<hr/>
+<div class="container">
+  <div class="media">
+    <img class="mr-3" src="https://picsum.photos/200/300" alt="Free unsplash image">
+    <div class="media-body">
+      <h1>{{post.id}}</h1>
+      <h5 class="mt-0">{{post.title}}</h5>
+      {{post.body}}
+    </div>
+  </div>
+    <button class="form-control" (click)="back()">Back</button>
+</div>
