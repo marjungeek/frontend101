@@ -17,12 +17,12 @@ export class PostService {
     return this.http.get<DT[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-  getPost(id: number):void{
+  // getPost(id: number):void{
 
-    console.log('In Post.service: ',id);
-    this.index=id;
+  //   console.log('In Post.service: ',id);
+  //   this.index=id;
 
-    //return this.http.get<DT[]>('https://jsonplaceholder.typicode.com/posts');
+  //   //return this.http.get<DT[]>('https://jsonplaceholder.typicode.com/posts');
 
-  }
+  // }
 }

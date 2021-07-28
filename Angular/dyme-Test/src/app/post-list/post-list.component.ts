@@ -27,11 +27,11 @@ export class PostListComponent implements OnInit {
     });
   }
 
-  viewPost(id: number): void{
-    console.log('In post list: ',id);
-    this.myId=id;
-    this.PostService.getPost(id);
+  // viewPost(id: number): void{
+  //   console.log('In post list: ',id);
+  //   this.myId=id;
+  //   this.PostService.getPost(id);
 
-  }
+  // }
 
 }

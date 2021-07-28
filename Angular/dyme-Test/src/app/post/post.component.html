@@ -1,2 +1,18 @@
-<span>id: {{post.id}} <br><hr> title: {{post.title}} <br><hr> body: {{post.body}}</span><br><hr>
-<a routerLink='/Post'>Back</a>
+<hr/>
+<div class="container">
+    <div class="media">
+        <img class="align-self-center mr-3" src="https://picsum.photos/200/300" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0">Id# {{post.id}} TITLE: {{post.title}}</h5>
+          <h5 class="mt-0">BODY:</h5>
+          <p>{{post.body}}</p>
+        </div>
+    </div>
+    <a routerLink='/Post'>Back</a>
+    <!-- <button class="form-control" (click)="back()">Back</button> -->
+</div>
+
+
+
+<!-- <span>id: {{post.id}} <br><hr> title: {{post.title}} <br><hr> body: {{post.body}}</span><br><hr>
+<a routerLink='/Post'>Back</a> -->
