@@ -8,13 +8,19 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule} from '@angular/material/slider';
 import { ButtonComponent } from './button/button.component';
+import { TeamListComponent } from './team-list/team-list.component';
+import { TeamComponent } from './team/team.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ButtonComponent
+    ButtonComponent,
+    TeamListComponent,
+    TeamComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
