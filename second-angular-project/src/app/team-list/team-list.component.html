@@ -1,2 +1,6 @@
-<p>team-list works!</p>
-<button>click</button>
+<p>The Team Lists: </p>
+<button (click)="getAPI()">click</button>
+
+<ul *ngFor="let data of listOfTeams">
+  <li><app-team [team]="data"></app-team></li>
+</ul>
