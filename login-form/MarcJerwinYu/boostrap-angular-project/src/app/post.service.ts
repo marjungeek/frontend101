@@ -15,4 +15,8 @@ export class PostService {
   getList() : Observable<DataInterface[]>{
     return this.http.get<DataInterface[]>(this.globalAPI);
   }
+
+  getPost(id : any): Observable<any> {
+    return this.http.get(`${this.globalAPI}/${id}`);
+  }
 }
