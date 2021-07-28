@@ -9,10 +9,10 @@
   </thead>
   <tbody>
     <tr *ngFor='let key of post'>
-      <th scope="row">{{key.id}}</th>
-      <td>{{key.userId}}</td>
-      <td>{{key.title}}</td>
-      <td>{{key.body}}</td>
+      <th scope="row"  (click)='viewPost(key.id)' [routerLink]='Post+key.id' >{{key.id}}</th>
+      <td (click)='viewPost(key.id)'>{{key.userId}}</td>
+      <td (click)='viewPost(key.id)'>{{key.title}}</td>
+      <td (click)='viewPost(key.id)'>{{key.body}}</td>
     </tr>
   </tbody>
 </table>

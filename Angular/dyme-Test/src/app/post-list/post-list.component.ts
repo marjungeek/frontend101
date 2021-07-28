@@ -10,8 +10,9 @@ import { DT } from '../interface';
 
 
 export class PostListComponent implements OnInit {
-
+  myId:number=0;
   post!:DT[];
+  Post:string='/Post/';
   constructor(private PostService: PostService) { }
 
   ngOnInit(): void {
@@ -26,5 +27,11 @@ export class PostListComponent implements OnInit {
     });
   }
 
+  viewPost(id: number): void{
+    console.log('In post list: ',id);
+    this.myId=id;
+    this.PostService.getPost(id);
+
+  }
 
 }

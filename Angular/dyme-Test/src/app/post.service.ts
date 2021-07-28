@@ -9,10 +9,20 @@ import { DT } from './interface';
   providedIn: 'root'
 })
 export class PostService {
+  index:number=NaN;
 
   constructor(private http: HttpClient) { }
 
   getList(): Observable<DT[]>{
     return this.http.get<DT[]>('https://jsonplaceholder.typicode.com/posts');
+  }
+
+  getPost(id: number):void{
+
+    console.log('In Post.service: ',id);
+    this.index=id;
+
+    //return this.http.get<DT[]>('https://jsonplaceholder.typicode.com/posts');
+
   }
 }

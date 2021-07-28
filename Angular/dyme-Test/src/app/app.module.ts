@@ -11,6 +11,7 @@ import { FeaturesComponent } from './features/features.component';
 import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { PNFComponent } from './pnf/pnf.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PNFComponent } from './pnf/pnf.component';
     FeaturesComponent,
     HomeComponent,
     PricingComponent,
-    PNFComponent
+    PNFComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
