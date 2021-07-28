@@ -9,6 +9,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { FeaturesComponent } from './features/features.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { HomeComponent } from './home/home.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     PostListComponent,
     FeaturesComponent,
     PricingComponent,
-    HomeComponent
+    HomeComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
