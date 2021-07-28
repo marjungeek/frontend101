@@ -25,6 +25,8 @@ export class PostComponent implements OnInit {
 
   back() {
     this.router.navigate(['/post-list']);
+
+
   }
 
 }
