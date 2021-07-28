@@ -1,0 +1,9 @@
+.centerText {
+  text-align: center;
+}
+
+.testPadding {
+  /* Top Right Down Left */
+  padding: 40px 20px 20px 20px;
+  /* color: blanchedalmond; */
+}

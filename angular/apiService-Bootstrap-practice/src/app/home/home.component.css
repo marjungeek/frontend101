@@ -1,0 +1,13 @@
+.centerText {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+.testPadding {
+  /* Top Right Down Left */
+  padding: 20px 40px 20px 40px;
+  /* color: blanchedalmond; */
+}

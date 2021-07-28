@@ -1,0 +1,23 @@
+table, th, td {
+  border: 1px solid black; /* Border completion is delayed on browser?? */
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 40px 10px 40px; /* Top Right Down Left */
+  word-wrap: break-word;
+}
+
+.center {
+  margin: auto;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.testPadding {
+  /* Top Right Down Left */
+  padding: 40px 20px 20px 20px;
+  /* color: blanchedalmond; */
+}

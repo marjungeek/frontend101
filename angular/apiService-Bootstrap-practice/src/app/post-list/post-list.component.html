@@ -1,0 +1,19 @@
+<div class="testPadding">
+  <p class="centerText">Sample API call then display data on a table</p>
+  <table class="table">
+    <thead>
+      <tr class="centerText">
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let anyName of posts" >
+        <td>{{anyName.id}}</td>
+        <td>{{anyName.title}}</td>
+        <td>{{anyName.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
