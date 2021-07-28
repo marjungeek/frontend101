@@ -1,0 +1,10 @@
+<button (click)="getAPI()"> Show Teams! </button>
+<div>
+<ul *ngFor="let showteam of listofTeams">
+
+<app-team [teams]="showteam.team" [id]="showteam.id"  ></app-team>
+</ul>
+</div>
+
+
+
