@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FeaturesComponent } from './features/features.component';
+import { HomeComponent } from './home/home.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { PostListComponent } from './post-list/post-list.component';
 
 const routes: Routes = [
- // {path: '', pathMatch: 'full', redirectTo: 'home'},
-  //{path: 'home', component: HomeComponent}
+  {path: '', pathMatch: 'full', redirectTo: 'posts'},
+  {path: 'home', component: HomeComponent},
+  {path: 'posts', component: PostListComponent},
+  {path: 'features', component: FeaturesComponent},
+  {path: 'pricing', component: PricingComponent}
 ];
 
 @NgModule({
