@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
-import { PostFormat } from '../interface';
+import { PostFormat } from '../postFormat.interface';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +9,7 @@ import { PostFormat } from '../interface';
 })
 export class PostListComponent implements OnInit {
 
-  posts!: PostFormat[];
+  posts: any;
 
   constructor(private postService: PostService) { }
 
@@ -18,6 +18,10 @@ export class PostListComponent implements OnInit {
     result.subscribe(result => {
       this.posts = result;
     })
+  }
+
+  viewPostContent(id: number) : void {
+    console.log(id);
   }
 
 }
