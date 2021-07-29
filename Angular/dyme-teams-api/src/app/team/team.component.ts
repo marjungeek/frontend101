@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { APIService } from '../api.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class TeamComponent implements OnInit {
     name:'Like',num: 0
   };
 
-  constructor(private route: ActivatedRoute,private APIService: APIService) { }
+  constructor(private router: Router,private route: ActivatedRoute,private APIService: APIService) { }
 
   ngOnInit(): void {
     const id=this.route.snapshot.paramMap.get('id');
@@ -40,6 +40,10 @@ export class TeamComponent implements OnInit {
       //console.log(result.data);
 
       const index = this.team.findIndex(x => x.id ===id);
+      console.log(typeof(index),index);
+      if(index==-1){
+        this.router.navigate(['**']);
+      }
       this.parsedTeam=this.team[index];
       //console.log('parse team is:\n',this.parsedTeam);
 

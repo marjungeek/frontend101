@@ -12,6 +12,8 @@ const routes: Routes = [
   {path: 'TeamList', component: TeamListComponent},
   {path: 'TeamList/:id',component: TeamComponent},
   {path: '**', component: PNFComponent}
+
+
 ];
 
 @NgModule({
