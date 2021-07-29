@@ -6,8 +6,10 @@ import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'team', component: TeamComponent},
+  { path: 'team-list/:id', component: TeamComponent},
   { path: 'team-list', component: TeamListComponent}
+
+
 ];
 
 @NgModule({

@@ -2,11 +2,11 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">TeamFields</th>
+      <th scope="col">Teams</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="list" *ngFor="let result of teams" [routerLink]="['/team']" routerLinkActive="router-link-active" >
+    <tr class="list" *ngFor="let result of teams" routerLink="{{result.id}}">
       <td>{{result.id}}</td>
       <td>{{result.team}}</td>
     </tr>

@@ -2,26 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-  title: string ='Team Details';
-  teams:any;
-
+arrayData:any;
+resultItem: any;
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const data = this.route.snapshot.paramMap.get('data');
-    const result = this.teams = this.apiService.getData(data);
-    result.subscribe(data => {
-      this.teams = data;
+    const dataResult = this.route.snapshot.paramMap.get('id');
+    const teamResult = this.apiService.getTeam();
+    teamResult.subscribe(teamResult => {
+      this.arrayData = teamResult.data;
+      console.log(this.arrayData);
 
-    })
-    console.log('teams: ',this.teams);
+      this.resultItem = this.arrayData.find(function(element:any) {
+        return element.id === dataResult;
+      });
+
+    });
+
+
+    // const dataResult = this.route.snapshot.paramMap.get('id');
+    // const result = this.arrayData = this.apiService.getData(dataResult);
+    // result.subscribe(data => {
+    //   this.arrayData = data;
+    //   console.log(this.arrayData);
+    // });
   }
 
 }

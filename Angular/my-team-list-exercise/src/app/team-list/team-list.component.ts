@@ -10,19 +10,15 @@ import { ApiService } from '../api.service'
 export class TeamListComponent implements OnInit {
   teams!: TeamInterface[];
 
-  constructor(private postService: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
 
   ngOnInit(): void {
-
-    const teamResult = this.postService.getTeam();
+    const teamResult = this.apiService.getTeam();
     teamResult.subscribe(teamResult => {
       this.teams = teamResult.data;
       console.log(this.teams);
     })
-
-
-
   }
 
 }
