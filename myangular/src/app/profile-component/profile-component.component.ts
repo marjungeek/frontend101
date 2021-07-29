@@ -26,8 +26,6 @@ export class ProfileComponentComponent implements OnInit {
     }
   }
 
-
-
   changeLabel(lbl:string, hdr:string){
 
     this.count++;

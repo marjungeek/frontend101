@@ -1,13 +1,25 @@
 <hr/>
-<div class="container">
-  <div class="media">
-    <img class="mr-3" src="https://source.unsplash.com/user/erondu/700x300" alt="Free unsplash image">
-    <div class="media-body">
-      <h1>{{post.id}}</h1>
-      <h5 class="mt-0">{{post.title}}</h5>
-      {{post.body}}
+<div class="ht" style="background-color: lightgray;">
+
+  <div class="container">
+    <div class="media">
+      <div class='p1'>
+        <img class="mr-3" src="https://source.unsplash.com/user/erondu/500x200" alt="Free unsplash image">
+
+      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="media-body">
+            <h1>{{post.id}}</h1>
+            <h5 class="mt-0">{{post.title}}</h5>
+            {{post.body}}
+          </div>
+          <button class="form-control" (click)="backBtn()">Back</button>
+
+        </mat-card-content>
+      </mat-card>
+
     </div>
   </div>
-    <!-- <button class="form-control" (click)="back()">Back</button> -->
-</div>
 
+</div>

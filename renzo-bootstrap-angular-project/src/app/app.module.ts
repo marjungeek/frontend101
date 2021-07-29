@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { FeatureComponent } from './feature/feature.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { PostComponent } from './post-list/post/post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule }  from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { PostComponent } from './post-list/post/post.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

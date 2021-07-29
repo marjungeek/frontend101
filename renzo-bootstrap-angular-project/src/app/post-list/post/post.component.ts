@@ -22,4 +22,9 @@ export class PostComponent implements OnInit {
     })
   }
 
+  backBtn() {
+    this.router.navigate(['/post-list']);
+  }
+
+
 }

@@ -4,6 +4,19 @@
 
 .media-body{
   width: 750px;
+
+}
+
+.p1{
+  padding-top: 30px;
+}
+
+.ht{
+  height: 86%;
+}
+
+mat-card{
+  top: 20px;
 }
 
 img{
