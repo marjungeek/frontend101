@@ -4,9 +4,11 @@ import { FeaturesComponent } from './features/features.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo:'home'},
+  {path: 'post-list/:id', component: PostComponent},
   {path: 'home', component : HomeComponent},
   {path: 'pricing', component: PricingComponent},
   {path: 'features', component: FeaturesComponent},

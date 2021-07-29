@@ -19,5 +19,8 @@ post! : postInterface [];
       this.post = result;
     })
   }
+  viewPost(id:number){
+    console.log(id);
+  }
 
 }

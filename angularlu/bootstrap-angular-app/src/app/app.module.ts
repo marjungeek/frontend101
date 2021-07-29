@@ -8,6 +8,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { FeaturesComponent } from './features/features.component';
+import { PostComponent } from './post/post.component';
+import { TeamsComponent } from './teams/teams.component';
 
 
 
@@ -18,7 +20,9 @@ import { FeaturesComponent } from './features/features.component';
     PostListComponent,
     HomeComponent,
     PricingComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    PostComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
