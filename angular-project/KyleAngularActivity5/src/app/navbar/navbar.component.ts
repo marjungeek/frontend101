@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  addlikeCount:number = 0;
+  constructor(private ServiceService: ServiceService) { }
 
   ngOnInit(): void {
+    this.ServiceService.finalnumber.subscribe(res =>{
+      this.addlikeCount = res;
+
+    })
+
   }
+
+
 
 }

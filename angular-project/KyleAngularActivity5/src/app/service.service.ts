@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 //step 1 import modules
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { teamlistINT } from './teamlistINT';
 
 
@@ -12,13 +12,23 @@ import { teamlistINT } from './teamlistINT';
 export class ServiceService {
   //step 2, create the teamlist url
   private apiURL = 'https://api.first.org/data/v1/teams'
+  private number1 = 0;
+  private number2 = new BehaviorSubject<number>(this.number1);
+  finalnumber = this.number2.asObservable();
 
   constructor(private http: HttpClient ) { }
+
 
   // step 3. create method
   getList() : Observable<[]>{
     return this.http.get<[]>(this.apiURL);
   }
+
+addlike(addlikeCount:string){
+this.number2.next(this.number1++);
+
+}
+
 
   //step 3 create getlist method to call the apiurl
 // getList():Observable<teamlistINT[]>{

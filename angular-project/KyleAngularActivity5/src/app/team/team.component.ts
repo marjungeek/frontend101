@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../service.service';
+import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-team',
@@ -19,6 +20,10 @@ export class TeamComponent implements OnInit {
     result.subscribe(data => {
       console.log(this.teaml)
       this.teaml =data});
+  }
+
+  AddLike(){
+    this.ServiceService.addlike("added");
   }
 
 }
