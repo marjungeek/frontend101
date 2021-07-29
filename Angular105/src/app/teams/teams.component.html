@@ -1,0 +1,15 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">TEAM ID</th>
+      <th scope="col">TEAM NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of team.data" routerLink="{{list.team}}" >
+      <td>{{list.id}}</td>
+      <td>{{list.team}}</td>
+    </tr>
+  </tbody>
+</table>

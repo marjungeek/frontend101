@@ -1,0 +1,15 @@
+<hr/>
+<div class="container">
+    <div class="media">
+        <img class="align-self-center mr-3" src="https://picsum.photos/200" alt="Generic placeholder image">
+        <div class="media-body" *ngFor="let data of tddata1" >
+          <h5 class="mt-0" ></h5>
+          <p>{{"TEAM NAME: "+ data.host}}</p>
+          <p>{{"COUNTRY: "+ data.country}}</p>
+          <p>{{"ADDRESS: "+ data.address}}</p>
+          <p>{{"ESTABLISHMENT: "+ data.establishment}}</p>
+          <p>{{"WEBSITE: "+ data.website}}</p>
+        </div>
+    </div>
+    <button>LIKE</button>
+</div>
