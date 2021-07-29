@@ -20,6 +20,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
-
-
+  getAPI(){
+   const result = this.apiService.getAPI();
+   result.subscribe(data =>{
+     console.log(data);
+   })
+  }
 }

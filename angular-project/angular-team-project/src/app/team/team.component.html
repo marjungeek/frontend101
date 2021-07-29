@@ -1,0 +1,11 @@
+<hr/>
+<div class="container">
+  <div class="media">
+    <img class="mr-3" src="https://picsum.photos/200/300" alt="Free unsplash image">
+    <div class="media-body">
+      <h1 *ngFor="let team of teamDisplay">
+        {{team}}</h1>
+    </div>
+  </div>
+    <button class="form-control" (click)="back()">Back</button>
+</div>

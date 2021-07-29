@@ -7,6 +7,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
   contentMessage: string;
 
   constructor(private apiService: ApiService) { }
