@@ -55,6 +55,7 @@ a:link, a:visited{
   color: white;
 }
 
-h1{
+h3{
   color: black;
+  font-size: 40px;
 }
