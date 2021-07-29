@@ -1,0 +1,39 @@
+<hr/>
+<div class="container">
+    <div class="media">
+        <button (click)='likeMe()'>{{Like.name}} </button> {{Like.num}}<br>
+        <a routerLink='/TeamList'>Back</a><br>
+        <img class="align-self-center mr-3" src="https://picsum.photos/200/300" alt="Generic placeholder image">
+        <div class="media-body">
+          <!-- <h5 class="mt-0">Id# {{team}} TITLE: {{team}}</h5>
+          <hr>
+          <h5 class="mt-0">BODY:</h5>-->
+          <!-- <p>{{parsedTeam.establishment}}</p> -->
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let key of parsedTeam | keyvalue;'>
+                <th scope="row"  >{{key.key}}</th>
+                <td> {{key.value}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>
+
+    <!-- <button class="form-control" (click)="back()">Back</button> -->
+</div>
+
+
+
+<!-- <span>id: {{post.id}} <br><hr> title: {{post.title}} <br><hr> body: {{post.body}}</span><br><hr>
+<a routerLink='/Post'>Back</a> -->
+

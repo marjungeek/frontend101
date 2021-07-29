@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">team-full</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let key of team;let i =index' [routerLink]='[key.id]'>
+      <th scope="row"  >{{key.id}}</th>
+      <td>{{key['team-full']}}</td>
+
+    </tr>
+  </tbody>
+</table>
