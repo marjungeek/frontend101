@@ -38,6 +38,7 @@
   float: left;
   width: 50%;
   font-weight: 400;
+  color: gray;
 }
 
 .column.text{
@@ -52,4 +53,8 @@ a:link, a:visited{
   border-radius: 5px;
   text-decoration: none;
   color: white;
+}
+
+h1{
+  color: black;
 }
