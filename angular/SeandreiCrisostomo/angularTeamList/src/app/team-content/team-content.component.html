@@ -1,0 +1,12 @@
+<hr/>
+<div class="container">
+    <div class="media">
+        <p>Likes: {{likesOfTeam}}</p>
+        <img class="align-self-center mr-3" src="https://picsum.photos/200" alt="random image every refresh">
+        <div class="media-body">
+            <h5 class="mt-0">{{teamContent.id}} - {{teamContent.team}}</h5>
+        </div>
+    </div>
+    <button (click)="clickLike()">Like</button>
+    <button class="form-control" (click)="back()">Back</button>
+</div>
