@@ -37,6 +37,7 @@
 .column2{
   float: left;
   width: 50%;
+  font-weight: 400;
 }
 
 .column.text{
@@ -45,8 +46,8 @@
   font-size: 15px;
 }
 
-a:link{
-  background-color: lightskyblue;
+a:link, a:visited{
+  background-color: dodgerblue;
   padding: 5px;
   border-radius: 5px;
   text-decoration: none;
