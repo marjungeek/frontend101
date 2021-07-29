@@ -7,10 +7,14 @@ import { PostInterface } from './post';
   providedIn: 'root'
 })
 export class PostService {
-  globalAPI = 'https://jsonplaceholder.typicode.com/posts';
+  url: string = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private http: HttpClient) { }
 
 getList() : Observable<PostInterface[]>{
-  return this.http.get<PostInterface[]>(this.globalAPI);
+  return this.http.get<PostInterface[]>('https://jsonplaceholder.typicode.com/posts');
+}
+
+getPost(id: any) : Observable<any> {
+  return this.http.get(`${this.url}/${id}`);
 }
 }
