@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Team</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="list" *ngFor = "let teamzz of teams" routerLink="{{teamzz.id}}">
+      <td>{{teamzz.id}}</td>
+      <td>{{teamzz.team}}</td>
+    </tr>
+
+  </tbody>
+</table>
