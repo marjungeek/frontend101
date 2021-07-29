@@ -6,7 +6,7 @@ import { TeamlistComponent } from './teamlist/teamlist.component';
 
 const routes: Routes = [
   // {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'team/:team', component: TeamComponent},
+  {path: 'teamlist/:id', component: TeamComponent},
   {path: 'teamlist', component:  TeamlistComponent},
   {path: 'home', component:  HomeComponent}
 ];

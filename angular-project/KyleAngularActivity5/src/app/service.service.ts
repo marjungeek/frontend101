@@ -31,8 +31,8 @@ export class ServiceService {
 // }
 
 
-getPost(team: any): Observable<[]>{
- return this.http.get<[]>(`${this.apiURL}?team=${team}`)
+getPost(id: any): Observable<[]>{
+ return this.http.get<[]>(`${this.apiURL}?team=${id}`)
 
 }
 

@@ -9,13 +9,13 @@ import { ServiceService } from '../service.service';
 })
 export class TeamComponent implements OnInit {
   teaml:any;
-  post:any;
+
 
   constructor(private route: ActivatedRoute, private ServiceService: ServiceService) { }
 
   ngOnInit(): void {
-    const team = this.route.snapshot.paramMap.get('team');
-    const result = this.ServiceService.getPost(team);
+    const id = this.route.snapshot.paramMap.get('id');
+    const result = this.ServiceService.getPost(id);
     result.subscribe(data => {
       console.log(this.teaml)
       this.teaml =data});
