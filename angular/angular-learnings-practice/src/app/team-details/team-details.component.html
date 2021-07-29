@@ -1,0 +1,49 @@
+<div class="testPadding">
+  <!-- <p class="centerText">This page should display other details of the selected team,
+    a like button, and a back button.
+  </p>
+  <hr/> -->
+  <div class="row centerText">
+    <div class="column">
+      <span class="testPadding">Team ID: {{ specificTeam.id }}</span>
+      <span class="testPadding">AKA: {{ specificTeam.team }}</span>
+      <blockquote class="blockquote paddingBigTop">
+        <h4 class="mb-0">
+          "The Team could put a quote or something here to get the likes of the visitors"
+        </h4>
+      </blockquote>
+    </div>
+    <div class="column">
+      <img class="mr-3" src="https://picsum.photos/200" alt="Generic placeholder image">
+      <!--July 29, 2021: Image does not change because single page app T.T
+                Check/ask tomorrow if there is a way to force refresh a single tag on Angular
+      -->
+    </div>
+  </div>
+  <!--
+    routerLink Documentation:
+    https://angular.io/api/router/RouterLink
+  -->
+  <button class="btn btn-outline-primary" routerLink="/team-list">Back</button>
+  <button class="btn btn-primary marginLeft" (click)="addLikeEvent()">Like</button>
+<hr/>
+  <table class="table table-hover">
+    <thead>
+      <tr class="centerText">
+        <th scope="col">Full Team Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Contact Us</th>
+        <!-- <th scope="col">Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ specificTeam['team-full'] }}</td>
+        <td>{{ specificTeam.address }}</td>
+        <td>{{ specificTeam.email }}</td>
+        <!-- <td><button (click)="addLikeEvent(specificTeam.id)">Like</button></td> -->
+        <!--There is typeError on browser ????-->
+      </tr>
+    </tbody>
+  </table>
+</div>

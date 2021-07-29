@@ -1,0 +1,26 @@
+<div class="testPadding">
+  <p class="centerText">Sample API call then display data on a table.
+    When row is clicked, it will display a different page with its details
+  </p>
+  <table class="table table-hover">
+    <thead>
+      <tr class="centerText">
+        <th scope="col">ID</th>
+        <th scope="col">Shortcut Team Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--Added a routerLink so when clicked will display different page
+          The routerLink here already takes the link "team-list"
+          so when I added the "anyName.id", the whole link would look like
+          "team-list/anyName.id"
+      -->
+      <tr *ngFor="let anyName of apiTeamData" routerLink="team-likes/{{anyName.id}}">
+        <td>{{anyName.id}}</td>
+        <td>{{anyName.team}}</td>
+        <!-- <app-team-details *ngIf="false"></app-team-details> -->
+        <!--The false value above hides the appteamdetails-->
+      </tr>
+    </tbody>
+  </table>
+</div>

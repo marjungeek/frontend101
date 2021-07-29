@@ -1,6 +1,8 @@
 <div class="testPadding">
-  <p class="centerText">Sample API call then display data on a table</p>
-  <table class="table">
+  <p class="centerText inline">Sample API call then display data on a table.
+    When row is clicked, it will display a different page with its details
+  </p>
+  <table class="table table-hover">
     <thead>
       <tr class="centerText">
         <th scope="col">ID</th>
@@ -9,7 +11,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let anyName of posts" >
+      <!--Added a routerLink so when clicked will display different page-->
+      <tr *ngFor="let anyName of posts" routerLink="post-list/post-details">
         <td>{{anyName.id}}</td>
         <td>{{anyName.title}}</td>
         <td>{{anyName.body}}</td>

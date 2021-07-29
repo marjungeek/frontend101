@@ -1,0 +1,7 @@
+<div class="testPadding">
+  <p>Total Likes: {{ likeCounterParent }}</p>
+  <!--July 29, 2021: Is there a way to store likes without DB??
+      Try to do storing tomorrow
+  -->
+<app-team-details (likeEvent)="likeEventFromChild($event)"></app-team-details>
+</div>
