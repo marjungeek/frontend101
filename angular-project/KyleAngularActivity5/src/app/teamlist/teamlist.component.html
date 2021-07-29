@@ -1,0 +1,20 @@
+
+<h1>hiho !</h1>
+
+<table class="table table-hover cursor">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">teams</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let post of teamlist" routerLink="{{post.id}}" > -->
+      <tr *ngFor="let post of teaml.data" routerLink="{{post.team}}" >
+      <td>{{post.id}}</td>
+      <td>{{post.team}}</td>
+
+    </tr>
+  </tbody>
+</table>

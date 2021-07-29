@@ -13,6 +13,7 @@ export class PostlistComponent implements OnInit {
   constructor(private postService: PostService) { }
 
 
+
   //-------------------------normal way of
 //   ngOnInit(): void {
 //     const result = this.postService.getList();
