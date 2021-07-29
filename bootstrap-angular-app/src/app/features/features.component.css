@@ -18,6 +18,10 @@
   background-color: black;
 }
 
+.body2{
+  background-color:beige;
+}
+
 .text{
   color:darkgray;
   text-align: center;
@@ -28,6 +32,11 @@
   float: left;
   width: 33.3%;
   color:darkkhaki;
+}
+
+.column2{
+  float: left;
+  width: 50%;
 }
 
 .column.text{
