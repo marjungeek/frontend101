@@ -1,10 +1,10 @@
 <hr/>
 <div class="container">
     <div class="media">
-        <p>Likes: {{likesOfTeam}}</p>
         <img class="align-self-center mr-3" src="https://picsum.photos/200" alt="random image every refresh">
-        <div class="media-body">
-            <h5 class="mt-0">{{teamContent.id}} - {{teamContent.team}}</h5>
+        <div *ngFor="let content of teamContent.data">
+            <p>ID: {{content.id}}</p> 
+            <p>Team: {{content.team}}</p>
         </div>
     </div>
     <button (click)="clickLike()">Like</button>

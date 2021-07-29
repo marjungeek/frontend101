@@ -2,31 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TeamFormat } from './postFormat.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeamService {
 
-  myUrl: string = 'https://api.first.org/data/v1/teams';
-  plsLike: number = 0;
+  myUrl = 'https://api.first.org/data/v1/teams';
+  num = 0;
+  teamNumlikes = new BehaviorSubject<number>(this.num);
+  amountLikes = this.teamNumlikes.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  getTeamList() : Observable<any> {
-    return this.http.get(this.myUrl);
+  getTeamList() : Observable<[]> {
+    return this.http.get<[]>(this.myUrl);
   }
 
-  getTeamID(id: any) {
-    return this.http.get(`${this.myUrl}/${id}`);
+  getTeamID(team: any): Observable<[]> {
+    console.log(team);
+    return this.http.get<[]>(`${this.myUrl}/?team=${team}`);
   }
   
-  likedTeam(teamsLike: number){
-    return teamsLike++, this.plsLike++;
-  }
-
-  showLikes(show: number) {
-    return show = this.plsLike;
+  likedTeam(){
+    this.teamNumlikes.next(this.num++);
   }
 
 }

@@ -12,8 +12,11 @@ export class NavbarComponent implements OnInit {
 
   constructor(private teamServices: TeamService) { }
 
-  ngOnInit() {
-    this.TotalLikes = this.teamServices.showLikes(this.TotalLikes);
+  ngOnInit(): void {
+    this.teamServices.amountLikes.subscribe(countLike => {
+      this.TotalLikes = countLike;
+    })
+
   }
 
 }
