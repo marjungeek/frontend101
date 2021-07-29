@@ -1,0 +1,14 @@
+<table class="table table-hover cursor">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alpha of teams" routerLink="{{alpha.id}}">
+      <td>{{ alpha.id }}</td>
+      <td>{{ alpha.team }}</td>
+    </tr>
+  </tbody>
+</table>
