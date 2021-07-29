@@ -14,12 +14,12 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.APIService.count.subscribe(data =>{
-      console.log('total like: ',data);
+      //console.log('total like: ',data);
       this.Like=data;
     });
   }
-  plusMe(event:any){
-    console.log('NavBar:',event);
-  }
+  // plusMe(event:any){
+  //   console.log('NavBar:',event);
+  // }
 
 }

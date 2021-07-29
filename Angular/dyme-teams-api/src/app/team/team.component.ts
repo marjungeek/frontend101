@@ -9,10 +9,11 @@ import { APIService } from '../api.service';
 })
 export class TeamComponent implements OnInit {
   //index:number=NaN;
-  @Output() count: EventEmitter<any> = new EventEmitter();
+ // @Output() count: EventEmitter<any> = new EventEmitter();
 
   team!: any[];
   parsedTeam:any;
+  myStatus:boolean=false;
   Like={
     name:'Like',num: 0
   };
@@ -21,16 +22,26 @@ export class TeamComponent implements OnInit {
 
   ngOnInit(): void {
     const id=this.route.snapshot.paramMap.get('id');
-    console.log('in post init id: ',id);
+    //console.log('in post init id: ',id);
+    this.myStatus=this.APIService.teamRecord(id);
+    console.log('MyStatus: ',this.myStatus)
+    if(this.myStatus){
+      this.Like.name='like';
+      this.Like.num=0;
+    }else{
+      this.Like.name='dis-like';
+      this.Like.num=1;
+
+    }
 
     this.APIService.getList().subscribe(result => {
       this.team =result.data;
       //console.log(result);
-      console.log(result.data);
+      //console.log(result.data);
 
       const index = this.team.findIndex(x => x.id ===id);
       this.parsedTeam=this.team[index];
-      console.log('parse team is:\n',this.parsedTeam);
+      //console.log('parse team is:\n',this.parsedTeam);
 
     });
     // res.subscribe((event)=>{
@@ -47,13 +58,13 @@ export class TeamComponent implements OnInit {
     if(this.Like.num==0){
       this.Like.num=1;
       this.Like.name='dis-Like'
-      this.count.emit(true);
-      this.APIService.likeNum(true);
+      //this.count.emit(true);
+      this.APIService.likeNum(true,this.parsedTeam.id);
     }else{
       this.Like.num=0;
       this.Like.name='Like'
-      this.count.emit(true);
-      this.APIService.likeNum(false);
+      //this.count.emit(true);
+      this.APIService.likeNum(false,this.parsedTeam.id);
     }
   }
 
