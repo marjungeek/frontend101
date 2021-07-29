@@ -1,0 +1,21 @@
+<hr/>
+<div class="container">
+ <table>
+  <thead>
+    <tr>
+      <p>Details</p>
+      <th scope="col">Host</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of post" routerLink="{{data.id}}">
+      <td>{{data.id}}</td>
+      <td>{{data.host}}</td>
+      <td>{{data.address}}</td>
+    </tr>
+  </tbody>
+
+ </table>
+    <button class="form-control" (click)="back()">Back</button>
+</div>
