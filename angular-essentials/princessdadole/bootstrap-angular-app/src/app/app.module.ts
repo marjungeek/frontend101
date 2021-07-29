@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { PostComponent } from './post/post.component';
     NavbarComponent,
     PostListComponent,
     PostComponent,
+    HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

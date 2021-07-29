@@ -11,8 +11,6 @@ import { PostService } from '../post.service';
 export class PostComponent implements OnInit {
   post!:PostInterface;
   id:any;
-  title:any
-  body:any
   sub:any;
   constructor(private _Activatedroute:ActivatedRoute,
     private _router:Router,
@@ -30,7 +28,7 @@ export class PostComponent implements OnInit {
    });
   }
   onBack(): void {
-    this._router.navigate(['post']);
+    this._router.navigate(['teamlist']);
  }
 
 }
