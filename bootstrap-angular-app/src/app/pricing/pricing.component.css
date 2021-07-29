@@ -1,0 +1,30 @@
+#bottom{
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  padding-bottom: 0%;
+  top: 120%;
+}
+.column {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.text2{
+  font-weight: 400;
+}
+
+.pic{
+  background-color: #fafafa;
+  background-repeat: repeat;
+}
+
+span.text{
+  display: inline-block;
+  top: 120%;
+  padding: 10px;
+}
+
+.header{
+  font-size: 56px;
+}

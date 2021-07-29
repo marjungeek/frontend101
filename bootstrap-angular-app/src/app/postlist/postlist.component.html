@@ -1,0 +1,16 @@
+<table class="table table-list hover cursor">
+  <thead>
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of list" routerLink="{{post.id}}">
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </tbody>
+</table>
