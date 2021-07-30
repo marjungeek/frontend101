@@ -28,7 +28,9 @@ export class TeamdetailsComponent implements OnInit {
       console.log(this.id);
      const result = this._postService.getTeams();
      result.subscribe(result=>{
+
         this.team=result.data[this.id];
+        this.team.team_full=result.data[this.id]['team-full'];
         console.log(this.team)
         })
       })

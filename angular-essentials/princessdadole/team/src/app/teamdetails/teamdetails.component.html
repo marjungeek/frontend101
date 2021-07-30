@@ -4,8 +4,12 @@
       <h3>team DETAILS</h3>
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{team.id}} </h5>
-          <p class="card-text">{{team.team}}</p>
+          <h5 class="card-title">ID:{{team.id}} <br>{{team.team}} </h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{team.team_full}}</h6>
+          <p class="card-text">{{team.address}}</p>
+          <p class="card-text">{{team.address}}</p>
+          <p class="card-text">{{team.constituency}}</p>
+          <p class="card-text">{{team.email}}</p>
           <a href="#" class="btn btn-primary"(click)="onBack()">Back</a>
         </div>
       </div>
