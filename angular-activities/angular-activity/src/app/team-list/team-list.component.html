@@ -1,0 +1,14 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Teams</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teams of teamlist" routerLink="{{ teams.id}}">
+      <td>{{teams.id}}</td>
+      <td>{{teams.team}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+.table {
+  background-color: #0e3885;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table-tr tr:hover{
+  background: #0b2a64;
+  color: rgb(252, 253, 203);
+}
