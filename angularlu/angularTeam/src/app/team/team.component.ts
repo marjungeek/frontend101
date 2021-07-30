@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { datas } from './tmInterface';
 
 
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -18,10 +19,11 @@ export class TeamComponent implements OnInit {
 
     const team = this.route.snapshot.paramMap.get('team');
     const result = this.TeamsService.getInfo(team);
-    result.subscribe((datas)=>{
-      this.teamz = datas;
-
+    result.subscribe((data)=>{
+      this.teamz = data;
+      console.log(data)
     }
+
     )
 
   }

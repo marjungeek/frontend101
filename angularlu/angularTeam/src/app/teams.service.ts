@@ -16,7 +16,7 @@ export class TeamsService {
 
   getInfo(team:any):Observable<any>{
     console.log(team)
-    return this.http.get<any>(`${this.url}?/team=${team}`);
+    return this.http.get<any>(`${this.url}?team=${team}`);
 
   }
 
