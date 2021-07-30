@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TeamComponent implements OnInit {
 arrayData:any;
 resultItem: any;
+Likes: number = 0;
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,16 +24,14 @@ resultItem: any;
       this.resultItem = this.arrayData.find(function(element:any) {
         return element.id === dataResult;
       });
-
+      console.log(this.resultItem);
     });
 
-
-    // const dataResult = this.route.snapshot.paramMap.get('id');
-    // const result = this.arrayData = this.apiService.getData(dataResult);
-    // result.subscribe(data => {
-    //   this.arrayData = data;
-    //   console.log(this.arrayData);
-    // });
   }
+    addLike() {
+      this.Likes++;
+      console.log("like added");
+      console.log(this.Likes);
+    }
 
 }
