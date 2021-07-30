@@ -20,7 +20,7 @@ getTeams() : Observable<[]> {
 getPost(team: any): Observable<any> {
   return this.http.get(`${this.apiUrl}?team=${team}`);
 }
-getLike(){
+getLike() : void {
   this.likes.next(this.number++);
 }
 

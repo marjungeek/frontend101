@@ -28,4 +28,9 @@ export class TeamComponent implements OnInit {
 likeshu(){
   this.teamService.getLike();
 }
+backbtn() : void{
+  this.router.navigate(['/teamlist']);
+}
+
+
 }

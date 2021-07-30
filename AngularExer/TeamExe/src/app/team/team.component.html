@@ -1,7 +1,10 @@
-<div *ngFor="let team of post.data">
+<div align='center' *ngFor="let team of post.data">
   <button (click)="likeshu()" >Like!</button>
   <p>ID:{{team.id}}</p>
   <p>Team:{{team.team}}</p>
   <p>Address:{{team.address}}</p>
   <p>Phone:{{team.phone}}</p>
+</div>
+<div align='center' >
+  <button (click)="backbtn()" >Back</button>
 </div>
