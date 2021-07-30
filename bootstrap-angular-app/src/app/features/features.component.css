@@ -32,6 +32,8 @@
   float: left;
   width: 33.3%;
   color:darkkhaki;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 .column2{
@@ -42,7 +44,7 @@
 }
 
 .column.text{
-  padding-top: 255px;
+  padding-top: 500px;
   font-weight: 300;
   font-size: 15px;
 }
@@ -67,6 +69,7 @@ h3{
   font-size: 50px;
   font-weight: 600;
   text-align: center;
+  padding-top: 50px;
 }
 
 p.bodycamera{
