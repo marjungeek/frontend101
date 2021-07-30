@@ -1,0 +1,21 @@
+<body>
+  <div class="container">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">team</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <tr *ngFor="let list of teamdetails;let indexofelement=index;" [routerLink]="['/teamdetails',indexofelement]">
+
+        <td>{{list.id}}</td>
+        <td>{{list.team}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </body>
+
