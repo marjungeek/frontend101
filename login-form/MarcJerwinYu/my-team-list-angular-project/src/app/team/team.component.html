@@ -1,11 +1,19 @@
 <hr/>
 <div class="container">
   <div class="media">
+    <p>Teams</p>
     <div class="media-body">
-      <h1>{{post.id}}</h1>
-      <h5 class="mt-0">{{post.title}}</h5>
-      {{post.body}}
+      <h1>{{ post.id }}</h1>
+      <div *ngFor="let data of postResult">
+        <p>ID: {{ data.id }}</p>
+        <p>teams: {{ data.team }}</p>
+        <p>Establishment: {{ data.establishment }}</p>
+        <p>address: {{ data.address }}</p>
+        <p>Website: {{ post.website }}</p>
+        <p>Phone: {{ post.phone}} </p>
+      </div>
     </div>
   </div>
+  <button class="form-control" (click)="postLike(0)">Like</button>
     <button class="form-control" (click)="back()">Back</button>
 </div>

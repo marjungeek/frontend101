@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamlistService } from '../teamlist.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  like : number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+  addLike() {
+    this.like++;
+    console.log(this.like);
   }
 
 }

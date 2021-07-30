@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamlistService } from '../teamlist.service';
-import { DataInterface } from '../data';
+import { newDataInterface } from '../data';
 
 @Component({
   selector: 'app-team',
@@ -10,17 +10,29 @@ import { DataInterface } from '../data';
 })
 export class TeamComponent implements OnInit {
 
-  post! : any;
+  @Output() like = new EventEmitter<number>();
+  post : any;
+  postResult : any;
+  team! : newDataInterface;
 
   constructor(private TeamlistService : TeamlistService, private router : Router, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    const result = this.TeamlistService.getPost(id);
-    result.subscribe(data => {
-      console.log(this.post);
-      this.post = data;
+    const result = this.TeamlistService.getList();
+    result.subscribe(result => {
+      this.postResult = result.data;
+      console.log( this.postResult);
+      console.log(id);
+      this.post = this.postResult.find(function (element : any){
+        return element.id === id;
+      })
+      console.log(this.postResult);
     })
+  }
+  postLike(suki : number) {
+    this.like.emit(suki);
+    console.log(suki);
   }
 
   back(){
