@@ -8,15 +8,15 @@ import { teamInterface } from './teamInterface';
 })
 export class TeamsService {
   url: string = 'https://api.first.org/data/v1/teams';
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ) { }
   getTeam(): Observable<any>{
     return this.http.get<any>(this.url);
 
   }
 
-  getInfo(id:any):Observable<[]>{
-    console.log(id)
-    return this.http.get<[]>('${this.url}?id=${id}');
+  getInfo(team:any):Observable<any>{
+    console.log(team)
+    return this.http.get<any>(`${this.url}?/team=${team}`);
 
   }
 

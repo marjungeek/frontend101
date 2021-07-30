@@ -11,15 +11,15 @@ import { VirtualTimeScheduler } from 'rxjs';
   styleUrls: ['./team-list.component.css']
 })
 export class TeamListComponent implements OnInit {
-  teams!: teamInterface[];
+  teams: any;
   constructor(private teamService: TeamsService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
 
     const res = this.teamService.getTeam()
     res.subscribe(result=>{
-      console.log()
-      this.teams = result.data;
+      this.teams = result;
+      console.log(this.teams)
     }
 
     )

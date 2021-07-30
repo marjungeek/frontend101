@@ -7,9 +7,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="list" *ngFor = "let teamzz of teams" routerLink="{{teamzz.id}}">
-      <td>{{teamzz.id}}</td>
-      <td>{{teamzz.team}}</td>
+    <tr class="list" *ngFor = "let post of teams.data" routerLink="{{post.team}}">
+      <td>{{post.id}}</td>
+      <td>{{post.team}}</td>
     </tr>
 
   </tbody>

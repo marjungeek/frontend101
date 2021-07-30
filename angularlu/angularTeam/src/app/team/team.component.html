@@ -2,14 +2,13 @@
 <div class="container">
     <div class="media">
 
-        <div class="media-body">
+        <div class="media-body" *ngFor = "let team of teamz.data">
 
-          <p *ngFor = "let team of teamz">
-            {{team.id}}
-            {{team.team}}
-
-          </p>
+          <p>ID: {{team.id}}</p>
+          <p>Team: {{team.team}}</p>
+          <p>Host: {{team.host}}</p>
+          <p>address: {{team.address}}</p>
         </div>
     </div>
-    <button class="form-control">Back</button>
+    <button class="form-control" (click)="back()">Back</button>
 </div>
