@@ -17,7 +17,7 @@ export class TeamListComponent implements OnInit {
     const teamResult = this.apiService.getTeam();
     teamResult.subscribe(teamResult => {
       this.teams = teamResult.data;
-      console.log(this.teams);
+      console.log('Get team: ',this.teams);
     })
   }
 

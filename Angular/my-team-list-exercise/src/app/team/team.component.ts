@@ -17,7 +17,8 @@ resultItem: any;
     const teamResult = this.apiService.getTeam();
     teamResult.subscribe(teamResult => {
       this.arrayData = teamResult.data;
-      console.log(this.arrayData);
+      console.log('Get details: ',this.arrayData);
+      console.log('Data get ID: ', dataResult);
 
       this.resultItem = this.arrayData.find(function(element:any) {
         return element.id === dataResult;
