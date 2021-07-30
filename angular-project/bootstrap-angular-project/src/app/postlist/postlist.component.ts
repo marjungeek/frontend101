@@ -20,4 +20,7 @@ export class PostlistComponent implements OnInit {
     })
   }
 
+  viewPost(id: number): void{
+
+  }
 }

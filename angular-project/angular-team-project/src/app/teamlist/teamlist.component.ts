@@ -9,15 +9,16 @@ import { teamdatas } from '../teamdata';
 })
 export class TeamlistComponent implements OnInit {
 
-  teams! : teamdatas [];
+  teamLists!: teamdatas[];
 
   constructor(private teamListService: TeamlistService) { }
 
   ngOnInit(): void {
     const result = this.teamListService.getList();
     result.subscribe(result => {
-      this.teams = result.data;
-      console.log(this.teams);
+      console.log(result);
+      this.teamLists = result.data;
+      console.log(result);
     })
   }
 

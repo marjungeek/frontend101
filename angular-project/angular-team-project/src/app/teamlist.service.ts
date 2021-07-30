@@ -8,14 +8,15 @@ import { teamdatas } from './teamdata';
 })
 export class TeamlistService {
 
-  teamUrl = "https://api.first.org/data/v1/teams";
+  private teamUrl = "https://api.first.org/data/v1/teams";
 
   constructor(private http: HttpClient) { }
 
-  getList () : Observable<teamdatas>{
-    return this.http.get<teamdatas>(this.teamUrl);
+  getList () : Observable<any>{
+    return this.http.get(this.teamUrl);
   }
-  getPost(id:any) : Observable<teamdatas> {
-    return this.http.get<teamdatas>(`${this.teamUrl}/${id}`);
+  getPost(data:any) : Observable<any> {
+    console.log(data);
+    return this.http.get(`${this.teamUrl}/${data}`)
   }
 }

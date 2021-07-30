@@ -7,7 +7,7 @@ import { PostlistComponent } from './postlist/postlist.component';
 import { PricingComponent } from './pricing/pricing.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: '', pathMatch: 'full', redirectTo: 'posts'},
   {path: 'home', component: HomeComponent},
   {path: 'posts/:id', component: PostComponent},
   {path: 'posts', component: PostlistComponent},

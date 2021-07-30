@@ -10,17 +10,27 @@ import { teamdatas } from '../teamdata';
 })
 export class TeamComponent implements OnInit {
 
+  datas:any;
   teamDisplay: any;
 
-  constructor(private route : ActivatedRoute, private router: Router, private teamService: TeamlistService) { }
+  constructor(
+    private route : ActivatedRoute,
+    private router: Router,
+    private teamService: TeamlistService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('data')!;
-    const result = this.teamDisplay = this.teamService.getPost(id);
-    result.subscribe(data =>{
-      this.teamDisplay = data;
+    const id = this.route.snapshot.paramMap.get('id');
+    const res = this.teamService.getList();
+    res.subscribe(res => {
+      this.datas = res.data;
+      console.log(id);
+      console.log(this.datas);
+
+      this.teamDisplay = this.datas.find(function(element:any) {
+        return element.id === id;
+      });
       console.log(this.teamDisplay);
-    })
+    });
   }
     back(){
       this.router.navigate(['/teamslist'])

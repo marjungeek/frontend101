@@ -3,9 +3,15 @@
   <div class="media">
     <img class="mr-3" src="https://picsum.photos/200/300" alt="Free unsplash image">
     <div class="media-body">
-      <h1 *ngFor="let team of teamDisplay">
-        {{team}}</h1>
-    </div>
+      <hr/>
+      <div>
+        <p>ID: {{teamDisplay.id}}</p>
+        <p>Team: {{teamDisplay.team}}</p>
+        <p>Address: {{teamDisplay.address}}</p>
+        <p>Country: {{teamDisplay.country}}</p>
+        <p>Email: {{teamDisplay.email}}</p>
+        <p>website: {{teamDisplay.website}}</p>
+      </div>
   </div>
     <button class="form-control" (click)="back()">Back</button>
 </div>
