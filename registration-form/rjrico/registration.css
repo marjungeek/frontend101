@@ -1,0 +1,7 @@
+.main{
+    width: 600px;
+}
+
+input.error {
+    border-color: red;
+}
