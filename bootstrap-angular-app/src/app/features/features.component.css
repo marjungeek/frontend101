@@ -69,9 +69,27 @@ h3{
   text-align: center;
 }
 
-.bodycamera{
+p.bodycamera{
   padding-left: 170px;
   padding-right: 170px;
   color: grey;
   font-size: 24px;
+  word-wrap: break-word;
+}
+
+.column3 {
+  float: left;
+  width: 33.3%;
+}
+
+.column.text2{
+  writing-mode: vertical-lr;
+  color: cornflowerblue;
+  font-size: 50px;
+  font-weight: 400;
+  padding-left: 100px;
+  padding-top: 120px;
+}
+.body4{
+  padding-top: 100px;
 }

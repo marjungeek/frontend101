@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'app', component: HomeComponent },
   {path: 'pricing' , component: PricingComponent},
   {path: 'features' , component: FeaturesComponent},
-  {path: 'post/:id', component: PostComponent}
+  {path: 'postlist/:id', component: PostComponent}
 ];
 
 @NgModule({
