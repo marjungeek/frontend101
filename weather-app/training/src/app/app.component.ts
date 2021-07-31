@@ -19,7 +19,7 @@ export class AppComponent {
   ngOninit() : void {
     const result = this.apiService.getList();
     result.subscribe(result => {
-      this.post = result.weather;
+      this.post = result.id;
       console.log(this.post);
     })
   }
