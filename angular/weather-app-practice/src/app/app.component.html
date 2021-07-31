@@ -5,7 +5,8 @@
     </div>
 
     <div class="location">
-      <h2>Las Pinas, Philippines</h2>
+      <!-- <h2>Las Pinas, Philippines</h2> -->
+      <h2>{{ apiLocationName }}</h2>
     </div>
 
     <div class="current-weather">
@@ -14,7 +15,8 @@
           <img src="../assets/img/weather-icons/003-rainy.svg"/>
         </span>
         <span class="temperature">
-          27&deg;
+          <!-- 27&deg; -->
+          {{ apiWeatherData.current.temp | number:'1.0-0'}}&deg;
         </span>
         <span class="description">
           <h2>Light rain</h2>
