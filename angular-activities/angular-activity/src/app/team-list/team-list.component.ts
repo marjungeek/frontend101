@@ -12,10 +12,10 @@ export class TeamListComponent implements OnInit {
   constructor(private teamService: TeamService) { }
 
   ngOnInit(): void {
-    const result = this.teamService.getTeamList();
-    result.subscribe(result => {
-      this.teamlist = result.data;
-      console.log(result);
+    const teamRes = this.teamService.getTeamList();
+    teamRes.subscribe(teamRes => {
+      this.teamlist = teamRes.data;
+      console.log(this.teamlist);
     })
   }
 

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +11,7 @@ export class TeamService {
   constructor(private httpClient: HttpClient) { }
 
   getTeamList() : Observable<any> {
-    return this.httpClient.get(this.teamUrl);
-  }
-
-  getTeam(data: any) : Observable<any> {
-    return this.httpClient.get(`${this.teamUrl}/${data}`);
+    return this.httpClient.get<any>(this.teamUrl);
   }
 
 }

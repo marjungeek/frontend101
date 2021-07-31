@@ -3,23 +3,21 @@
   <button class="form-control" (click)="back()">Back</button>
   <div class="media">
     <img src="https://picsum.photos/200/300" alt="free unsplash image" class="align-self-center- mr-3">
-    <br>
-        <!-- <div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">id</th>
-                <th scope="col">team</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let teamlist of obj" routerLink="{{ teamlist.id}}">
-                <td>{{ teamlist.id }}</td>
-                <td>{{ teamlist.team}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
+    <br><br><br>
+        <div class="media-body">
+          <h2 class="mt-0">{{ resultObject.team }}</h2>
+          <p>{{ resultObject["team-full"] }}</p>
+          <p>Company E-mail: {{ resultObject.email }}</p>
+          <p>Contact #: {{ resultObject["phone-emergency"]}}</p>
+          <p>Date Established: {{ resultObject.establishment }}</p>
+          <p>Company Address: {{ resultObject.address }}</p>
+          <p>Constituency: {{ resultObject.constituency }}</p>
+          <p>Description: {{ resultObject["constituency-description"] }}</p>
+        </div>
+        <br><br>
       </div>
   </div>
+  <footer>
+    Teams Application 2021 | Paula Lopez
+  </footer>
 

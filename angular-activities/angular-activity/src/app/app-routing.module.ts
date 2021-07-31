@@ -7,8 +7,7 @@ import { TeamsComponent } from './teams/teams.component';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
-  // {path: 'teams-list', component: TeamsComponent},
-  {path: 'teams/:object', component: TeamsComponent},
+  {path: 'teams/:id', component: TeamsComponent},
   {path: 'teams', component: TeamListComponent},
 
 ];
