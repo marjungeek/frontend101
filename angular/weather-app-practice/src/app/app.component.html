@@ -1,7 +1,8 @@
 <div class="wrapper">
   <div class="main-content">
     <div class="search">
-      <input type="text" placeholder="Search for location"><button>Go</button>
+      <input type="text" placeholder="Search for location" #search>
+      <button (click)="userSearch(search.value, search)">Go</button>
     </div>
 
     <div class="location">
