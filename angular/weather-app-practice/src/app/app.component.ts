@@ -29,22 +29,20 @@ export class AppComponent implements OnInit{
           console.log(observedData);
         },
         error: (err: Error) => console.log('Observer got an error: ' + err),
-        complete: () => console.log("Observer did its job!"),
+        complete: () => console.log("Observer did its job!")
       }
 
       pos.apiUrl.subscribe(myObserver);/* pos.apiUrl is myObservable */
       //  console.log("Check Value of long: " + this.longitude);/* 2nd Logged on Browser??? */
-      let myObserver2 = {
+      const myObserver2 = {
         next: (observedData2: any) => {
-          // this.apiLocationName = observedData2.features[0].place_name;/* For specific location */
-          this.apiLocationName = observedData2.features[0].context[3].text
-          + ", " + observedData2.features[0].context[4].text;/**This is for [City, Country] location */
-          // console.log("Location Name: ");
-          // console.log(observedData2.features[0].context[3].text);
-          // console.log(observedData2.features[0].place_name);
+          console.log(observedData2.features[0]);
+          this.apiLocationName = observedData2.features[0].place_name;/* For specific location */
+          // this.apiLocationName = observedData2.features[0].context[3].text
+          // + ", " + observedData2.features[0].context[4].text;/* This is for [City, Country] location */
         },
         error: (err: Error) => console.log('Observer2 got an error: ' + err),
-        complete: () => console.log("Observer2 did its job!"),
+        complete: () => console.log("Observer2 did its job!")
       }
 
       pos.name.subscribe(myObserver2);
@@ -54,6 +52,50 @@ export class AppComponent implements OnInit{
       before doing any logic here??
       */
       // console.log("On Init method" + this.longitude);
+  }
+
+  // testClick() {
+  //   console.log(this.apiLocationName);
+  // }
+
+  userSearch(searchValue: string, searchField: HTMLInputElement) {
+    if (searchValue == '') {
+      alert("No input found! Please try again.");
+    } else {
+      const searchObservable = this.weatherOnLoad.getWeatherOnSearch(searchValue);
+
+      const searchObserver = {
+        next: (observedData: any) => {
+          // console.log(observedData.features.length);
+          if(observedData.features.length == 0){
+            alert("Location not found! Please try again.");
+            searchField.value = '';
+          } else {
+            // console.log("Search Observer Works");
+            // console.log("longitude: " + observedData.features[0].center[0]);
+            // console.log("latitude: " + observedData.features[0].center[1]);
+            this.apiLocationName = observedData.features[0].place_name;
+            let longitudeTemp = observedData.features[0].center[0];
+            let latitudeTemp = observedData.features[0].center[1];
+            const displayObservable = this.weatherOnLoad.displayWeatherOnSearch(longitudeTemp, latitudeTemp);
+            const displayObserver = {
+              next: (observedDataDisp: any) => {
+                // console.log("Trial for Update data on Search");
+                this.apiWeatherData = observedDataDisp;
+              },
+              error: (err: Error) => console.log("Display Observer error: " + err),
+              complete: () => console.log("Display Observer did its job!")
+            }
+            displayObservable.subscribe(displayObserver);
+            searchField.value = '';
+          }
+        },
+        error: (err: Error) => console.log("Search Observer got an error: " + err),
+        complete: () => console.log("Search observer did its job!")
+      }
+
+      searchObservable.subscribe(searchObserver);
+    }
   }
 
   title = 'weather-app-practice';
