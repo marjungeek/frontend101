@@ -20,9 +20,9 @@
           {{ apiWeatherData.current.temp | number:'1.0-0'}}&deg;
         </span>
         <span class="description">
-          <h2>{{apiWeatherData.daily[0].weather[0].description}}</h2>
-          <p>{{apiWeatherData.daily[0].weather[0].description}} is expected.
-            The low will be {{apiWeatherData.daily[0].temp.min}}.&deg;</p>
+          <h2>{{apiWeatherData.daily[0].weather[0].description | titlecase}}</h2>
+          <p>{{apiWeatherData.daily[0].weather[0].description | titlecase}} is expected.
+            The low will be {{apiWeatherData.daily[0].temp.min }}.&deg;</p>
         </span>
       </div>
       <div class="details">
@@ -49,9 +49,9 @@
               </svg>
             </span>
             <span class="information">
-              <i>Wind</i>
+              <i>Wind speed</i>
               {{apiWeatherData.current.wind_speed | number: '1.0-0'}} km/h
-              <svg width="14" height="14" viewBox="0 0 10 14" style="transform:rotate(70deg)">
+              <svg width="14" height="14" viewBox="0 0 10 14" style="transform:rotate({{apiWeatherData.current.wind_deg}}deg)">
                 <path d="M5 0L9.66895 14L5 9.33105L0.331055 14L5 0Z"></path>
               </svg>
             </span>
@@ -92,7 +92,7 @@
             </span>
             <span class="information">
               <i>Pressure</i>
-              {{apiWeatherData.current.pressure}}mb
+              {{apiWeatherData.current.pressure/100 | number: '1.0-0'}}mb
             </span>
           </li>
           <li>
@@ -104,8 +104,8 @@
             </svg>
             </span>
             <span class="information">
-              <i>Pressure</i>
-              {{apiWeatherData.current.pressure}}mb
+              <i>Dew Point</i>
+              {{apiWeatherData.current.dew_point | number: '1.0-0'}}&deg;
             </span>
           </li>
         </ul>
@@ -199,17 +199,17 @@
           </thead>
           <tr>
             <td class="subhead">Temperature</td>
-            <td>16&deg;</td>
-            <td>21&deg;</td>
-            <td>18&deg;</td>
-            <td>25&deg;</td>
+            <td>{{apiWeatherData.daily[0].temp.morn}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].temp.day}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].temp.eve}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].temp.night}}&deg;</td>
           </tr>
           <tr>
             <td class="subhead">Feels Like</td>
-            <td>16&deg;</td>
-            <td>21&deg;</td>
-            <td>18&deg;</td>
-            <td>25&deg;</td>
+            <td>{{apiWeatherData.daily[0].feels_like.morn}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].feels_like.day}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].feels_like.eve}}&deg;</td>
+            <td>{{apiWeatherData.daily[0].feels_like.night}}&deg;</td>
           </tr>
         </table>
       </div>
@@ -221,12 +221,12 @@
             </path>
           </svg>
           <span>Sunrise</span>
-          <span>5:38 AM</span>
+          <span>{{apiWeatherData.daily[0].sunrise* 1000| date:'h:mm' }}AM</span>
         </div>
         <div class="daylight">
           <h3>Daylight Hours</h3>
           <img src="../assets/img/WeatherDaylight.svg"/>
-          <span>12 hr 47 min</span>
+          <span>12:47 </span>
         </div>
         <div class="sunset">
           <span>
@@ -237,7 +237,7 @@
             </svg>
           </span>
           <span>Sunset</span>
-          <span>6:26 PM</span>
+          <span>{{apiWeatherData.daily[0].sunset* 1000| date:'h:mm'}}PM</span>
         </div>
       </div>
     </div>
