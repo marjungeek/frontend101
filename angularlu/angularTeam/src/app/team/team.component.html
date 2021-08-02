@@ -1,0 +1,14 @@
+<hr/>
+<div class="container">
+    <div class="media">
+
+        <div class="media-body" *ngFor = "let team of teamz.data">
+
+          <p>ID: {{team.id}}</p>
+          <p>Team: {{team.team}}</p>
+          <p>Host: {{team.host}}</p>
+          <p>address: {{team.address}}</p>
+        </div>
+    </div>
+    <button class="form-control" (click)="back()">Back</button>
+</div>
