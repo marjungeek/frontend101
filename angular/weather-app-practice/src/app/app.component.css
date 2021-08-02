@@ -44,6 +44,10 @@ footer {
   outline: none;
 }
 
+.imgCustom {
+  height: 30px;
+}
+
 .wrapper {
   min-height: 800px;
   max-height: 1000px;

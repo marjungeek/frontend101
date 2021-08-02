@@ -1,0 +1,87 @@
+<div class="daily-forecast">
+  <h2>Forecast</h2>
+  <ul>
+    <!--*ngFor="let item of list" -->
+
+   <li>
+      <div class="daily-item">
+        <h3>Today</h3>
+        <span class="icon">{{apiWeatherData.daily[0].weather.icon}}
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet" />{{apiWeatherData.daily[0].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[0].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[0].temp.min}}&deg;</span>
+      </div>
+    </li>
+    <li>
+      <div class="daily-item">
+        <h3>{{apiWeatherData.daily[1].dt* 1000| date:'EEEE,d' }}</h3>
+        <span class="icon">
+          <!-- {{apiWeatherData.daily[1].weather.icon}} -->
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image2>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image2)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet" />{{apiWeatherData.daily[1].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[1].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[1].temp.min}}&deg;</span>
+      </div>
+    </li>
+    <li>
+      <div class="daily-item">
+        <h3>{{apiWeatherData.daily[2].dt* 1000| date:'EEEE,d' }}</h3>
+        <span class="icon">{{apiWeatherData.daily[2].weather.icon}}
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image3>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image3)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet" />{{apiWeatherData.daily[2].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[2].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[2].temp.min}}&deg;</span>
+      </div>
+    </li>
+    <li>
+      <div class="daily-item">
+        <h3>{{apiWeatherData.daily[3].dt* 1000| date:'EEEE,d' }}</h3>
+        <span class="icon">{{apiWeatherData.daily[3].weather.icon}}
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image4>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image4)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet" />{{apiWeatherData.daily[3].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[3].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[3].temp.min}}&deg;</span>
+      </div>
+    </li>
+    <li>
+      <div class="daily-item">
+        <h3>{{apiWeatherData.daily[4].dt* 1000| date:'EEEE,d' }}</h3>
+        <span class="icon">{{apiWeatherData.daily[4].weather.icon}}
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image5>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image5)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet" />{{apiWeatherData.daily[4].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[4].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[4].temp.min}}&deg;</span>
+      </div>
+    </li>
+    <li>
+      <div class="daily-item">
+        <h3>{{apiWeatherData.daily[5].dt* 1000| date:'EEEE,d' }}</h3>
+        <span class="icon">{{apiWeatherData.daily[5].weather.icon}}
+          <!-- <img src="../assets/img/weather-icons/013-storm-2.svg" /> -->
+          <img class="imgCustom" #image6>
+          {{getIcon(apiWeatherData.current.weather[0].icon, image6)}}
+          <i><img src="../assets/img/water_drop_white_8x8.svg" class="droplet"/>{{apiWeatherData.daily[5].pop | percent}}</i>
+        </span>
+        <span class="temp-high">{{apiWeatherData.daily[5].temp.max}}&deg;</span>
+        <span class="temp-low">{{apiWeatherData.daily[5].temp.min}}&deg;</span>
+      </div>
+    </li>
+
+  </ul>
+</div>

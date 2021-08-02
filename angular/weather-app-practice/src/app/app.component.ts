@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
   apiWeatherData: any;
   apiLocationName: any;
 
+  mapped:any;
+
   ngOnInit(): void {
     this.weatherOnLoad.getWeatherOnLoad().then(pos => {
 
@@ -80,7 +82,8 @@ export class AppComponent implements OnInit{
             const displayObservable = this.weatherOnLoad.displayWeatherOnSearch(longitudeTemp, latitudeTemp);
             const displayObserver = {
               next: (observedDataDisp: any) => {
-                // console.log("Trial for Update data on Search");
+                console.log("Trial for Update data on Search");
+                console.log(observedDataDisp);
                 this.apiWeatherData = observedDataDisp;
               },
               error: (err: Error) => console.log("Display Observer error: " + err),
@@ -97,6 +100,8 @@ export class AppComponent implements OnInit{
       searchObservable.subscribe(searchObserver);
     }
   }
+
+
 
   title = 'weather-app-practice';
 
