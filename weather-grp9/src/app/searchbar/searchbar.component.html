@@ -2,7 +2,10 @@
   <input type="text" placeholder="Search for location"#search>
   <button (click)="onClick(search.value)">Go</button>
 </div>
+<div class= "location">
+  <h2>{{mapBox.features[0].place_name}}</h2>
+</div>
 
-<app-weather-body [locate]="searchLoc"></app-weather-body>
-    <app-fore-cast></app-fore-cast>
-  <app-weather-details></app-weather-details>
+<app-weather-body [lat] = "lat" [lon] = "lon"></app-weather-body>
+<app-fore-cast [lat] = "lat" [lon] = "lon"></app-fore-cast>
+<app-weather-details [lat] = "lat" [lon] = "lon"></app-weather-details>

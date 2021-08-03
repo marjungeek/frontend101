@@ -1,4 +1,6 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-weather-details',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-details.component.css']
 })
 export class WeatherDetailsComponent implements OnInit {
+  @Input() lon:any;
+  @Input() lat:any;
+  xxx!: any
 
-  constructor() { }
+  constructor(private apiService:ApiServiceService) { }
 
   ngOnInit(): void {
+  }
+  ngOnChanges():void{
+    this.apiService.getWeatherAll(this.lat, this.lon).subscribe(res=>{
+      this.xxx =res ;
+    })
   }
 
 }

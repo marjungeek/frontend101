@@ -8,11 +8,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="list" *ngFor = "let post of post" routerLink="{{post.id}}">
-      <td>{{post.userId}}</td>
-      <td>{{post.id}}</td>
-      <td>{{post.title}}</td>
-      <td>{{post.body}}</td>
+    <tr class="list"  routerLink="{{post.id}}">
+      <td>{{post.weather[0].main}}</td>
+      <td>{{post.coord.lon}}</td>
+      <td>{{post.name}}</td>
+      
+      
+      
+      
+     
+      
     </tr>
 
   </tbody>

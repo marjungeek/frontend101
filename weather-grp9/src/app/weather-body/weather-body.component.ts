@@ -9,8 +9,9 @@ import { ApiServiceService } from '../api-service.service';
 })
 export class WeatherBodyComponent implements OnInit {
 
-  @Input() locate:any = "";
-  xxx!:any
+  @Input() lon:any;
+  @Input() lat:any;
+  xxx!:any;
   search!:any;
 result : any;
 urlMapbox = 'https://api.mapbox.com/geocoding/v5/mapbox.places'
@@ -23,22 +24,24 @@ key = 'pk.eyJ1IjoibGFuenV5MDYiLCJhIjoiY2tyc3lpZ3h2MG9oMTJucGZ3eXRwZWtrcSJ9.Yv-F9
   
   ngOnInit(): void {
 
-    this.apiService.getWeatherForecast().subscribe(res=>{
-      console.log(res)
+    // this.apiService.getWeatherForecast().subscribe(res=>{
+    //   console.log(res)
     
-    this.apiService.cityChild("").subscribe(res=>{
-      this.result = res;
-      console.log(res)
+    // this.apiService.cityChild("").subscribe(res=>{
+    //   this.result = res;
+    //   console.log(res)
   
 
   
-    })
+  //   })
    
-  })
-    
-  
-  console.log(this.locate)
-
+  // })
+  }
+  ngOnChanges():void{
+    this.apiService.getWeatherAll(this.lat, this.lon).subscribe(res=>{
+      this.result =res ;
+      console.log(res)
+    })
   }
 
     

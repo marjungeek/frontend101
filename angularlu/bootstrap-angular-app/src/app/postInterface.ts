@@ -1,9 +1,9 @@
 
 
 export interface postInterface{
-userId:number;
+main:string;
   id: number;
-  title:string;
-  body:string;
+  icon:string;
+  description:string;
 
 }
