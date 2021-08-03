@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,10 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent implements OnInit {
+  lat!:number;
+  lon!:number;
+  loc!:number
 
-  constructor() { }
+  searchLoc:any
+  constructor(private apiService:ApiServiceService) { }
 
   ngOnInit(): void {
   }
+  onClick(search:any){
 
-}
+    this.apiService.cityChild(search).subscribe(res=>{
+      this.searchLoc = res;
+      console.log(this.searchLoc)
+    })
+    
+    
+    }
+
+   
+  }
+    
+
+  
+ 
+

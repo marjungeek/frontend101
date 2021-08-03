@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiServiceService } from '../api-service.service';
 @Component({
   selector: 'app-weather-body',
@@ -6,14 +8,38 @@ import { ApiServiceService } from '../api-service.service';
   styleUrls: ['./weather-body.component.css']
 })
 export class WeatherBodyComponent implements OnInit {
+
+  @Input() locate:any = "";
+  xxx!:any
+  search!:any;
 result : any;
-  constructor(private ApiServiceService : ApiServiceService ) { }
+urlMapbox = 'https://api.mapbox.com/geocoding/v5/mapbox.places'
+location = "";
+key = 'pk.eyJ1IjoibGFuenV5MDYiLCJhIjoiY2tyc3lpZ3h2MG9oMTJucGZ3eXRwZWtrcSJ9.Yv-F98s_odqqHASs03YT6g'
+  
+  constructor(private apiService : ApiServiceService, private http:HttpClient ) { }
 
+
+  
   ngOnInit(): void {
-    this.ApiServiceService.getWeatherForecast().subscribe(req=>{
-      this.result = req;
-      console.log(this.result);
-  })
 
-}
+    this.apiService.getWeatherForecast().subscribe(res=>{
+      console.log(res)
+    
+    this.apiService.cityChild("").subscribe(res=>{
+      this.result = res;
+      console.log(res)
+  
+
+  
+    })
+   
+  })
+    
+  
+  console.log(this.locate)
+
+  }
+
+    
 }

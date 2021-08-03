@@ -1,1 +1,8 @@
-<p>searchbar works!</p>
+<div class="search">
+  <input type="text" placeholder="Search for location"#search>
+  <button (click)="onClick(search.value)">Go</button>
+</div>
+
+<app-weather-body [locate]="searchLoc"></app-weather-body>
+    <app-fore-cast></app-fore-cast>
+  <app-weather-details></app-weather-details>
