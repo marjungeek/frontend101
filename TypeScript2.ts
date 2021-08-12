@@ -6,4 +6,5 @@ class Yahiko extends RavenRome{
     }
 }
 
+//Instantiate a class
 var obj = new Yahiko()
