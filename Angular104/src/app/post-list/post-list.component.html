@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let post of data" >
+    <tr *ngFor="let post of data" routerLink="{{post.id}}" >
       <td>{{post.userId}}</td>
       <td>{{post.id}}</td>
       <td>{{post.title}}</td>

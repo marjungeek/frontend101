@@ -18,4 +18,9 @@ export class PostListComponent implements OnInit {
     console.log(result);
   }
 
+  viewPost(id:number):void{
+    console.log(id)
+
+  }
+
 }

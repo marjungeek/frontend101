@@ -16,9 +16,9 @@ export class FeedComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  likeClick(raven:number){
+  likeClick(rrr:number){
     console.log('Like Clicked...')
-    this.gusto.emit(raven);
+    this.gusto.emit(rrr);
   }
 
 }

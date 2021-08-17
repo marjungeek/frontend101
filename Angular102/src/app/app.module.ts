@@ -12,7 +12,7 @@ import { FeedComponent } from './feed/feed.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
   ],
   imports: [
     BrowserModule,

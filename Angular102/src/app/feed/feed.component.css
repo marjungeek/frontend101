@@ -4,9 +4,12 @@
   width: 40em;
   border: 2px solid violet;
   padding: 0.5em;
+  background-color: white;
 }
 
 .feed-btn{
   float: right;
   background-color: skyblue;
+  margin-left: 34em;
 }
+

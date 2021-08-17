@@ -10,8 +10,10 @@ export class HomeComponent implements OnInit {
   gusto:number=0;
 
   list:any = [
-    {status:'Hi raven!'},
-    {status:'Baka Master Raven Yan!'}
+    {status:'Hi Guys!'},
+    {status:'Baka Renejay To!'},
+    {status:'i i i ?'},
+    {status:'DOLOOOOO!!'}
   ]
 
   constructor() { }
@@ -24,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.list.push({status: status})
   }
 
-  dagdagGusto(avatar:number=1){
+  dagdagGusto(avatar:number=0){
     this.gusto++;
   }
 

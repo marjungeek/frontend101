@@ -6,9 +6,9 @@
         </td>
     <tbody>
       <tr *ngFor="let item of list">
-        <td>
+        <td class="status" >
           {{item.status}}
-          <button class="feed-btn" (click)="likeClick(1)" >Like</button>
+          <button class="feed-btn" (click)="likeClick(0)" >Like</button>
         </td>
       </tr>
     </tbody>
